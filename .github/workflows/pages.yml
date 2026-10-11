@@ -10,6 +10,7 @@ on:
       - detail_pontoise.csv
       - membres.yaml
       - generer_site.py
+      - assets/**
       - .github/workflows/pages.yml
   workflow_dispatch:
 

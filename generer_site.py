@@ -29,6 +29,7 @@ import csv
 import html as html_lib
 import logging
 import re
+import shutil
 from collections import defaultdict
 from dataclasses import dataclass
 from datetime import date
@@ -38,6 +39,7 @@ from typing import Any
 import yaml
 
 logger = logging.getLogger("generer_site")
+ASSETS = Path(__file__).parent / "assets"  # logo du club et police manuscrite
 
 CLUB = "Cie Archers de Pontoise"
 MEDAILLES = {1: "🥇", 2: "🥈", 3: "🥉"}
@@ -202,79 +204,95 @@ def construire_epreuves(rows: list[dict[str, Any]], mots_cles: list[str]) -> lis
 # --- Briques HTML ----------------------------------------------------------
 
 _CSS = """
-:root {
-  --bg: #fafaf7; --surface: #ffffff; --ink: #1d2327; --ink2: #4a555c; --muted: #7a858c;
-  --line: #d9dde0; --accent: #1f6f8b; --accent-soft: #e3f0f4; --hover: #f0f4f6;
-  --m1: #c99a06; --m2: #8d99a3; --m3: #a8602d; --m0: #3f8aa3; --grand: #fff4d1;
+/* Charte graphique de la compagnie */
+@font-face {
+  font-family: "Caveat";
+  src: url("static/caveat.woff2") format("woff2");
+  font-weight: 400 700;
+  font-display: swap;
 }
-@media (prefers-color-scheme: dark) {
-  :root {
-    --bg: #14181b; --surface: #1c2226; --ink: #e8ecee; --ink2: #b4bec4; --muted: #8a959c;
-    --line: #333c42; --accent: #6bb6d0; --accent-soft: #22343b; --hover: #242d32;
-    --m1: #e3b428; --m2: #a9b4be; --m3: #cd8650; --m0: #6bb6d0; --grand: #3a3319;
-  }
+:root {
+  --accent: #3f60aa; --bleu: #1b2b5a; --bleu-moyen: #475b8b; --encre: #09132d;
+  --fond: #f3ebe7; --carte: #fffdfb; --gris: #3b3f50; --gris-doux: #767e98;
+  --filet: #acafc1; --pale: #eef1f8; --hover: #e8edf7; --grand: #fff4d1;
+  --m0: #3f60aa; --m1: #c99a06; --m2: #8d99a3; --m3: #a8602d;
 }
 * { box-sizing: border-box; }
-body { margin: 0; background: var(--bg); color: var(--ink);
-  font: 16px/1.5 system-ui, -apple-system, "Segoe UI", sans-serif; }
+body { margin: 0; background: var(--fond); color: var(--encre);
+  font: 16px/1.55 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
 a { color: var(--accent); }
-header.site { background: var(--surface); border-bottom: 1px solid var(--line); }
-header.site .in { max-width: 1100px; margin: 0 auto; padding: 0.7rem 16px;
-  display: flex; flex-wrap: wrap; gap: 0.4rem 1.5rem; align-items: center; }
-header.site .titre { font-weight: 700; color: var(--ink); text-decoration: none; }
-header.site nav { display: flex; flex-wrap: wrap; gap: 0.2rem 1.1rem; }
-header.site nav a { text-decoration: none; color: var(--ink2); }
-header.site nav a.actif, header.site nav a:hover { color: var(--accent); }
-main { max-width: 1100px; margin: 0 auto; padding: 1.2rem 16px 3rem; }
-h1 { font-size: 1.7rem; margin: 0.3rem 0 0.2rem; }
-h2 { font-size: 1.2rem; margin: 2rem 0 0.6rem; }
-.fil { color: var(--muted); font-size: 0.9rem; }
-.fil a { color: var(--muted); }
+a:focus-visible, :focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+h1, h2 { font-weight: 700; text-transform: uppercase; letter-spacing: 0.03em; }
+h1 { font-size: 1.55rem; margin: 0.3rem 0 0.2rem; }
+h2 { font-size: 1.2rem; margin: 2rem 0 0.6rem; color: var(--bleu); }
+h3 { margin: 1rem 0 0.4rem; color: var(--bleu); }
+.manuscrit { font-family: "Caveat", "Segoe Script", "Bradley Hand", cursive;
+  text-transform: none; letter-spacing: 0; }
+.gabarit { max-width: 1240px; margin: 0 auto; }
+header.site { background: var(--bleu); color: var(--fond); padding: 1.4rem 1.25rem 1.1rem;
+  border-bottom: 4px solid var(--accent); }
+header.site .entete-flex { display: flex; align-items: center; gap: 1rem; }
+header.site a.marque { display: flex; align-items: center; gap: 1rem; color: inherit;
+  text-decoration: none; }
+.logo { height: 64px; width: auto; flex: none; }
+header.site .manuscrit { margin: 0; font-size: 1.55rem; line-height: 1.1; color: #ccd4ea; }
+header.site .titre { margin: 0.15rem 0 0; font-size: 1.55rem; font-weight: 700;
+  text-transform: uppercase; letter-spacing: 0.03em; }
+nav.site { display: flex; flex-wrap: wrap; gap: 0.4rem 1.4rem; padding: 0.8rem 1.25rem 0; }
+nav.site a { color: var(--accent); font-weight: 600; }
+nav.site a[aria-current] { color: var(--encre); text-decoration: none; }
+main { padding: 1.25rem 1.25rem 1.5rem; }
+footer { padding: 0 1.25rem 1.5rem; font-size: 0.88rem; color: var(--gris); }
+.fil { color: var(--gris); font-size: 0.9rem; }
+.fil a { color: var(--gris); }
 .chiffres { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-  gap: 0.8rem; margin: 1rem 0; }
-.chiffre { background: var(--surface); border: 1px solid var(--line); border-radius: 8px;
-  padding: 0.7rem 0.9rem; }
-.chiffre b { display: block; font-size: 1.7rem; line-height: 1.2; }
-.chiffre span { color: var(--ink2); font-size: 0.9rem; }
-.carte { background: var(--surface); border: 1px solid var(--line); border-radius: 8px;
-  padding: 0.8rem 1rem; margin: 0.8rem 0; }
-.saisons { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 0.6rem; }
-.saisons a { display: block; background: var(--surface); border: 1px solid var(--line);
-  border-radius: 8px; padding: 0.5rem 0.8rem; text-decoration: none; color: var(--ink); }
-.saisons a:hover { background: var(--accent-soft); border-color: var(--accent); }
-.saisons a b { font-size: 1.1rem; }
-.saisons a span { display: block; font-size: 0.85rem; color: var(--ink2); }
+  gap: 1rem; margin: 1rem 0; }
+.chiffre { background: var(--carte); border: 1px solid var(--filet);
+  border-left: 4px solid var(--accent); border-radius: 6px; padding: 0.7rem 0.9rem; }
+.chiffre b { display: block; font-size: 1.7rem; line-height: 1.2; color: var(--bleu); }
+.chiffre span { color: var(--gris); font-size: 0.9rem; }
+.carte { background: var(--carte); border: 1px solid var(--filet); border-radius: 6px;
+  padding: 0.8rem 1rem; margin: 1rem 0; }
+.saisons { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 0.8rem; }
+.saisons a { display: block; background: var(--carte); border: 1px solid var(--filet);
+  border-left: 4px solid var(--accent); border-radius: 6px; padding: 0.5rem 0.8rem;
+  text-decoration: none; color: var(--encre); }
+.saisons a:hover { background: var(--pale); }
+.saisons a b { font-size: 1.1rem; color: var(--bleu); }
+.saisons a span { display: block; font-size: 0.85rem; color: var(--gris); }
 .table-wrap { overflow-x: auto; }
-table { border-collapse: collapse; width: 100%; background: var(--surface);
-  border: 1px solid var(--line); font-size: 0.93rem; }
-th, td { padding: 0.35rem 0.6rem; text-align: left; border-bottom: 1px solid var(--line); }
-th { background: var(--accent-soft); white-space: nowrap; }
+table { border-collapse: collapse; width: 100%; background: var(--carte); font-size: 0.92rem; }
+th, td { border: 1px solid var(--filet); padding: 0.4rem 0.65rem; text-align: left; }
+th { background: var(--bleu); color: #fff; font-weight: 600; white-space: nowrap; }
 tbody tr:hover { background: var(--hover); }
 tr.grand { background: var(--grand); }
 td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; }
 th.triable { cursor: pointer; user-select: none; }
-th.triable::after { content: " \\2195"; color: var(--muted); font-weight: normal; }
-th.triable.asc::after { content: " \\25B2"; color: var(--ink); }
-th.triable.desc::after { content: " \\25BC"; color: var(--ink); }
+th.triable::after { content: " \\2195"; color: #aab4d4; font-weight: normal; }
+th.triable.asc::after { content: " \\25B2"; color: #fff; }
+th.triable.desc::after { content: " \\25BC"; color: #fff; }
 input.filtre { width: 100%; max-width: 360px; padding: 0.5rem 0.7rem; font-size: 1rem;
-  border: 1px solid var(--line); border-radius: 6px; background: var(--surface); color: var(--ink); }
-.pager { display: flex; justify-content: space-between; margin: 0.8rem 0; }
-.legende { display: flex; gap: 1rem; flex-wrap: wrap; font-size: 0.9rem; color: var(--ink2);
+  border: 1px solid var(--filet); border-radius: 6px; background: var(--carte); color: var(--encre); }
+.pager { display: flex; justify-content: space-between; margin: 0.8rem 0; font-weight: 600; }
+.legende { display: flex; gap: 1rem; flex-wrap: wrap; font-size: 0.9rem; color: var(--gris);
   margin: 0.3rem 0; }
 .legende i { display: inline-block; width: 0.8rem; height: 0.8rem; border-radius: 2px;
   margin-right: 0.35rem; vertical-align: -1px; }
 svg.chart { width: 100%; height: auto; display: block; }
-svg.chart text { fill: var(--muted); font-size: 11px; }
-svg.chart .grille { stroke: var(--line); stroke-width: 1; }
+svg.chart text { fill: var(--gris); font-size: 11px; }
+svg.chart .grille { stroke: var(--filet); stroke-width: 1; }
 svg.chart rect.m0 { fill: var(--m0); } svg.chart rect.m1 { fill: var(--m1); }
 svg.chart rect.m2 { fill: var(--m2); } svg.chart rect.m3 { fill: var(--m3); }
-svg.chart rect.b { stroke: var(--surface); stroke-width: 2; }
+svg.chart rect.b { stroke: var(--carte); stroke-width: 2; }
 .i0 { background: var(--m0); } .i1 { background: var(--m1); }
 .i2 { background: var(--m2); } .i3 { background: var(--m3); }
 details { margin: 0.6rem 0; }
-summary { cursor: pointer; font-weight: 600; padding: 0.3rem 0; }
-footer { max-width: 1100px; margin: 0 auto; padding: 1rem 16px 2rem; color: var(--muted);
-  font-size: 0.85rem; border-top: 1px solid var(--line); }
+summary { cursor: pointer; font-weight: 600; padding: 0.3rem 0; color: var(--bleu); }
+@media (max-width: 600px) {
+  header.site { padding: 0.8rem 1rem; }
+  .logo { height: 44px; }
+  header.site .manuscrit, header.site .titre { font-size: 1.2rem; }
+}
 """
 
 _JS = """
@@ -339,7 +357,7 @@ def page(titre: str, corps: str, profondeur: int, actif: str, saisons: list[str]
         ("apropos", "a-propos.html", "À propos"),
     ]
     nav = "".join(
-        f"<a href='{racine}{href}'{' class=actif' if cle == actif else ''}>{label}</a>"
+        f"<a href='{racine}{href}'{' aria-current=page' if cle == actif else ''}>{label}</a>"
         for cle, href, label in liens
     )
     return f"""<!DOCTYPE html>
@@ -348,17 +366,22 @@ def page(titre: str, corps: str, profondeur: int, actif: str, saisons: list[str]
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>{esc(titre)} – {CLUB}</title>
+<link rel="icon" href="{racine}static/logo.png" />
 <link rel="stylesheet" href="{racine}style.css" />
 </head>
 <body>
-<header class="site"><div class="in">
-<a class="titre" href="{racine}index.html">🏹 {CLUB}</a>
-<nav>{nav}</nav>
+<header class="site"><div class="gabarit">
+<a class="marque" href="{racine}index.html">
+<img class="logo" src="{racine}static/logo.png" alt="Blason de Pontoise" />
+<div><p class="manuscrit">Compagnie d'archers de Pontoise</p>
+<p class="titre">Palmarès</p></div>
+</a>
 </div></header>
-<main>
+<nav class="site gabarit">{nav}</nav>
+<main class="gabarit">
 {corps}
 </main>
-<footer>Palmarès issu de l'extranet FFTA – généré le {date.today():%d/%m/%Y}.
+<footer class="gabarit">Palmarès issu de l'extranet FFTA – généré le {date.today():%d/%m/%Y}.
 Voir <a href="{racine}a-propos.html">la méthode de calcul</a>.</footer>
 <script src="{racine}site.js"></script>
 </body>
@@ -820,6 +843,9 @@ def generer_site(rows: list[dict[str, Any]], mots_cles: list[str], sortie: Path)
     def ecrire(chemin: str, titre: str, corps: str, profondeur: int, actif: str) -> None:
         (sortie / chemin).write_text(page(titre, corps, profondeur, actif, saisons), encoding="utf-8")
 
+    (sortie / "static").mkdir(exist_ok=True)
+    for fichier in ("logo.png", "caveat.woff2"):
+        shutil.copyfile(ASSETS / fichier, sortie / "static" / fichier)
     (sortie / "style.css").write_text(_CSS, encoding="utf-8")
     (sortie / "site.js").write_text(_JS, encoding="utf-8")
     ecrire("index.html", "Palmarès", page_accueil(epreuves, par_saison, saisons), 0, "accueil")

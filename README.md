@@ -40,6 +40,7 @@ dans `generer_site.py`.
 | `membres.example.yaml`        | Modèle de `membres.yaml`                           |
 | `detail_pontoise.csv`         | Données collectées (une ligne par performance)     |
 | `requirements.txt`            | Dépendances Python de la collecte                  |
+| `assets/`                     | Blason de la compagnie, police Caveat |
 | `.github/workflows/pages.yml` | Publication sur GitHub Pages                       |
 | `.cache_ffta/`                | Cache des pages FFTA (généré, non versionné)       |
 | `site/`                       | Site généré (non versionné)                        |
