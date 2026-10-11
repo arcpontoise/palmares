@@ -1,0 +1,6 @@
+__pycache__
+*.pyc
+.cache_ffta
+.venv
+# site/ est reconstruit par GitHub Actions (ou en local via generer_site.py)
+site/

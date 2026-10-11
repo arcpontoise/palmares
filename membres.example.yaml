@@ -1,0 +1,15 @@
+# Liste des archers de la Cie Archers de Pontoise à interroger, par saison
+# (générée depuis licences_complet.csv : tous les licenciés du club par saison).
+
+archers_par_saison:
+  '2026':
+  - nom: DOE John
+    licence: 1234567A
+
+grands_concours_mots_cles:
+  - "championnat de france"
+  - "championnat régional"
+  - "championnat regional"
+  - "^cr\\b"
+  - "idf"
+  - "coupe de france"

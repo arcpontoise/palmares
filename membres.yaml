@@ -1,0 +1,5835 @@
+# Liste des archers de la Cie Archers de Pontoise à interroger, par saison
+# (générée depuis licences_complet.csv : tous les licenciés du club par saison).
+
+archers_par_saison:
+  '1999':
+  - nom: GIVRAN Sebastien
+    licence: 0343953M
+  - nom: BORGES J Daniel
+    licence: 0224088Z
+  - nom: GUILLEAUMAUD Claude
+    licence: 0272684W
+  - nom: DEHER Jean-Pierre
+    licence: 0396803H
+  - nom: LOGNONE Claire
+    licence: 0396807M
+  - nom: SCHEEL Agnes
+    licence: 0397009G
+  - nom: FOUILLOUX-PREVOST Sarah
+    licence: 0397011J
+  - nom: POUX Adrien
+    licence: 0397016P
+  - nom: POUX Bastien
+    licence: 0397017R
+  - nom: KROU Stephane
+    licence: 0333057U
+  - nom: GODRY Michel
+    licence: 0413565C
+  - nom: LALANNE Jeremi
+    licence: 0413569G
+  - nom: PITOU Aurelie
+    licence: 0413571J
+  - nom: CHARNOIS Fabienne
+    licence: 0325564Z
+  - nom: FORGET Jacques
+    licence: 0413591F
+  - nom: BERTRAND Patrick
+    licence: 0414418E
+  - nom: VINTENON Alain
+    licence: 0275698X
+  - nom: HAMEL Guillaume
+    licence: 0379722S
+  - nom: CHARNOIS Roger
+    licence: 0343942A
+  '2000':
+  - nom: BOUCHET SARDIN Valerie
+    licence: 0376131N
+  - nom: THENIERE Philippe
+    licence: 0324636R
+  - nom: DUMAS Bertrand
+    licence: 0360892Z
+  - nom: MATHIOT Olivier
+    licence: 0397014M
+  - nom: JOLY Alain
+    licence: 0413564B
+  - nom: BONETTI Sophie
+    licence: 0413566D
+  - nom: DECREMPS Sylvain
+    licence: 0413568F
+  - nom: MERLINO Laetitia
+    licence: 0413570H
+  - nom: PRADEAU Alexandre
+    licence: 0413572K
+  - nom: GERVASONI Yohan
+    licence: 0413573L
+  - nom: LOUIS ANDRE Christophe
+    licence: 0430244G
+  - nom: JOLY Marie-Rose
+    licence: 0414420G
+  - nom: COULETTE Romain
+    licence: 0430708L
+  - nom: BERTRAND Brigitte
+    licence: 0430711P
+  - nom: COURBARIAUX Jean
+    licence: 0430712R
+  - nom: THOUIN Laurent
+    licence: 0430713S
+  - nom: VANKERREBROECK Etienne
+    licence: 0322741F
+  - nom: HAGUE Bernard
+    licence: 0202921S
+  - nom: LENEVEUX Marc
+    licence: 0430984L
+  - nom: QUEIXALOS Pablo
+    licence: 0379718M
+  '2001':
+  - nom: BOISSY Francis
+    licence: 0436064H
+  - nom: SEGAUD Fabrice
+    licence: 0348300M
+  - nom: PERONNET Christian
+    licence: 0076584U
+  - nom: SCTRICK Pascale
+    licence: 0397008F
+  - nom: NICOLAS Ronan
+    licence: 0405076A
+  - nom: KERDILES Yann
+    licence: 0305428M
+  - nom: MALCHROWICZ Benoit
+    licence: 0361980G
+  - nom: BLOND Thomas
+    licence: 0450140H
+  - nom: KEERPAL Jean-Charles
+    licence: 0450141J
+  - nom: MARTIN Florent
+    licence: 0450142K
+  - nom: SCHILLER Alexandre
+    licence: 0450147R
+  - nom: VIGNON Elodie
+    licence: 0430245H
+  - nom: JACQUEMIN Monique
+    licence: 0366959U
+  - nom: DUMONT Pascal
+    licence: 0430982J
+  - nom: POLETTI Gaelle
+    licence: 0383723R
+  - nom: ANCELOT Claude
+    licence: 0011843Y
+  '2002':
+  - nom: LEPEUC Jean-Francois
+    licence: 0343941Z
+  - nom: THOUIN Jean-Pierre
+    licence: 0343944C
+  - nom: MERESSE Christophe
+    licence: 0343951K
+  - nom: POTTIER Colette
+    licence: 0011889Y
+  - nom: POTTIER Michel
+    licence: 0011892B
+  - nom: WILLEMS Claude
+    licence: 0043965N
+  - nom: BOUJU Claude
+    licence: 0043968S
+  - nom: BOUJU Christiane
+    licence: 0060045S
+  - nom: COUVRAT Claude
+    licence: 0060049W
+  - nom: TOURTET Romain
+    licence: 0300155F
+  - nom: GUZMANN Alain
+    licence: 0312518U
+  - nom: CHOUC Thierry
+    licence: 0312526C
+  - nom: VESPIERS Leon
+    licence: 0324633M
+  - nom: PERIGAUD Michel
+    licence: 0324634N
+  - nom: LEMAIRE Francois
+    licence: 0324635P
+  - nom: RUFFIANDIS Jean Marie
+    licence: 0076587X
+  - nom: SANDRET Emmanuel
+    licence: 0272681T
+  - nom: SCTRICK Stephane
+    licence: 0364736C
+  - nom: COULON Georges
+    licence: 0272761E
+  - nom: GUEDRA Jean-Paul
+    licence: 0396802G
+  - nom: CARETTE Jean-Luc
+    licence: 0396804J
+  - nom: COLIN Christine
+    licence: 0360881M
+  - nom: SCELLIER Gerard
+    licence: 0397006D
+  - nom: MAITRE Nicolas
+    licence: 0397013L
+  - nom: LE BIHAN Didier
+    licence: 0289044D
+  - nom: DEFRANCE DE TERSANT Thierry
+    licence: 0289047G
+  - nom: DEFRANCE DE TERSANT Monique
+    licence: 0289048H
+  - nom: BERTON Beatrice
+    licence: 0381081U
+  - nom: BERTON Francis
+    licence: 0381082V
+  - nom: ANDRAUD Gregory
+    licence: 0381083W
+  - nom: SARDENNE Daniel
+    licence: 0417099U
+  - nom: PERONNET Sebastien
+    licence: 0469135E
+  - nom: GOMINET Denis
+    licence: 0409298P
+  - nom: POLETTI Yves
+    licence: 0205276B
+  - nom: MAINGOT J Claude
+    licence: 0025334M
+  - nom: DEFRANCE DE TERSANT Aymeric
+    licence: 0305425J
+  - nom: GORGOLEWSKI Fabrice
+    licence: 0209516K
+  - nom: CHAUVICOURT Denis
+    licence: 0413567E
+  - nom: THOUIN Audrey
+    licence: 0325565A
+  - nom: RISCH Laurence
+    licence: 0469687E
+  - nom: RISCH Maurice
+    licence: 0469688F
+  - nom: PIVETTE Claire
+    licence: 0429684Y
+  - nom: LE Etienne
+    licence: 0453743Z
+  - nom: SCTRICK Huguette
+    licence: 0065719J
+  - nom: NOGUEIRA Bernadette
+    licence: 0361977D
+  - nom: SEYMAND Claudine
+    licence: 0361978E
+  - nom: MERCIER Jerome
+    licence: 0109925J
+  - nom: KESSEDJIAN Baptiste
+    licence: 0442045J
+  - nom: DOLONGPONT Francois
+    licence: 0450143L
+  - nom: ESPINAS Sebastien
+    licence: 0450144M
+  - nom: BOSSELUT Adrien
+    licence: 0450145N
+  - nom: BEURIENNE Sylvain
+    licence: 0450146P
+  - nom: GEGOT Alban
+    licence: 0450148S
+  - nom: KOCH Ludovic
+    licence: 0450149T
+  - nom: CAUSSIGNAC Thomas
+    licence: 0450150U
+  - nom: THOUIN Dominique
+    licence: 0398150X
+  - nom: LESQUELIN Cyril
+    licence: 0450244W
+  - nom: BOUDET Pierre
+    licence: 0450245X
+  - nom: MARTIN John-Hamilton
+    licence: 0430246J
+  - nom: DUCROCQ Heloise
+    licence: 0430247K
+  - nom: DETOEUF Aurelie
+    licence: 0430248L
+  - nom: DECARPENTRIE Damien
+    licence: 0430250N
+  - nom: CLIPET Georgette
+    licence: 0414422J
+  - nom: SERRE-GENDRON Olivier
+    licence: 0414423K
+  - nom: NICOLAS Jean Yves
+    licence: 0386491Z
+  - nom: DEFLANDRE Franck
+    licence: 0466676G
+  - nom: CHEVEAU Mickael
+    licence: 0466677H
+  - nom: ROSE David
+    licence: 0466678J
+  - nom: KONCKI Arielle
+    licence: 0466679K
+  - nom: KONCKI Olympe
+    licence: 0466680L
+  - nom: GOSSELIN Clement
+    licence: 0466681M
+  - nom: DECARPENTRIE Quentin
+    licence: 0466682N
+  - nom: JARRASSE Marine
+    licence: 0466683P
+  - nom: ROBERT Tom
+    licence: 0466684R
+  - nom: DEBEIR Emeline
+    licence: 0466685S
+  - nom: DOLLEANS Maria
+    licence: 0466686T
+  - nom: FELBACQ Jean-Marie
+    licence: 0466687U
+  - nom: LEDUCQ Jean-Jacques
+    licence: 0466688V
+  - nom: LEDUCQ Louisette
+    licence: 0466689W
+  - nom: MAFFRAY Celine
+    licence: 0466690X
+  - nom: CARTIER Julien
+    licence: 0466693A
+  - nom: MULLER Claire
+    licence: 0466691Y
+  - nom: MULLER Didier
+    licence: 0466692Z
+  - nom: DELAMARRE Jerome
+    licence: 0430707K
+  - nom: DAVIAU Romain
+    licence: 0430709M
+  - nom: KASAS Florent
+    licence: 0430710N
+  - nom: THOUIN Celia
+    licence: 0430714T
+  - nom: BOURGET Bernard
+    licence: 0346936E
+  - nom: PARIS Claude
+    licence: 0202919P
+  - nom: BAHRI Joelle
+    licence: 0430983K
+  - nom: PERETTI Raphael
+    licence: 0371113J
+  - nom: POSTEL Mathias
+    licence: 0239223A
+  - nom: BORGES J Pierre
+    licence: 0239349M
+  - nom: DEFRANCE DE TERSANT Thibaut
+    licence: 0275690N
+  - nom: PAGES Aurore
+    licence: 0275691P
+  - nom: KONCKI Philippe
+    licence: 0275692R
+  - nom: GODART Ombeline
+    licence: 0379724U
+  - nom: MORTEGOUTE. Alain
+    licence: 0379730A
+  - nom: PERONNET Catherine
+    licence: 0095800F
+  - nom: WILLEMS Patricia
+    licence: 0095807N
+  - nom: BONETTI Gilbert
+    licence: 0011853J
+  - nom: BOUFFON J Pierre
+    licence: 0011856M
+  - nom: CRESPIN Michel
+    licence: 0011865X
+  '2003':
+  - nom: BONETTI Gilbert
+    licence: 0011853J
+  - nom: DEFRANCE DE TERSANT Thierry
+    licence: 0289047G
+  - nom: DEFRANCE DE TERSANT Thibaut
+    licence: 0275690N
+  - nom: DEFRANCE DE TERSANT Monique
+    licence: 0289048H
+  - nom: DEFRANCE DE TERSANT Aymeric
+    licence: 0305425J
+  - nom: SEYMAND Claudine
+    licence: 0361978E
+  - nom: BERTON Francis
+    licence: 0381082V
+  - nom: BOUJU Claude
+    licence: 0043968S
+  - nom: BOUFFON J Pierre
+    licence: 0011856M
+  - nom: BEURIENNE Sylvain
+    licence: 0450146P
+  - nom: BERTON Beatrice
+    licence: 0381081U
+  - nom: BORGES J Pierre
+    licence: 0239349M
+  - nom: BOUJU Christiane
+    licence: 0060045S
+  - nom: CARTIER Julien
+    licence: 0466693A
+  - nom: CHAUVICOURT Denis
+    licence: 0413567E
+  - nom: CHOUC Thierry
+    licence: 0312526C
+  - nom: BOSSELUT Adrien
+    licence: 0450145N
+  - nom: CHEVEAU Mickael
+    licence: 0466677H
+  - nom: CLIPET Georgette
+    licence: 0414422J
+  - nom: DECARPENTRIE Quentin
+    licence: 0466682N
+  - nom: DECARPENTRIE Damien
+    licence: 0430250N
+  - nom: DOLLEANS Maria
+    licence: 0466686T
+  - nom: DELAMARRE Jerome
+    licence: 0430707K
+  - nom: DETOEUF Aurelie
+    licence: 0430248L
+  - nom: GOSSELIN Clement
+    licence: 0466681M
+  - nom: JARRASSE Marine
+    licence: 0466683P
+  - nom: KASAS Florent
+    licence: 0430710N
+  - nom: KOCH Ludovic
+    licence: 0450149T
+  - nom: KONCKI Arielle
+    licence: 0466679K
+  - nom: KONCKI Olympe
+    licence: 0466680L
+  - nom: MARTIN John-Hamilton
+    licence: 0430246J
+  - nom: PERETTI Raphael
+    licence: 0371113J
+  - nom: PERIGAUD Michel
+    licence: 0324634N
+  - nom: NICOLAS Jean Yves
+    licence: 0386491Z
+  - nom: KONCKI Philippe
+    licence: 0275692R
+  - nom: LEDUCQ Jean-Jacques
+    licence: 0466688V
+  - nom: LEDUCQ Louisette
+    licence: 0466689W
+  - nom: MULLER Claire
+    licence: 0466691Y
+  - nom: MULLER Didier
+    licence: 0466692Z
+  - nom: NOGUEIRA Bernadette
+    licence: 0361977D
+  - nom: ROSE David
+    licence: 0466678J
+  - nom: BARBERO Sebastien
+    licence: 0462852A
+  - nom: RUFFIANDIS Jean Marie
+    licence: 0076587X
+  - nom: BOUILLOT Amandine
+    licence: 0417882V
+  - nom: CARDON Bernard
+    licence: 0314755A
+  - nom: CARDON Monique
+    licence: 0369409G
+  - nom: DUCROCQ Heloise
+    licence: 0430247K
+  - nom: LEPEUC Jean-Francois
+    licence: 0343941Z
+  - nom: LE BIHAN Didier
+    licence: 0289044D
+  - nom: BOURGET Bernard
+    licence: 0346936E
+  - nom: SCTRICK Huguette
+    licence: 0065719J
+  - nom: SCTRICK Stephane
+    licence: 0364736C
+  - nom: THOUIN Celia
+    licence: 0430714T
+  - nom: PIVETTE Claire
+    licence: 0429684Y
+  - nom: MAITRE Nicolas
+    licence: 0397013L
+  - nom: MAINGOT J Claude
+    licence: 0025334M
+  - nom: MAFFRAY Celine
+    licence: 0466690X
+  - nom: LE Etienne
+    licence: 0453743Z
+  - nom: MERESSE Christophe
+    licence: 0343951K
+  - nom: LEMAIRE Francois
+    licence: 0324635P
+  - nom: GORGOLEWSKI Fabrice
+    licence: 0209516K
+  - nom: DEBEIR Emeline
+    licence: 0466685S
+  - nom: ESPINAS Sebastien
+    licence: 0450144M
+  - nom: VESPIERS Leon
+    licence: 0324633M
+  - nom: WILLEMS Claude
+    licence: 0043965N
+  - nom: WILLEMS Patricia
+    licence: 0095807N
+  - nom: COUVRAT Claude
+    licence: 0060049W
+  - nom: GOMINET Denis
+    licence: 0409298P
+  - nom: MARCHAND Dominique
+    licence: 0396315C
+  - nom: CRESPIN Michel
+    licence: 0011865X
+  - nom: GUZMANN Alain
+    licence: 0312518U
+  - nom: COLIN Christine
+    licence: 0360881M
+  - nom: MERCIER Jerome
+    licence: 0109925J
+  - nom: POTTIER Colette
+    licence: 0011889Y
+  - nom: POTTIER Michel
+    licence: 0011892B
+  - nom: SANDRET Emmanuel
+    licence: 0272681T
+  - nom: LAVAUD Dominique
+    licence: 0428303X
+  - nom: ANDRAUD Gregory
+    licence: 0381083W
+  - nom: PARIS Claude
+    licence: 0202919P
+  - nom: POSTEL Mathias
+    licence: 0239223A
+  - nom: FAUCONNIER Vincent
+    licence: 0368870W
+  - nom: BAILLET Benoit
+    licence: 0420656K
+  - nom: LELY Thomas
+    licence: 0605447V
+  - nom: SCHMITT Matthias
+    licence: 0605448W
+  - nom: CHAUVICOURT Fabien
+    licence: 0605449X
+  - nom: LEMERCHIN Adrien
+    licence: 0605450Y
+  - nom: COULON Robin
+    licence: 0605451Z
+  - nom: ZUBKA Michael
+    licence: 0605452A
+  - nom: BORONAD Thomas
+    licence: 0605453B
+  - nom: CUSSOT Bernard
+    licence: 0605717N
+  - nom: GARRIGUES Emmanuelle
+    licence: 0605718P
+  - nom: BOURRET Johan
+    licence: 0605720S
+  - nom: FAUCONNIER Julien
+    licence: 0605721T
+  - nom: KATOLA France
+    licence: 0396290A
+  - nom: VANDANEIGEN Gaultier
+    licence: 0605793W
+  - nom: THOUIN Jean-Pierre
+    licence: 0343944C
+  '2004':
+  - nom: SEYMAND Claudine
+    licence: 0361978E
+  - nom: GORGOLEWSKI Fabrice
+    licence: 0209516K
+  - nom: NOGUEIRA Bernadette
+    licence: 0361977D
+  - nom: BERTON Beatrice
+    licence: 0381081U
+  - nom: BERTON Francis
+    licence: 0381082V
+  - nom: MAITRE Nicolas
+    licence: 0397013L
+  - nom: CHOUC Thierry
+    licence: 0312526C
+  - nom: BOURGET Bernard
+    licence: 0346936E
+  - nom: MULLER Claire
+    licence: 0466691Y
+  - nom: MULLER Didier
+    licence: 0466692Z
+  - nom: DEFRANCE DE TERSANT Aymeric
+    licence: 0305425J
+  - nom: DEFRANCE DE TERSANT Monique
+    licence: 0289048H
+  - nom: DEFRANCE DE TERSANT Thibaut
+    licence: 0275690N
+  - nom: DEFRANCE DE TERSANT Thierry
+    licence: 0289047G
+  - nom: ROSE David
+    licence: 0466678J
+  - nom: SCHMITT Matthias
+    licence: 0605448W
+  - nom: LERMECHIN Adrien
+    licence: 0610465Z
+  - nom: LELY Thomas
+    licence: 0605447V
+  - nom: KONCKI Arielle
+    licence: 0466679K
+  - nom: KONCKI Olympe
+    licence: 0466680L
+  - nom: KONCKI Philippe
+    licence: 0275692R
+  - nom: KASAS Florent
+    licence: 0430710N
+  - nom: JARRASSE Marine
+    licence: 0466683P
+  - nom: DETOEUF Aurelie
+    licence: 0430248L
+  - nom: DECARPENTRIE Quentin
+    licence: 0466682N
+  - nom: COULON Robin
+    licence: 0605451Z
+  - nom: CHEVEAU Mickael
+    licence: 0466677H
+  - nom: CHAUVICOURT Fabien
+    licence: 0605449X
+  - nom: CARTIER Julien
+    licence: 0466693A
+  - nom: BEURIENNE Sylvain
+    licence: 0450146P
+  - nom: BOUILLOT Amandine
+    licence: 0417882V
+  - nom: PANNET Jean Claude
+    licence: 0105577H
+  - nom: GUZMANN Alain
+    licence: 0312518U
+  - nom: LEPEUC Jean-Francois
+    licence: 0343941Z
+  - nom: DELAMARRE Jerome
+    licence: 0430707K
+  - nom: WILLEMS Claude
+    licence: 0043965N
+  - nom: BOUJU Claude
+    licence: 0043968S
+  - nom: BOUJU Christiane
+    licence: 0060045S
+  - nom: PIVETTE Claire
+    licence: 0429684Y
+  - nom: LEDUCQ Jean-Jacques
+    licence: 0466688V
+  - nom: LEDUCQ Louisette
+    licence: 0466689W
+  - nom: SCTRICK Stephane
+    licence: 0364736C
+  - nom: BENMAAMAR Abel
+    licence: 0385891X
+  - nom: NICOLAS Jean Yves
+    licence: 0386491Z
+  - nom: PERIGAUD Michel
+    licence: 0324634N
+  - nom: KATOLA France
+    licence: 0396290A
+  - nom: LE BIHAN Didier
+    licence: 0289044D
+  - nom: CARDON Bernard
+    licence: 0314755A
+  - nom: CARDON Monique
+    licence: 0369409G
+  - nom: DESCHAMPS Martine
+    licence: 0433755Y
+  - nom: DESCHAMPS Christophe
+    licence: 0433750T
+  - nom: KONCKI Dyna
+    licence: 0610600W
+  - nom: GARRIGUES Emmanuelle
+    licence: 0605718P
+  - nom: CUSSOT Bernard
+    licence: 0605717N
+  - nom: WILLEMS Patricia
+    licence: 0095807N
+  - nom: COUSSE Francis
+    licence: 0371683D
+  - nom: GUERET Philippe
+    licence: 0371694R
+  - nom: BENETREAULT Patrick
+    licence: 0433767L
+  - nom: MAINGOT J Claude
+    licence: 0025334M
+  - nom: RUFFIANDIS Jean Marie
+    licence: 0076587X
+  - nom: COUVRAT Claude
+    licence: 0060049W
+  - nom: BAILLET Benoit
+    licence: 0420656K
+  - nom: BOUFFON J Pierre
+    licence: 0011856M
+  - nom: COLIN Christine
+    licence: 0360881M
+  - nom: MAFFRAY Celine
+    licence: 0466690X
+  - nom: KOCH Ludovic
+    licence: 0450149T
+  - nom: GOSSELIN Clement
+    licence: 0466681M
+  - nom: THOUIN Celia
+    licence: 0430714T
+  - nom: BORGES J Pierre
+    licence: 0239349M
+  - nom: DUCROCQ Heloise
+    licence: 0430247K
+  - nom: MERCIER Jerome
+    licence: 0109925J
+  - nom: MERESSE Christophe
+    licence: 0343951K
+  - nom: SCTRICK Huguette
+    licence: 0065719J
+  - nom: GOIS Marie-Aline
+    licence: 0611840U
+  - nom: LE Etienne
+    licence: 0453743Z
+  - nom: CHAUVICOURT Denis
+    licence: 0413567E
+  - nom: LAVAUD Dominique
+    licence: 0428303X
+  - nom: DOLLEANS Maria
+    licence: 0466686T
+  - nom: BONETTI Gilbert
+    licence: 0011853J
+  - nom: POSTEL Mathias
+    licence: 0239223A
+  - nom: BOSSELUT Adrien
+    licence: 0450145N
+  - nom: CARAGUEL Jean-Francois
+    licence: 0615897D
+  - nom: CLIPET Georgette
+    licence: 0414422J
+  - nom: CRESPIN Michel
+    licence: 0011865X
+  - nom: PARIS Claude
+    licence: 0202919P
+  - nom: POTTIER Michel
+    licence: 0011892B
+  - nom: THOUIN Jean-Pierre
+    licence: 0343944C
+  - nom: VANDANEIGEN Gaultier
+    licence: 0605793W
+  - nom: LEMAIRE Francois
+    licence: 0324635P
+  - nom: PERETTI Raphael
+    licence: 0371113J
+  - nom: BOUJU Tristan
+    licence: 0624558T
+  - nom: SAVARY Swann
+    licence: 0624559U
+  - nom: PINHEIRO Joey
+    licence: 0624560V
+  - nom: KONCKI Roman
+    licence: 0624562X
+  - nom: FOUCHE Raphael
+    licence: 0624564Z
+  - nom: CATHELINE Sebastien
+    licence: 0624566B
+  - nom: JHUREEA Gregoire
+    licence: 0625042U
+  - nom: QUILLIVIC Rene
+    licence: 0625680M
+  - nom: BRETAUEAU Pierre-Francois
+    licence: 0625681N
+  - nom: DELAMARRE Jean-Louis
+    licence: 0625682P
+  - nom: MAFFRAY Yolande
+    licence: 0625683R
+  - nom: BOISSON Velerie
+    licence: 0625684S
+  '2005':
+  - nom: CHAUVICOURT Denis
+    licence: 0413567E
+  - nom: THOUIN Celia
+    licence: 0430714T
+  - nom: PIVETTE Claire
+    licence: 0429684Y
+  - nom: MERESSE Christophe
+    licence: 0343951K
+  - nom: GUZMANN Alain
+    licence: 0312518U
+  - nom: CATHELINE Sebastien
+    licence: 0624566B
+  - nom: LERMECHIN Adrien
+    licence: 0610465Z
+  - nom: GOSSELIN Clement
+    licence: 0466681M
+  - nom: DECARPENTRIE Quentin
+    licence: 0466682N
+  - nom: KONCKI Arielle
+    licence: 0466679K
+  - nom: KONCKI Olympe
+    licence: 0466680L
+  - nom: KOCH Ludovic
+    licence: 0450149T
+  - nom: ROSE David
+    licence: 0466678J
+  - nom: CHEVEAU Mickael
+    licence: 0466677H
+  - nom: BERTON Beatrice
+    licence: 0381081U
+  - nom: BERTON Francis
+    licence: 0381082V
+  - nom: BEURIENNE Sylvain
+    licence: 0450146P
+  - nom: BOUILLOT Amandine
+    licence: 0417882V
+  - nom: BOUJU Christiane
+    licence: 0060045S
+  - nom: BOUJU Claude
+    licence: 0043968S
+  - nom: BOUDET Pierre
+    licence: 0450245X
+  - nom: CARDON Bernard
+    licence: 0314755A
+  - nom: CARDON Monique
+    licence: 0369409G
+  - nom: CHOUC Thierry
+    licence: 0312526C
+  - nom: COUSSE Francis
+    licence: 0371683D
+  - nom: COUVRAT Claude
+    licence: 0060049W
+  - nom: CUSSOT Bernard
+    licence: 0605717N
+  - nom: GARRIGUES Emmanuelle
+    licence: 0605718P
+  - nom: DEFRANCE DE TERSANT Thibaut
+    licence: 0275690N
+  - nom: DELAMARRE Jean-Louis
+    licence: 0625682P
+  - nom: DESCHAMPS Christophe
+    licence: 0433750T
+  - nom: DESCHAMPS Martine
+    licence: 0433755Y
+  - nom: DETOEUF Aurelie
+    licence: 0430248L
+  - nom: DOLLEANS Maria
+    licence: 0466686T
+  - nom: KONCKI Dyna
+    licence: 0610600W
+  - nom: KONCKI Philippe
+    licence: 0275692R
+  - nom: LE Etienne
+    licence: 0453743Z
+  - nom: LE BIHAN Didier
+    licence: 0289044D
+  - nom: LEPEUC Jean-Francois
+    licence: 0343941Z
+  - nom: MAFFRAY Celine
+    licence: 0466690X
+  - nom: MAFFRAY Yolande
+    licence: 0625683R
+  - nom: MAITRE Nicolas
+    licence: 0397013L
+  - nom: MULLER Claire
+    licence: 0466691Y
+  - nom: MULLER Didier
+    licence: 0466692Z
+  - nom: NICOLAS Jean Yves
+    licence: 0386491Z
+  - nom: NOGUEIRA Bernadette
+    licence: 0361977D
+  - nom: PANNET Jean Claude
+    licence: 0105577H
+  - nom: PERETTI Raphael
+    licence: 0371113J
+  - nom: RUFFIANDIS Jean Marie
+    licence: 0076587X
+  - nom: SEYMAND Claudine
+    licence: 0361978E
+  - nom: WILLEMS Claude
+    licence: 0043965N
+  - nom: WILLEMS Patricia
+    licence: 0095807N
+  - nom: BOUJU Tristan
+    licence: 0624558T
+  - nom: GORGOLEWSKI Fabrice
+    licence: 0209516K
+  - nom: DEFRANCE DE TERSANT Thierry
+    licence: 0289047G
+  - nom: DEFRANCE DE TERSANT Monique
+    licence: 0289048H
+  - nom: DEFRANCE DE TERSANT Aymeric
+    licence: 0305425J
+  - nom: TULLI Elisa
+    licence: 0385916Z
+  - nom: HERNANDEZ Yvan
+    licence: 0610359J
+  - nom: SOCHET Arnaud
+    licence: 0404115F
+  - nom: CARAGUEL Jean-Francois
+    licence: 0615897D
+  - nom: CHAUVICOURT Fabien
+    licence: 0605449X
+  - nom: FOUCHE Raphael
+    licence: 0624564Z
+  - nom: COULON Robin
+    licence: 0605451Z
+  - nom: SCHMITT Matthias
+    licence: 0605448W
+  - nom: PINHEIRO Joey
+    licence: 0624560V
+  - nom: COLIN Christine
+    licence: 0360881M
+  - nom: BOUFFON J Pierre
+    licence: 0011856M
+  - nom: BOSSELUT Adrien
+    licence: 0450145N
+  - nom: BENTZ Jessy
+    licence: 0642229A
+  - nom: CHARBONNIER - LEROY Steven
+    licence: 0642231C
+  - nom: COURNET Fabrice
+    licence: 0642232D
+  - nom: GUGLIELMI Joaquim
+    licence: 0642233E
+  - nom: HAYOT Clement
+    licence: 0642234F
+  - nom: LE BRETON Guillaume
+    licence: 0642235G
+  - nom: MORAINE Richard
+    licence: 0642236H
+  - nom: TRICHET Guillaume
+    licence: 0642237J
+  - nom: MERCIER Jerome
+    licence: 0109925J
+  - nom: BORGES J Pierre
+    licence: 0239349M
+  - nom: BONETTI Gilbert
+    licence: 0011853J
+  - nom: LEDUCQ Jean-Jacques
+    licence: 0466688V
+  - nom: LEDUCQ Louisette
+    licence: 0466689W
+  - nom: BOURGET Bernard
+    licence: 0346936E
+  - nom: QUILLIVIC Rene
+    licence: 0625680M
+  - nom: PARIS Claude
+    licence: 0202919P
+  - nom: BOISSON Velerie
+    licence: 0625684S
+  - nom: SCTRICK Stephane
+    licence: 0364736C
+  - nom: GLATRE Francois
+    licence: 0647484M
+  - nom: POTTIER Michel
+    licence: 0011892B
+  - nom: FREYDIER Remi
+    licence: 0648576Z
+  - nom: CRESPO Thierry
+    licence: 0648577A
+  - nom: BERKANE Zoubida
+    licence: 0648578B
+  - nom: DUMAS Nicolas
+    licence: 0648579C
+  - nom: FEROLDI Antoine
+    licence: 0648580D
+  - nom: FOUCAULT Dominique
+    licence: 0648581E
+  - nom: MASSICOT Alain
+    licence: 0648582F
+  - nom: POILLY Guillaume
+    licence: 0648583G
+  - nom: ROBERTS Benjamin
+    licence: 0648584H
+  - nom: CHEMIN Etienne
+    licence: 0648585J
+  - nom: COURDIER Mathilde
+    licence: 0648588M
+  - nom: FEROLDI Benjamin
+    licence: 0648589N
+  - nom: FERON Michael
+    licence: 0648590P
+  - nom: GAUTHIER Romuald
+    licence: 0648591R
+  - nom: GUTFREUND Arnaud
+    licence: 0648592S
+  - nom: COUTY Axel
+    licence: 0437544S
+  - nom: CRESPIN Michel
+    licence: 0011865X
+  - nom: NOIRET Guillaume
+    licence: 0651309V
+  '2006':
+  - nom: CUSSOT Bernard
+    licence: 0605717N
+  - nom: GARRIGUES Emmanuelle
+    licence: 0605718P
+  - nom: MORAINE Richard
+    licence: 0642236H
+  - nom: CHAUVICOURT Fabien
+    licence: 0605449X
+  - nom: GOSSELIN Clement
+    licence: 0466681M
+  - nom: COURNET Fabrice
+    licence: 0642232D
+  - nom: FERON Michael
+    licence: 0648590P
+  - nom: GUTFREUND Arnaud
+    licence: 0648592S
+  - nom: GAUTHIER Romuald
+    licence: 0648591R
+  - nom: LEDUCQ Jean-Jacques
+    licence: 0466688V
+  - nom: LEDUCQ Louisette
+    licence: 0466689W
+  - nom: CARDON Monique
+    licence: 0369409G
+  - nom: CARDON Bernard
+    licence: 0314755A
+  - nom: LEPEUC Jean-Francois
+    licence: 0343941Z
+  - nom: VELUT Myriam
+    licence: 0408868X
+  - nom: SANDRET Emmanuel
+    licence: 0272681T
+  - nom: BOUJU Christiane
+    licence: 0060045S
+  - nom: LE Etienne
+    licence: 0453743Z
+  - nom: MAFFRAY Celine
+    licence: 0466690X
+  - nom: MAFFRAY Yolande
+    licence: 0625683R
+  - nom: KONCKI Philippe
+    licence: 0275692R
+  - nom: KONCKI Olympe
+    licence: 0466680L
+  - nom: KONCKI Arielle
+    licence: 0466679K
+  - nom: DESCHAMPS Christophe
+    licence: 0433750T
+  - nom: DESCHAMPS Martine
+    licence: 0433755Y
+  - nom: DEFRANCE DE TERSANT Thierry
+    licence: 0289047G
+  - nom: DEFRANCE DE TERSANT Monique
+    licence: 0289048H
+  - nom: DEFRANCE DE TERSANT Thibaut
+    licence: 0275690N
+  - nom: DEFRANCE DE TERSANT Aymeric
+    licence: 0305425J
+  - nom: BOUJU Tristan
+    licence: 0624558T
+  - nom: BERTON Beatrice
+    licence: 0381081U
+  - nom: BERTON Francis
+    licence: 0381082V
+  - nom: JUBERT Tristan
+    licence: 0634453Y
+  - nom: PERETTI Raphael
+    licence: 0371113J
+  - nom: BOUILLOT Amandine
+    licence: 0417882V
+  - nom: TULLI Elisa
+    licence: 0385916Z
+  - nom: MULLER Claire
+    licence: 0466691Y
+  - nom: FEROLDI Antoine
+    licence: 0648580D
+  - nom: FEROLDI Benjamin
+    licence: 0648589N
+  - nom: FEROLDI Thomas
+    licence: 0653013X
+  - nom: PINHEIRO Joey
+    licence: 0624560V
+  - nom: MASSICOT Alain
+    licence: 0648582F
+  - nom: CHEVEAU Mickael
+    licence: 0466677H
+  - nom: NOGUEIRA Bernadette
+    licence: 0361977D
+  - nom: BOUJU Claude
+    licence: 0043968S
+  - nom: MAITRE Nicolas
+    licence: 0397013L
+  - nom: GORGOLEWSKI Fabrice
+    licence: 0209516K
+  - nom: MULLER Didier
+    licence: 0466692Z
+  - nom: COUVRAT Claude
+    licence: 0060049W
+  - nom: MERCIER Jerome
+    licence: 0109925J
+  - nom: WILLEMS Claude
+    licence: 0043965N
+  - nom: WILLEMS Patricia
+    licence: 0095807N
+  - nom: GUZMANN Alain
+    licence: 0312518U
+  - nom: CATHELINE Sebastien
+    licence: 0624566B
+  - nom: SEYMAND Claudine
+    licence: 0361978E
+  - nom: CHEMIN Etienne
+    licence: 0648585J
+  - nom: DOLLEANS Maria
+    licence: 0466686T
+  - nom: CHARBONNIER - LEROY Steven
+    licence: 0642231C
+  - nom: FOUCHE Raphael
+    licence: 0624564Z
+  - nom: DECARPENTRIE Quentin
+    licence: 0466682N
+  - nom: PICOTTO Jean Marc
+    licence: 0657172T
+  - nom: BEURIENNE Sylvain
+    licence: 0450146P
+  - nom: HAYOT Clement
+    licence: 0642234F
+  - nom: SCHMITT Matthias
+    licence: 0605448W
+  - nom: ROLLAND-THIBAULT Jules
+    licence: 0659061W
+  - nom: ROGER Simon
+    licence: 0659062X
+  - nom: BADIER Romain
+    licence: 0659063Y
+  - nom: TRICHET Guillaume
+    licence: 0642237J
+  - nom: FRICOU Julien
+    licence: 0659064Z
+  - nom: CHOUC Thierry
+    licence: 0312526C
+  - nom: COURDIER Mathilde
+    licence: 0648588M
+  - nom: GUILLARD Clement
+    licence: 0660748E
+  - nom: KOCH Ludovic
+    licence: 0450149T
+  - nom: BOSSELUT Adrien
+    licence: 0450145N
+  - nom: BORGES J Pierre
+    licence: 0239349M
+  - nom: DOUCHET Eric
+    licence: 0626106A
+  - nom: BOUDET Pierre
+    licence: 0450245X
+  - nom: QUILLIVIC Rene
+    licence: 0625680M
+  - nom: HERNANDEZ Yvan
+    licence: 0610359J
+  - nom: BOUFFON J Pierre
+    licence: 0011856M
+  - nom: BOURGET Bernard
+    licence: 0346936E
+  - nom: LE BIHAN Didier
+    licence: 0289044D
+  - nom: SCTRICK Stephane
+    licence: 0364736C
+  - nom: DETOEUF Aurelie
+    licence: 0430248L
+  - nom: POTTIER Michel
+    licence: 0011892B
+  - nom: PARENT Isabelle
+    licence: 0593813Z
+  - nom: RUFFIANDIS Jean Marie
+    licence: 0076587X
+  - nom: HU Alicia
+    licence: 0669790H
+  - nom: BROCHET Antoine
+    licence: 0669792K
+  - nom: PICOTTO Pierre
+    licence: 0669793L
+  - nom: RIOU Paul
+    licence: 0669794M
+  - nom: BEUZELIN Corentin
+    licence: 0669796P
+  - nom: BEUZELIN William
+    licence: 0669797R
+  - nom: PARISOT Clement
+    licence: 0669798S
+  - nom: CIBIEL Elodie
+    licence: 0669799T
+  - nom: CHOQUET Joseph
+    licence: 0669800U
+  - nom: GROPALLO Adrien
+    licence: 0670016D
+  - nom: LETEMPLIER Mathieu
+    licence: 0670017E
+  - nom: VERA Sylvie
+    licence: 0670018F
+  - nom: DOUMECHE Bastien
+    licence: 0670019G
+  - nom: SAVARIA Jacques
+    licence: 0670020H
+  - nom: BOISSON Velerie
+    licence: 0625684S
+  - nom: CHISSEY Audrey
+    licence: 0419404Z
+  - nom: DUCROCQ Heloise
+    licence: 0430247K
+  '2007':
+  - nom: CARDON Bernard
+    licence: 0314755A
+  - nom: CARDON Monique
+    licence: 0369409G
+  - nom: BOUILLOT Amandine
+    licence: 0417882V
+  - nom: CUSSOT Bernard
+    licence: 0605717N
+  - nom: VELUT Myriam
+    licence: 0408868X
+  - nom: FERON Michael
+    licence: 0648590P
+  - nom: FERON Quentin
+    licence: 0674957Z
+  - nom: DECARPENTRIE Quentin
+    licence: 0466682N
+  - nom: COURDIER Mathilde
+    licence: 0648588M
+  - nom: DEFRANCE DE TERSANT Thierry
+    licence: 0289047G
+  - nom: DEFRANCE DE TERSANT Monique
+    licence: 0289048H
+  - nom: TULLI Elisa
+    licence: 0385916Z
+  - nom: MAFFRAY Celine
+    licence: 0466690X
+  - nom: HAMEL Guillaume
+    licence: 0379722S
+  - nom: HUE Francoise
+    licence: 0400489P
+  - nom: LEPEUC Jean-Francois
+    licence: 0343941Z
+  - nom: COURNET Fabrice
+    licence: 0642232D
+  - nom: FRICOU Julien
+    licence: 0659064Z
+  - nom: CHEVEAU Mickael
+    licence: 0466677H
+  - nom: BADIER Romain
+    licence: 0659063Y
+  - nom: TRICHET Guillaume
+    licence: 0642237J
+  - nom: ROLLAND-THIBAULT Jules
+    licence: 0659061W
+  - nom: MASSICOT Alain
+    licence: 0648582F
+  - nom: DESCHAMPS Christophe
+    licence: 0433750T
+  - nom: DESCHAMPS Martine
+    licence: 0433755Y
+  - nom: MULLER Claire
+    licence: 0466691Y
+  - nom: MULLER Didier
+    licence: 0466692Z
+  - nom: CHEMIN Etienne
+    licence: 0648585J
+  - nom: PICOTTO Pierre
+    licence: 0669793L
+  - nom: FEROLDI Thomas
+    licence: 0653013X
+  - nom: FEROLDI Benjamin
+    licence: 0648589N
+  - nom: BOUDET Pierre
+    licence: 0450245X
+  - nom: FEROLDI Antoine
+    licence: 0648580D
+  - nom: PICOTTO Julien
+    licence: 0680000F
+  - nom: PICOTTO Jean Marc
+    licence: 0657172T
+  - nom: GOSSELIN Clement
+    licence: 0466681M
+  - nom: BERTON Beatrice
+    licence: 0381081U
+  - nom: BERTON Francis
+    licence: 0381082V
+  - nom: FOUCHE Raphael
+    licence: 0624564Z
+  - nom: DARRAS Ludovic
+    licence: 0454711B
+  - nom: JUBERT Tristan
+    licence: 0634453Y
+  - nom: YAKER Anton
+    licence: 0680022E
+  - nom: SCORNET Cedric
+    licence: 0680027K
+  - nom: COLAS Celine
+    licence: 0680030N
+  - nom: CHAUVICOURT Fabien
+    licence: 0605449X
+  - nom: NOGUEIRA Bernadette
+    licence: 0361977D
+  - nom: BOUJU Claude
+    licence: 0043968S
+  - nom: BOUJU Christiane
+    licence: 0060045S
+  - nom: LEDUCQ Jean-Jacques
+    licence: 0466688V
+  - nom: LEDUCQ Louisette
+    licence: 0466689W
+  - nom: GROPALLO Adrien
+    licence: 0670016D
+  - nom: BOUJU Tristan
+    licence: 0624558T
+  - nom: RIOU Paul
+    licence: 0669794M
+  - nom: BROCHET Antoine
+    licence: 0669792K
+  - nom: CATHELINE Sebastien
+    licence: 0624566B
+  - nom: HAYOT Clement
+    licence: 0642234F
+  - nom: GUZMANN Alain
+    licence: 0312518U
+  - nom: KONCKI Philippe
+    licence: 0275692R
+  - nom: LE Etienne
+    licence: 0453743Z
+  - nom: MAFFRAY Yolande
+    licence: 0625683R
+  - nom: DEFRANCE DE TERSANT Thibaut
+    licence: 0275690N
+  - nom: DEFRANCE DE TERSANT Aymeric
+    licence: 0305425J
+  - nom: BORGES J Pierre
+    licence: 0239349M
+  - nom: WILLEMS Claude
+    licence: 0043965N
+  - nom: WILLEMS Patricia
+    licence: 0095807N
+  - nom: LE BIHAN Didier
+    licence: 0289044D
+  - nom: SANDRET Emmanuel
+    licence: 0272681T
+  - nom: PERES Jeanfrancois
+    licence: 0235626R
+  - nom: SEYMAND Claudine
+    licence: 0361978E
+  - nom: PERES Yvain
+    licence: 0682291W
+  - nom: MENGUAL Paco
+    licence: 0682293Y
+  - nom: HERNANDEZ Yvan
+    licence: 0610359J
+  - nom: CIBIEL Elodie
+    licence: 0669799T
+  - nom: MERESSE Christophe
+    licence: 0343951K
+  - nom: DUCROCQ Heloise
+    licence: 0430247K
+  - nom: MERCIER Jerome
+    licence: 0109925J
+  - nom: DOLLEANS Maria
+    licence: 0466686T
+  - nom: BOURGET Bernard
+    licence: 0346936E
+  - nom: SIMON Sabine
+    licence: 0402503D
+  - nom: BOUFFON J Pierre
+    licence: 0011856M
+  - nom: CHOUC Thierry
+    licence: 0312526C
+  - nom: MAITRE Nicolas
+    licence: 0397013L
+  - nom: POTTIER Michel
+    licence: 0011892B
+  - nom: SCTRICK Stephane
+    licence: 0364736C
+  - nom: CRESPIN Michel
+    licence: 0011865X
+  - nom: COUVRAT Claude
+    licence: 0060049W
+  - nom: BICHARD Agnes
+    licence: 0693351T
+  - nom: PROUST DE LA GIRONIERE Jean-Christophe
+    licence: 0693352U
+  - nom: KOLODZIEJ Vincent
+    licence: 0693353V
+  - nom: VERGUET Sandrine
+    licence: 0693356Y
+  - nom: SEYLLER Eric
+    licence: 0693357Z
+  - nom: PHILIPS Laura
+    licence: 0693358A
+  - nom: BARBAUX Thierry
+    licence: 0693359B
+  - nom: GLAY Brigitte
+    licence: 0693360C
+  - nom: BARRE Guillaume
+    licence: 0693361D
+  - nom: LOUINEAU Jacky
+    licence: 0693743U
+  - nom: RUFFIANDIS Jean Marie
+    licence: 0076587X
+  - nom: LOUINEAU Steven
+    licence: 0693785P
+  - nom: PERRETTE Arthur
+    licence: 0693786R
+  - nom: DELHAYE Maxime
+    licence: 0693787S
+  - nom: PROUST Adrien
+    licence: 0693788T
+  - nom: COURCIER Alexis
+    licence: 0693789U
+  - nom: FOURMEAU Robin
+    licence: 0693790V
+  - nom: ROBERT Quentin
+    licence: 0693791W
+  - nom: BOJOVITCH Korto
+    licence: 0693866C
+  '2008':
+  - nom: CARDON Bernard
+    licence: 0314755A
+  - nom: CARDON Monique
+    licence: 0369409G
+  - nom: CUSSOT Bernard
+    licence: 0605717N
+  - nom: MULLER Didier
+    licence: 0466692Z
+  - nom: NOGUEIRA Bernadette
+    licence: 0361977D
+  - nom: BOUILLOT Amandine
+    licence: 0417882V
+  - nom: HUE Francoise
+    licence: 0400489P
+  - nom: FEROLDI Antoine
+    licence: 0648580D
+  - nom: DECARPENTRIE Quentin
+    licence: 0466682N
+  - nom: ROBERT Quentin
+    licence: 0693791W
+  - nom: BOJOVITCH Korto
+    licence: 0693866C
+  - nom: SCORNET Cedric
+    licence: 0680027K
+  - nom: FERON Michael
+    licence: 0648590P
+  - nom: BADIER Romain
+    licence: 0659063Y
+  - nom: DELHAYE Maxime
+    licence: 0693787S
+  - nom: COURNET Fabrice
+    licence: 0642232D
+  - nom: FEROLDI Thomas
+    licence: 0653013X
+  - nom: PICOTTO Julien
+    licence: 0680000F
+  - nom: FOUCHE Raphael
+    licence: 0624564Z
+  - nom: COLAS Celine
+    licence: 0680030N
+  - nom: CHAUVICOURT Fabien
+    licence: 0605449X
+  - nom: FOURMEAU Robin
+    licence: 0693790V
+  - nom: TULLI Elisa
+    licence: 0385916Z
+  - nom: LEPEUC Jean-Francois
+    licence: 0343941Z
+  - nom: NUNEZ Fabiola
+    licence: 0309040N
+  - nom: FRICOU Julien
+    licence: 0659064Z
+  - nom: PROUST Adrien
+    licence: 0693788T
+  - nom: TRICHET Guillaume
+    licence: 0642237J
+  - nom: DESCHAMPS Christophe
+    licence: 0433750T
+  - nom: DESCHAMPS Martine
+    licence: 0433755Y
+  - nom: VERGUET Sandrine
+    licence: 0693356Y
+  - nom: BARRE Guillaume
+    licence: 0693361D
+  - nom: DEFRANCE DE TERSANT Thibaut
+    licence: 0275690N
+  - nom: GOSSELIN Clement
+    licence: 0466681M
+  - nom: PERRETTE Arthur
+    licence: 0693786R
+  - nom: DEFRANCE DE TERSANT Monique
+    licence: 0289048H
+  - nom: DEFRANCE DE TERSANT Thierry
+    licence: 0289047G
+  - nom: MERCIER Jerome
+    licence: 0109925J
+  - nom: MAFFRAY Celine
+    licence: 0466690X
+  - nom: MAFFRAY Yolande
+    licence: 0625683R
+  - nom: LE Etienne
+    licence: 0453743Z
+  - nom: COUVRAT Claude
+    licence: 0060049W
+  - nom: KOLODZIEJ Vincent
+    licence: 0693353V
+  - nom: MAITRE Nicolas
+    licence: 0397013L
+  - nom: SCHMITT Matthias
+    licence: 0605448W
+  - nom: DOUCHET Eric
+    licence: 0626106A
+  - nom: WILLEMS Claude
+    licence: 0043965N
+  - nom: MERESSE Christophe
+    licence: 0343951K
+  - nom: SEYLLER Eric
+    licence: 0693357Z
+  - nom: BOUFFON J Pierre
+    licence: 0011856M
+  - nom: SCTRICK Huguette
+    licence: 0065719J
+  - nom: LEDUCQ Jean-Jacques
+    licence: 0466688V
+  - nom: HAMEL Guillaume
+    licence: 0379722S
+  - nom: LEDUCQ Louisette
+    licence: 0466689W
+  - nom: BERTON Francis
+    licence: 0381082V
+  - nom: BERTON Beatrice
+    licence: 0381081U
+  - nom: BOUJU Claude
+    licence: 0043968S
+  - nom: BOUJU Christiane
+    licence: 0060045S
+  - nom: DEVILLERS Sandra
+    licence: 0654125F
+  - nom: BARBAUX Thierry
+    licence: 0693359B
+  - nom: GLAY Brigitte
+    licence: 0693360C
+  - nom: SEYMAND Claudine
+    licence: 0361978E
+  - nom: MASSICOT Alain
+    licence: 0648582F
+  - nom: LE CORNIC Floriane
+    licence: 0706169A
+  - nom: BOUDET Pierre
+    licence: 0450245X
+  - nom: DUCROCQ Heloise
+    licence: 0430247K
+  - nom: MENGUAL Paco
+    licence: 0682293Y
+  - nom: BETSCH Pierre - Come
+    licence: 0706181N
+  - nom: FLOUX Loic
+    licence: 0706182P
+  - nom: BACQUET Axel
+    licence: 0706184S
+  - nom: DARRAS Ludovic
+    licence: 0454711B
+  - nom: PHILIPS Laura
+    licence: 0693358A
+  - nom: SANDRET Emmanuel
+    licence: 0272681T
+  - nom: DOLLEANS Maria
+    licence: 0466686T
+  - nom: CHEMIN Etienne
+    licence: 0648585J
+  - nom: HAYOT Clement
+    licence: 0642234F
+  - nom: JUBERT Tristan
+    licence: 0634453Y
+  - nom: BOURGET Bernard
+    licence: 0346936E
+  - nom: POURLIER Lucas
+    licence: 0708343N
+  - nom: MULLER Claire
+    licence: 0466691Y
+  - nom: DEFRANCE DE TERSANT Aymeric
+    licence: 0305425J
+  - nom: DEFRANCE DE TERSANT Marie
+    licence: 0409188V
+  - nom: CHEVEAU Mickael
+    licence: 0466677H
+  - nom: PICOTTO Jean Marc
+    licence: 0657172T
+  - nom: GUZMANN Alain
+    licence: 0312518U
+  - nom: CHOUC Thierry
+    licence: 0312526C
+  - nom: PERES Yvain
+    licence: 0682291W
+  - nom: POTTIER Michel
+    licence: 0011892B
+  - nom: LE BIHAN Didier
+    licence: 0289044D
+  - nom: PERES Jeanfrancois
+    licence: 0235626R
+  - nom: BOISSON Velerie
+    licence: 0625684S
+  - nom: FONTAINE Nael
+    licence: 0714046M
+  - nom: POISSY Dorian
+    licence: 0714047N
+  - nom: FAUCON Calixte
+    licence: 0714048P
+  - nom: LEBRETON Loic
+    licence: 0714049R
+  - nom: FONTAINE Laurence
+    licence: 0229164S
+  - nom: CRESPIN Michel
+    licence: 0011865X
+  - nom: SCTRICK Stephane
+    licence: 0364736C
+  - nom: WILLEMS Patricia
+    licence: 0095807N
+  - nom: MAINGOT J Claude
+    licence: 0025334M
+  '2009':
+  - nom: BOUILLOT Amandine
+    licence: 0417882V
+  - nom: CUSSOT Bernard
+    licence: 0605717N
+  - nom: CARDON Bernard
+    licence: 0314755A
+  - nom: CARDON Monique
+    licence: 0369409G
+  - nom: LEPEUC Jean-Francois
+    licence: 0343941Z
+  - nom: GOSSELIN Clement
+    licence: 0466681M
+  - nom: POISSY Dorian
+    licence: 0714047N
+  - nom: BADIER Romain
+    licence: 0659063Y
+  - nom: BACQUET Axel
+    licence: 0706184S
+  - nom: FERON Michael
+    licence: 0648590P
+  - nom: FRICOU Julien
+    licence: 0659064Z
+  - nom: HUE Francoise
+    licence: 0400489P
+  - nom: DEFRANCE DE TERSANT Monique
+    licence: 0289048H
+  - nom: DEFRANCE DE TERSANT Thierry
+    licence: 0289047G
+  - nom: DELHAYE Maxime
+    licence: 0693787S
+  - nom: FAUCON Calixte
+    licence: 0714048P
+  - nom: PERRETTE Arthur
+    licence: 0693786R
+  - nom: TRICHET Guillaume
+    licence: 0642237J
+  - nom: COLAS Celine
+    licence: 0680030N
+  - nom: BONNEFON Charline
+    licence: 0453082F
+  - nom: BERTON Beatrice
+    licence: 0381081U
+  - nom: BERTON Francis
+    licence: 0381082V
+  - nom: MULLER Claire
+    licence: 0466691Y
+  - nom: DALLEAU Maryvonne
+    licence: 0596687Y
+  - nom: MASSICOT Alain
+    licence: 0648582F
+  - nom: BOUJU Claude
+    licence: 0043968S
+  - nom: KOLODZIEJ Vincent
+    licence: 0693353V
+  - nom: SEYLLER Eric
+    licence: 0693357Z
+  - nom: BARRE Guillaume
+    licence: 0693361D
+  - nom: DARRAS Ludovic
+    licence: 0454711B
+  - nom: NOGUEIRA Bernadette
+    licence: 0361977D
+  - nom: MERCIER Jerome
+    licence: 0109925J
+  - nom: FEROLDI Thomas
+    licence: 0653013X
+  - nom: FEROLDI Antoine
+    licence: 0648580D
+  - nom: BOUDET Pierre
+    licence: 0450245X
+  - nom: LEDUCQ Jean-Jacques
+    licence: 0466688V
+  - nom: LEDUCQ Louisette
+    licence: 0466689W
+  - nom: BOUJU Christiane
+    licence: 0060045S
+  - nom: CHOUC Thierry
+    licence: 0312526C
+  - nom: SCTRICK Huguette
+    licence: 0065719J
+  - nom: PICOTTO Jean Marc
+    licence: 0657172T
+  - nom: LE Etienne
+    licence: 0453743Z
+  - nom: MAFFRAY Celine
+    licence: 0466690X
+  - nom: DESCHAMPS Christophe
+    licence: 0433750T
+  - nom: DESCHAMPS Martine
+    licence: 0433755Y
+  - nom: PICOTTO Julien
+    licence: 0680000F
+  - nom: COURNET Fabrice
+    licence: 0642232D
+  - nom: POTTIER Michel
+    licence: 0011892B
+  - nom: MAFFRAY Yolande
+    licence: 0625683R
+  - nom: WILLEMS Claude
+    licence: 0043965N
+  - nom: HAMEL Guillaume
+    licence: 0379722S
+  - nom: BACQUET Manon
+    licence: 0728432Z
+  - nom: DANIEL Lucas
+    licence: 0728436D
+  - nom: GIROD Charlyne
+    licence: 0728441J
+  - nom: GAIRE Florian
+    licence: 0728447R
+  - nom: GROUIN Ladislas
+    licence: 0728450U
+  - nom: GROUIN Alexandre
+    licence: 0728451V
+  - nom: POURLIER Lucas
+    licence: 0708343N
+  - nom: FLOUX Loic
+    licence: 0706182P
+  - nom: VERGUET Sandrine
+    licence: 0693356Y
+  - nom: RAMMAERT Jeremy
+    licence: 0728464J
+  - nom: BOCAGE Jocelyn
+    licence: 0728472T
+  - nom: VELIA Sabrina
+    licence: 0728475W
+  - nom: AUBERT Philippe
+    licence: 0728476X
+  - nom: ASSIER Lionel
+    licence: 0728481C
+  - nom: MULLER Didier
+    licence: 0466692Z
+  - nom: FONTAINE Nael
+    licence: 0714046M
+  - nom: FONTAINE Laurence
+    licence: 0229164S
+  - nom: DELEPINE Xavier
+    licence: 0728696L
+  - nom: PROVOST Viviane
+    licence: 0728702T
+  - nom: LEROY Elodie
+    licence: 0728712D
+  - nom: MARY Guillaume
+    licence: 0728717J
+  - nom: MARCHESE Alexandre
+    licence: 0728723R
+  - nom: PLESSIER Pascal
+    licence: 0728729X
+  - nom: NUNEZ Fabiola
+    licence: 0309040N
+  - nom: DEFRANCE DE TERSANT Thibaut
+    licence: 0275690N
+  - nom: TAJUDEEN Fazrul Hak
+    licence: 0730924H
+  - nom: CHARTIER Alexandre
+    licence: 0730927L
+  - nom: QUEMENER Georges
+    licence: 0730931R
+  - nom: CHEVEAU Mickael
+    licence: 0466677H
+  - nom: MAITRE Nicolas
+    licence: 0397013L
+  - nom: BOUFFON J Pierre
+    licence: 0011856M
+  - nom: DEFRANCE DE TERSANT Aymeric
+    licence: 0305425J
+  - nom: DOUCHET Eric
+    licence: 0626106A
+  - nom: HOFFMANN Benoit
+    licence: 0733847K
+  - nom: FOUCHE Raphael
+    licence: 0624564Z
+  - nom: FAVREAU Bernard
+    licence: 0610606C
+  - nom: SANDRET Emmanuel
+    licence: 0272681T
+  - nom: LE BIHAN Didier
+    licence: 0289044D
+  - nom: MERESSE Christophe
+    licence: 0343951K
+  - nom: GUZMANN Alain
+    licence: 0312518U
+  - nom: DEFRANCE DE TERSANT Marie
+    licence: 0409188V
+  - nom: DOLLEANS Maria
+    licence: 0466686T
+  - nom: SCTRICK Stephane
+    licence: 0364736C
+  - nom: SEYMAND Claudine
+    licence: 0361978E
+  - nom: DE MAUROY Gautier
+    licence: 0738349D
+  - nom: BOSSELUT Adrien
+    licence: 0450145N
+  - nom: THIBAULT Patricia
+    licence: 0332028A
+  - nom: CRESPIN Michel
+    licence: 0011865X
+  - nom: COUVRAT Claude
+    licence: 0060049W
+  - nom: WILLEMS Patricia
+    licence: 0095807N
+  '2010':
+  - nom: CUSSOT Bernard
+    licence: 0605717N
+  - nom: CARDON Bernard
+    licence: 0314755A
+  - nom: CARDON Monique
+    licence: 0369409G
+  - nom: HUE Francoise
+    licence: 0400489P
+  - nom: CHOUC Thierry
+    licence: 0312526C
+  - nom: CHRISTOPHE Jean
+    licence: 0742295T
+  - nom: BOUILLOT Amandine
+    licence: 0417882V
+  - nom: MOREAU Sylvie
+    licence: 0455326V
+  - nom: MARY Guillaume
+    licence: 0728717J
+  - nom: AUBERT Philippe
+    licence: 0728476X
+  - nom: BOUJU Christiane
+    licence: 0060045S
+  - nom: BOUJU Claude
+    licence: 0043968S
+  - nom: SEYLLER Eric
+    licence: 0693357Z
+  - nom: MOISY Alain
+    licence: 0449910H
+  - nom: KOLODZIEJ Vincent
+    licence: 0693353V
+  - nom: LEPEUC Jean-Francois
+    licence: 0343941Z
+  - nom: GUZMANN Alain
+    licence: 0312518U
+  - nom: CHEMIN Etienne
+    licence: 0648585J
+  - nom: NOGUEIRA Bernadette
+    licence: 0361977D
+  - nom: DEFRANCE DE TERSANT Thierry
+    licence: 0289047G
+  - nom: DEFRANCE DE TERSANT Monique
+    licence: 0289048H
+  - nom: BARRE Guillaume
+    licence: 0693361D
+  - nom: FEROLDI Antoine
+    licence: 0648580D
+  - nom: FEROLDI Thomas
+    licence: 0653013X
+  - nom: PICOTTO Jean Marc
+    licence: 0657172T
+  - nom: PICOTTO Julien
+    licence: 0680000F
+  - nom: PROVOST Viviane
+    licence: 0728702T
+  - nom: DESCHAMPS Martine
+    licence: 0433755Y
+  - nom: DESCHAMPS Christophe
+    licence: 0433750T
+  - nom: DECARPENTRIE Quentin
+    licence: 0466682N
+  - nom: DARRAS Ludovic
+    licence: 0454711B
+  - nom: POISSY Dorian
+    licence: 0714047N
+  - nom: BACQUET Axel
+    licence: 0706184S
+  - nom: BACQUET Manon
+    licence: 0728432Z
+  - nom: DANIEL Lucas
+    licence: 0728436D
+  - nom: PERRETTE Arthur
+    licence: 0693786R
+  - nom: MORISSEAU Valerie
+    licence: 0330783X
+  - nom: FAVREAU Bernard
+    licence: 0610606C
+  - nom: CHARTIER Alexandre
+    licence: 0730927L
+  - nom: BADIER Romain
+    licence: 0659063Y
+  - nom: COLAS Celine
+    licence: 0680030N
+  - nom: DELHAYE Maxime
+    licence: 0693787S
+  - nom: FAUCON Calixte
+    licence: 0714048P
+  - nom: HAMEL Guillaume
+    licence: 0379722S
+  - nom: POURLIER Lucas
+    licence: 0708343N
+  - nom: SCTRICK Huguette
+    licence: 0065719J
+  - nom: FONTAINE Laurence
+    licence: 0229164S
+  - nom: FONTAINE Nael
+    licence: 0714046M
+  - nom: LEDUCQ Jean-Jacques
+    licence: 0466688V
+  - nom: LEDUCQ Louisette
+    licence: 0466689W
+  - nom: WILLEMS Claude
+    licence: 0043965N
+  - nom: THIBAULT Patricia
+    licence: 0332028A
+  - nom: DEFRANCE DE TERSANT Thibaut
+    licence: 0275690N
+  - nom: MARQUET Philippe
+    licence: 0750057E
+  - nom: SANDRET Emmanuel
+    licence: 0272681T
+  - nom: PRENAT Nathalie
+    licence: 0752745B
+  - nom: LE BESCOND Aurelien
+    licence: 0752748E
+  - nom: ANON#752752 214310
+    licence: 0752752J
+  - nom: DUMORTIER Marc
+    licence: 0637419X
+  - nom: DUMORTIER Eric
+    licence: 0752768B
+  - nom: ASQUOET Caroline
+    licence: 0752779N
+  - nom: ZICAVO Franck
+    licence: 0752791B
+  - nom: LE BIHAN Didier
+    licence: 0289044D
+  - nom: HOFFMANN Benoit
+    licence: 0733847K
+  - nom: PECQUET Nicolas
+    licence: 0753140F
+  - nom: MERANDON Mathurin
+    licence: 0753155X
+  - nom: SAVINI Laura
+    licence: 0753160C
+  - nom: LEGRAS Thibault
+    licence: 0753165H
+  - nom: COURNET Fabrice
+    licence: 0642232D
+  - nom: TRICHET Guillaume
+    licence: 0642237J
+  - nom: DEFRANCE DE TERSANT Aymeric
+    licence: 0305425J
+  - nom: DETOEUF Aurelie
+    licence: 0430248L
+  - nom: DOLLEANS Maria
+    licence: 0466686T
+  - nom: FREYSSINET Eva
+    licence: 0754653A
+  - nom: BENOMAR Marina
+    licence: 0754658F
+  - nom: MULLER Claire
+    licence: 0466691Y
+  - nom: RAMMAERT Jeremy
+    licence: 0728464J
+  - nom: FRICOU Julien
+    licence: 0659064Z
+  - nom: MULLER Didier
+    licence: 0466692Z
+  - nom: BOUFFON J Pierre
+    licence: 0011856M
+  - nom: BERTON Beatrice
+    licence: 0381081U
+  - nom: BERTON Francis
+    licence: 0381082V
+  - nom: MAITRE Nicolas
+    licence: 0397013L
+  - nom: GOSSELIN Clement
+    licence: 0466681M
+  - nom: MERESSE Christophe
+    licence: 0343951K
+  - nom: MAFFRAY Celine
+    licence: 0466690X
+  - nom: MAFFRAY Yolande
+    licence: 0625683R
+  - nom: DEFRANCE DE TERSANT Marie
+    licence: 0409188V
+  - nom: LEROY Elodie
+    licence: 0728712D
+  - nom: DOUCHET Eric
+    licence: 0626106A
+  - nom: LARDAUX Guillaume
+    licence: 0758213V
+  - nom: QUEMENER Georges
+    licence: 0730931R
+  - nom: MANOURY Raphael
+    licence: 0758217Z
+  - nom: MERCIER Jerome
+    licence: 0109925J
+  - nom: SCTRICK Stephane
+    licence: 0364736C
+  - nom: SEYMAND Claudine
+    licence: 0361978E
+  - nom: BOCAGE Jocelyn
+    licence: 0728472T
+  - nom: MARCHESE Alexandre
+    licence: 0728723R
+  - nom: WILLEMS Patricia
+    licence: 0095807N
+  - nom: CRESPIN Michel
+    licence: 0011865X
+  - nom: MAINGOT J Claude
+    licence: 0025334M
+  - nom: GARRIGUES Emmanuelle
+    licence: 0605718P
+  - nom: MOREAU Alain
+    licence: 0455329Y
+  '2011':
+  - nom: PRENAT Nathalie
+    licence: 0752745B
+  - nom: MOREAU Sylvie
+    licence: 0455326V
+  - nom: MOREAU Alain
+    licence: 0455329Y
+  - nom: BOUILLOT Amandine
+    licence: 0417882V
+  - nom: BOUJU Claude
+    licence: 0043968S
+  - nom: GUZMANN Alain
+    licence: 0312518U
+  - nom: CARDON Bernard
+    licence: 0314755A
+  - nom: CARDON Monique
+    licence: 0369409G
+  - nom: BOSSELUT Adrien
+    licence: 0450145N
+  - nom: DEFRANCE DE TERSANT Thierry
+    licence: 0289047G
+  - nom: DEFRANCE DE TERSANT Monique
+    licence: 0289048H
+  - nom: MULLER Didier
+    licence: 0466692Z
+  - nom: BADIER Romain
+    licence: 0659063Y
+  - nom: COURNET Fabrice
+    licence: 0642232D
+  - nom: FAUCON Calixte
+    licence: 0714048P
+  - nom: PECQUET Nicolas
+    licence: 0753140F
+  - nom: MAFFRAY Yolande
+    licence: 0625683R
+  - nom: LEPEUC Jean-Francois
+    licence: 0343941Z
+  - nom: MANOURY Raphael
+    licence: 0758217Z
+  - nom: LEGRAS Thibault
+    licence: 0753165H
+  - nom: VERGUET Sandrine
+    licence: 0693356Y
+  - nom: POISSY Dorian
+    licence: 0714047N
+  - nom: COUVRAT Claude
+    licence: 0060049W
+  - nom: SCTRICK Huguette
+    licence: 0065719J
+  - nom: DARRAS Ludovic
+    licence: 0454711B
+  - nom: DESCHAMPS Martine
+    licence: 0433755Y
+  - nom: DESCHAMPS Christophe
+    licence: 0433750T
+  - nom: BOUJU Christiane
+    licence: 0060045S
+  - nom: CHOUC Thierry
+    licence: 0312526C
+  - nom: GARRIGUES Emmanuelle
+    licence: 0605718P
+  - nom: NOGUEIRA Bernadette
+    licence: 0361977D
+  - nom: LE BIHAN Didier
+    licence: 0289044D
+  - nom: MORISSEAU Valerie
+    licence: 0330783X
+  - nom: BERTON Beatrice
+    licence: 0381081U
+  - nom: BERTON Francis
+    licence: 0381082V
+  - nom: DECARPENTRIE Quentin
+    licence: 0466682N
+  - nom: DUMORTIER Eric
+    licence: 0752768B
+  - nom: DUMORTIER Marc
+    licence: 0637419X
+  - nom: LEDUCQ Jean-Jacques
+    licence: 0466688V
+  - nom: LEDUCQ Louisette
+    licence: 0466689W
+  - nom: AUBERT Philippe
+    licence: 0728476X
+  - nom: CLIPET Georgette
+    licence: 0414422J
+  - nom: KOLODZIEJ Vincent
+    licence: 0693353V
+  - nom: MAITRE Nicolas
+    licence: 0397013L
+  - nom: DEFRANCE DE TERSANT Marie
+    licence: 0409188V
+  - nom: MULLER Claire
+    licence: 0466691Y
+  - nom: FONTAINE Laurence
+    licence: 0229164S
+  - nom: WILLEMS Patricia
+    licence: 0095807N
+  - nom: DOS SANTOS CORREIA Valentin
+    licence: 0769522M
+  - nom: DELHAYE Maxime
+    licence: 0693787S
+  - nom: PICOTTO Julien
+    licence: 0680000F
+  - nom: PICOTTO Jean Marc
+    licence: 0657172T
+  - nom: CUSSOT Bernard
+    licence: 0605717N
+  - nom: SEYLLER Eric
+    licence: 0693357Z
+  - nom: LARDAUX Guillaume
+    licence: 0758213V
+  - nom: PERRETTE Arthur
+    licence: 0693786R
+  - nom: HUE Francoise
+    licence: 0400489P
+  - nom: HEYDENREICH Aude
+    licence: 0770680W
+  - nom: SASSI Frederic
+    licence: 0770690G
+  - nom: MATER Fabien
+    licence: 0770702V
+  - nom: KOMSA Marie-Claire
+    licence: 0770711E
+  - nom: PIGEAT Penelope
+    licence: 0770713G
+  - nom: COUDOIN Benedicte
+    licence: 0770719N
+  - nom: BRIDOT Nirina
+    licence: 0770723T
+  - nom: HANNE Jerome
+    licence: 0664688M
+  - nom: LETENEUR Damien
+    licence: 0770774Y
+  - nom: JOUANNE Mathilde
+    licence: 0770783H
+  - nom: GUIGNARD Denis
+    licence: 0770790R
+  - nom: CHAUVICOURT Denis
+    licence: 0413567E
+  - nom: MAFFRAY Celine
+    licence: 0466690X
+  - nom: ASQUOET Caroline
+    licence: 0752779N
+  - nom: MERCIER Jerome
+    licence: 0109925J
+  - nom: ANON#752752 214310
+    licence: 0752752J
+  - nom: MARQUET Philippe
+    licence: 0750057E
+  - nom: BONNICHON Corinne
+    licence: 0773697A
+  - nom: BACQUET Manon
+    licence: 0728432Z
+  - nom: BACQUET Axel
+    licence: 0706184S
+  - nom: LEMAIRE Thomas
+    licence: 0775608C
+  - nom: LOUIS Adrian
+    licence: 0775609D
+  - nom: JACQUES Lucas
+    licence: 0775610E
+  - nom: MERANDON Mathurin
+    licence: 0753155X
+  - nom: PROVOST Viviane
+    licence: 0728702T
+  - nom: FEROLDI Antoine
+    licence: 0648580D
+  - nom: GOSSELIN Clement
+    licence: 0466681M
+  - nom: DEFRANCE DE TERSANT Thibaut
+    licence: 0275690N
+  - nom: LASAUSSE Marc
+    licence: 0776977R
+  - nom: BARRE Guillaume
+    licence: 0693361D
+  - nom: HAMEL Guillaume
+    licence: 0379722S
+  - nom: BOUFFON J Pierre
+    licence: 0011856M
+  - nom: FREYSSINET Eva
+    licence: 0754653A
+  - nom: CHARTIER Alexandre
+    licence: 0730927L
+  - nom: BENOMAR Marina
+    licence: 0754658F
+  - nom: SANDRET Emmanuel
+    licence: 0272681T
+  - nom: WILLEMS Claude
+    licence: 0043965N
+  - nom: MERCIER Alban
+    licence: 0780309M
+  - nom: SCTRICK Stephane
+    licence: 0364736C
+  - nom: MERESSE Christophe
+    licence: 0343951K
+  - nom: SILBERSTEIN Mickael
+    licence: 0781294H
+  - nom: LEROY Elodie
+    licence: 0728712D
+  - nom: FRESSE Sebastien
+    licence: 0459642L
+  - nom: THIBAULT Patricia
+    licence: 0332028A
+  - nom: LE BESCOND Aurelien
+    licence: 0752748E
+  - nom: DEFRANCE DE TERSANT Aymeric
+    licence: 0305425J
+  - nom: CRESPIN Michel
+    licence: 0011865X
+  - nom: DOUCHET Eric
+    licence: 0626106A
+  - nom: MAINGOT J Claude
+    licence: 0025334M
+  - nom: HOFFMANN Benoit
+    licence: 0733847K
+  '2012':
+  - nom: CUSSOT Bernard
+    licence: 0605717N
+  - nom: CARDON Monique
+    licence: 0369409G
+  - nom: CARDON Bernard
+    licence: 0314755A
+  - nom: LEPEUC Jean-Francois
+    licence: 0343941Z
+  - nom: DARRAS Ludovic
+    licence: 0454711B
+  - nom: KOLODZIEJ Vincent
+    licence: 0693353V
+  - nom: MOREAU Alain
+    licence: 0455329Y
+  - nom: MOREAU Sylvie
+    licence: 0455326V
+  - nom: DESCHAMPS Martine
+    licence: 0433755Y
+  - nom: DESCHAMPS Christophe
+    licence: 0433750T
+  - nom: NOGUEIRA Bernadette
+    licence: 0361977D
+  - nom: HUE Francoise
+    licence: 0400489P
+  - nom: DEFRANCE DE TERSANT Thierry
+    licence: 0289047G
+  - nom: DEFRANCE DE TERSANT Monique
+    licence: 0289048H
+  - nom: MARY Guillaume
+    licence: 0728717J
+  - nom: POISSY Dorian
+    licence: 0714047N
+  - nom: BADIER Romain
+    licence: 0659063Y
+  - nom: FREYSSINET Eva
+    licence: 0754653A
+  - nom: LASAUSSE Marc
+    licence: 0776977R
+  - nom: COURNET Fabrice
+    licence: 0642232D
+  - nom: LEGRAS Thibault
+    licence: 0753165H
+  - nom: BACQUET Manon
+    licence: 0728432Z
+  - nom: BACQUET Axel
+    licence: 0706184S
+  - nom: LEMAIRE Thomas
+    licence: 0775608C
+  - nom: LOUIS Adrian
+    licence: 0775609D
+  - nom: BOULAKDAM Yanis
+    licence: 0751195S
+  - nom: BOUJU Claude
+    licence: 0043968S
+  - nom: CHOUC Thierry
+    licence: 0312526C
+  - nom: BRIDOT Nirina
+    licence: 0770723T
+  - nom: GARRIGUES Emmanuelle
+    licence: 0605718P
+  - nom: FONTAINE Laurence
+    licence: 0229164S
+  - nom: MORISSEAU Valerie
+    licence: 0330783X
+  - nom: WILLEMS Claude
+    licence: 0043965N
+  - nom: WILLEMS Patricia
+    licence: 0095807N
+  - nom: HANNE Jerome
+    licence: 0664688M
+  - nom: PIGEAT Penelope
+    licence: 0770713G
+  - nom: SASSI Frederic
+    licence: 0770690G
+  - nom: MERCIER Jerome
+    licence: 0109925J
+  - nom: PICOTTO Jean Marc
+    licence: 0657172T
+  - nom: DOLLEANS Maria
+    licence: 0466686T
+  - nom: BOUJU Christiane
+    licence: 0060045S
+  - nom: PRENAT Nathalie
+    licence: 0752745B
+  - nom: MULLER Didier
+    licence: 0466692Z
+  - nom: MULLER Claire
+    licence: 0466691Y
+  - nom: LEDUCQ Jean-Jacques
+    licence: 0466688V
+  - nom: LEDUCQ Louisette
+    licence: 0466689W
+  - nom: LE BIHAN Didier
+    licence: 0289044D
+  - nom: LEBRETON Franck
+    licence: 0793043D
+  - nom: KOMSA Marie-Claire
+    licence: 0770711E
+  - nom: MATER Fabien
+    licence: 0770702V
+  - nom: DUMORTIER Eric
+    licence: 0752768B
+  - nom: DUMORTIER Marc
+    licence: 0637419X
+  - nom: MAFFRAY Yolande
+    licence: 0625683R
+  - nom: SCTRICK Huguette
+    licence: 0065719J
+  - nom: BERTON Beatrice
+    licence: 0381081U
+  - nom: AUBERT Philippe
+    licence: 0728476X
+  - nom: BOUFFON J Pierre
+    licence: 0011856M
+  - nom: PROVOST Viviane
+    licence: 0728702T
+  - nom: HAMEL Guillaume
+    licence: 0379722S
+  - nom: MARQUET Philippe
+    licence: 0750057E
+  - nom: ANON#752752 214310
+    licence: 0752752J
+  - nom: PICOTTO Julien
+    licence: 0680000F
+  - nom: PRENAT Fleurine
+    licence: 0793645H
+  - nom: PRENAT Ugo
+    licence: 0793647K
+  - nom: DELHAYE Maxime
+    licence: 0693787S
+  - nom: MANOURY Raphael
+    licence: 0758217Z
+  - nom: LETENEUR Damien
+    licence: 0770774Y
+  - nom: MERCIER Alban
+    licence: 0780309M
+  - nom: MAFFRAY Celine
+    licence: 0466690X
+  - nom: LE BESCOND Aurelien
+    licence: 0752748E
+  - nom: GARRIGUES Francois
+    licence: 0796653C
+  - nom: PHILIPPE Alphonse
+    licence: 0636229D
+  - nom: PERONNET Gaetan
+    licence: 0796669V
+  - nom: RIBEIRO Cedric
+    licence: 0796672Y
+  - nom: SANTINI Hugo
+    licence: 0796767B
+  - nom: TIXIER Carl
+    licence: 0796769D
+  - nom: VAYSSE Matthieu
+    licence: 0796770E
+  - nom: DUPUICH Raphael
+    licence: 0797484F
+  - nom: DOREY Antoine
+    licence: 0797485G
+  - nom: DUFOURT Laurent
+    licence: 0797486H
+  - nom: FOURNAISE Dorian
+    licence: 0797488K
+  - nom: INAJETOVIC Sead
+    licence: 0797494S
+  - nom: ROCHETEAU Bernard
+    licence: 0797496U
+  - nom: LATOUCHE Jeannine
+    licence: 0797497V
+  - nom: LOUIS Jeremy
+    licence: 0797498W
+  - nom: CLERFAYTS Dany
+    licence: 0797532H
+  - nom: BADEDJI Simon
+    licence: 0797536M
+  - nom: TRICHET Guillaume
+    licence: 0642237J
+  - nom: MAITRE Nicolas
+    licence: 0397013L
+  - nom: DEFRANCE DE TERSANT Thibaut
+    licence: 0275690N
+  - nom: LEBRETON Florian
+    licence: 0798031A
+  - nom: NIJEAN-ANANI Matthieu
+    licence: 0798034D
+  - nom: BICHARD Marius
+    licence: 0798037G
+  - nom: TEURNIER Julie Marie
+    licence: 0798042M
+  - nom: GUZMANN Alain
+    licence: 0312518U
+  - nom: BARRE Guillaume
+    licence: 0693361D
+  - nom: HEYDENREICH Aude
+    licence: 0770680W
+  - nom: BERTON Francis
+    licence: 0381082V
+  - nom: SANDRET Emmanuel
+    licence: 0272681T
+  - nom: GOSSELIN Clement
+    licence: 0466681M
+  - nom: DEFRANCE DE TERSANT Marie
+    licence: 0409188V
+  - nom: LAROUDIE Yohan
+    licence: 0422592P
+  - nom: LAMIAUD Pascal
+    licence: 0800941N
+  - nom: SEYLLER Eric
+    licence: 0693357Z
+  - nom: BOCAGE Jocelyn
+    licence: 0728472T
+  - nom: PAROTY Antoine
+    licence: 0770909V
+  - nom: COUVRAT Claude
+    licence: 0060049W
+  - nom: DEFRANCE DE TERSANT Aymeric
+    licence: 0305425J
+  - nom: CRESPIN Michel
+    licence: 0011865X
+  - nom: SCTRICK Stephane
+    licence: 0364736C
+  - nom: MAINGOT J Claude
+    licence: 0025334M
+  - nom: DECARPENTRIE Quentin
+    licence: 0466682N
+  - nom: SILBERSTEIN Mickael
+    licence: 0781294H
+  - nom: MERESSE Christophe
+    licence: 0343951K
+  '2013':
+  - nom: CUSSOT Bernard
+    licence: 0605717N
+  - nom: CARDON Monique
+    licence: 0369409G
+  - nom: CARDON Bernard
+    licence: 0314755A
+  - nom: KOLODZIEJ Vincent
+    licence: 0693353V
+  - nom: GUZMANN Alain
+    licence: 0312518U
+  - nom: DARRAS Ludovic
+    licence: 0454711B
+  - nom: BOUJU Claude
+    licence: 0043968S
+  - nom: MOREAU Sylvie
+    licence: 0455326V
+  - nom: MOREAU Alain
+    licence: 0455329Y
+  - nom: LEDUCQ Jean-Jacques
+    licence: 0466688V
+  - nom: LEDUCQ Louisette
+    licence: 0466689W
+  - nom: HUE Francoise
+    licence: 0400489P
+  - nom: DUPUICH Raphael
+    licence: 0797484F
+  - nom: LEBRETON Florian
+    licence: 0798031A
+  - nom: LEBRETON Franck
+    licence: 0793043D
+  - nom: LATOUCHE Jeannine
+    licence: 0797497V
+  - nom: CLERFAYTS Dany
+    licence: 0797532H
+  - nom: FOSSET Fabrice
+    licence: 0808805L
+  - nom: MAITRE Nicolas
+    licence: 0397013L
+  - nom: MORISSEAU Valerie
+    licence: 0330783X
+  - nom: GARRIGUES Emmanuelle
+    licence: 0605718P
+  - nom: GARRIGUES Francois
+    licence: 0796653C
+  - nom: MULLER Didier
+    licence: 0466692Z
+  - nom: DEFRANCE DE TERSANT Monique
+    licence: 0289048H
+  - nom: DEFRANCE DE TERSANT Thierry
+    licence: 0289047G
+  - nom: JEANNE Leonore
+    licence: 0754720Y
+  - nom: DESCHAMPS Martine
+    licence: 0433755Y
+  - nom: MULLER Claire
+    licence: 0466691Y
+  - nom: FONTAINE Laurence
+    licence: 0229164S
+  - nom: KEERSTOCK Sandrine
+    licence: 0814478C
+  - nom: DUFOURT Ludivine
+    licence: 0814486L
+  - nom: COULANGE Quentin
+    licence: 0814492T
+  - nom: HAMEL Guillaume
+    licence: 0379722S
+  - nom: BERTON Beatrice
+    licence: 0381081U
+  - nom: BERTON Francis
+    licence: 0381082V
+  - nom: WILLEMS Claude
+    licence: 0043965N
+  - nom: WILLEMS Patricia
+    licence: 0095807N
+  - nom: PICOTTO Jean Marc
+    licence: 0657172T
+  - nom: DEFRANCE DE TERSANT Thibaut
+    licence: 0275690N
+  - nom: MERESSE Christophe
+    licence: 0343951K
+  - nom: COUVRAT Claude
+    licence: 0060049W
+  - nom: LE BIHAN Didier
+    licence: 0289044D
+  - nom: SCTRICK Huguette
+    licence: 0065719J
+  - nom: PHILIPPE Alphonse
+    licence: 0636229D
+  - nom: LEPEUC Jean-Francois
+    licence: 0343941Z
+  - nom: DOUCHET Eric
+    licence: 0626106A
+  - nom: PRENAT Nathalie
+    licence: 0752745B
+  - nom: DUMORTIER Eric
+    licence: 0752768B
+  - nom: DECARPENTRIE Quentin
+    licence: 0466682N
+  - nom: CUSSOT Marie-Anne
+    licence: 0815551U
+  - nom: LASAUSSE Marc
+    licence: 0776977R
+  - nom: BACQUET Axel
+    licence: 0706184S
+  - nom: BACQUET Manon
+    licence: 0728432Z
+  - nom: LE CORNIC Floriane
+    licence: 0706169A
+  - nom: NIJEAN-ANANI Matthieu
+    licence: 0798034D
+  - nom: MANOURY Raphael
+    licence: 0758217Z
+  - nom: RIBEIRO Cedric
+    licence: 0796672Y
+  - nom: FREYSSINET Eva
+    licence: 0754653A
+  - nom: TIXIER Carl
+    licence: 0796769D
+  - nom: BADIER Romain
+    licence: 0659063Y
+  - nom: TEURNIER Julie Marie
+    licence: 0798042M
+  - nom: PRENAT Fleurine
+    licence: 0793645H
+  - nom: PRENAT Ugo
+    licence: 0793647K
+  - nom: LOUIS Adrian
+    licence: 0775609D
+  - nom: LEMAIRE Thomas
+    licence: 0775608C
+  - nom: DUFOURT Laurent
+    licence: 0797486H
+  - nom: SEYLLER Eric
+    licence: 0693357Z
+  - nom: PICOTTO Julien
+    licence: 0680000F
+  - nom: PAROTY Antoine
+    licence: 0770909V
+  - nom: SILBERSTEIN Mickael
+    licence: 0781294H
+  - nom: DEFRANCE DE TERSANT Aymeric
+    licence: 0305425J
+  - nom: DEFRANCE DE TERSANT Marie
+    licence: 0409188V
+  - nom: ANON#752752 214310
+    licence: 0752752J
+  - nom: MARQUET Philippe
+    licence: 0750057E
+  - nom: LOUIS Jeremy
+    licence: 0797498W
+  - nom: BOUJU Christiane
+    licence: 0060045S
+  - nom: CHOUC Thierry
+    licence: 0312526C
+  - nom: MADEIRA Carlos
+    licence: 0818251D
+  - nom: PAULMIER Sophie
+    licence: 0818252E
+  - nom: IENGO Sylvie
+    licence: 0818257K
+  - nom: CAUET Vincent
+    licence: 0818261P
+  - nom: CHAMPION-HERIN Sophie
+    licence: 0818270Z
+  - nom: RAMBUR Regis
+    licence: 0818273C
+  - nom: TRICHET Guillaume
+    licence: 0642237J
+  - nom: CHAJRA Nassim
+    licence: 0818285R
+  - nom: LIZE Gabriel
+    licence: 0632490P
+  - nom: MAFFRAY Celine
+    licence: 0466690X
+  - nom: LAMIAUD Pascal
+    licence: 0800941N
+  - nom: BASSOT Coralie
+    licence: 0596747N
+  - nom: MAFFRAY Yolande
+    licence: 0625683R
+  - nom: MAINGOT J Claude
+    licence: 0025334M
+  - nom: COSTA Clementine
+    licence: 0822148P
+  - nom: MENARD Charles
+    licence: 0822156Y
+  - nom: COSTA Jose
+    licence: 0822164G
+  - nom: HEYDENREICH Stanislas
+    licence: 0822170N
+  - nom: MADEIRA Remi
+    licence: 0822175U
+  - nom: GAMARD Pierre
+    licence: 0822179Y
+  - nom: MICHELS Victor
+    licence: 0822182B
+  - nom: ABDELWAHAB Dana
+    licence: 0822189J
+  - nom: SRIVENKATTESVARAN Sriraam
+    licence: 0822193N
+  - nom: BOUFFON J Pierre
+    licence: 0011856M
+  - nom: GOSSELIN Clement
+    licence: 0466681M
+  - nom: GABEREAU Joffrey
+    licence: 0823296M
+  - nom: AGGOUN Lisa
+    licence: 0323532R
+  - nom: DELHAYE Maxime
+    licence: 0693787S
+  - nom: SANDRET Emmanuel
+    licence: 0272681T
+  - nom: SCTRICK Stephane
+    licence: 0364736C
+  - nom: PASSELAIGUE Valentin
+    licence: 0830912R
+  - nom: CHOLLET-DEBIEUVRE Alexis
+    licence: 0833525F
+  '2014':
+  - nom: CUSSOT Marie-Anne
+    licence: 0815551U
+  - nom: CUSSOT Bernard
+    licence: 0605717N
+  - nom: CARDON Monique
+    licence: 0369409G
+  - nom: CARDON Bernard
+    licence: 0314755A
+  - nom: GARRIGUES Emmanuelle
+    licence: 0605718P
+  - nom: MULLER Didier
+    licence: 0466692Z
+  - nom: MADEIRA Carlos
+    licence: 0818251D
+  - nom: MADEIRA Remi
+    licence: 0822175U
+  - nom: CHOLLET-DEBIEUVRE Alexis
+    licence: 0833525F
+  - nom: DARRAS Ludovic
+    licence: 0454711B
+  - nom: LEBRETON Franck
+    licence: 0793043D
+  - nom: LEBRETON Florian
+    licence: 0798031A
+  - nom: MOREAU Sylvie
+    licence: 0455326V
+  - nom: MOREAU Alain
+    licence: 0455329Y
+  - nom: MOREAU Julien
+    licence: 0835879P
+  - nom: GARRIGUES Francois
+    licence: 0796653C
+  - nom: BOUJU Claude
+    licence: 0043968S
+  - nom: INAJETOVIC Sead
+    licence: 0797494S
+  - nom: CHAMPION-HERIN Sophie
+    licence: 0818270Z
+  - nom: HUE Francoise
+    licence: 0400489P
+  - nom: AGGOUN Lisa
+    licence: 0323532R
+  - nom: THON Emmanuel
+    licence: 0224099L
+  - nom: COULANGE Quentin
+    licence: 0814492T
+  - nom: HEYDENREICH Aude
+    licence: 0770680W
+  - nom: HEYDENREICH Stanislas
+    licence: 0822170N
+  - nom: LEDUCQ Louisette
+    licence: 0466689W
+  - nom: LEDUCQ Jean-Jacques
+    licence: 0466688V
+  - nom: PICOTTO Jean Marc
+    licence: 0657172T
+  - nom: PICOTTO Julien
+    licence: 0680000F
+  - nom: MULLER Claire
+    licence: 0466691Y
+  - nom: GUZMANN Alain
+    licence: 0312518U
+  - nom: KOLODZIEJ Vincent
+    licence: 0693353V
+  - nom: PRENAT Nathalie
+    licence: 0752745B
+  - nom: PRENAT Ugo
+    licence: 0793647K
+  - nom: PRENAT Fleurine
+    licence: 0793645H
+  - nom: PAROTY Laurent
+    licence: 0837127W
+  - nom: PAROTY Antoine
+    licence: 0770909V
+  - nom: GABEREAU Joffrey
+    licence: 0823296M
+  - nom: CHAJRA Nassim
+    licence: 0818285R
+  - nom: TIXIER Carl
+    licence: 0796769D
+  - nom: LEMAIRE Thomas
+    licence: 0775608C
+  - nom: LEMAIRE Theo
+    licence: 0837151X
+  - nom: KEERSTOCK Sandrine
+    licence: 0814478C
+  - nom: NOUACER Nicolas
+    licence: 0837156C
+  - nom: LOUIS Jeremy
+    licence: 0797498W
+  - nom: GUILLEN Pascal
+    licence: 0837161H
+  - nom: DEFRANCE DE TERSANT Thierry
+    licence: 0289047G
+  - nom: DEFRANCE DE TERSANT Monique
+    licence: 0289048H
+  - nom: MAITRE Nicolas
+    licence: 0397013L
+  - nom: CHOUC Thierry
+    licence: 0312526C
+  - nom: BOUJU Christiane
+    licence: 0060045S
+  - nom: DESCHAMPS Martine
+    licence: 0433755Y
+  - nom: LOUIS Adrian
+    licence: 0775609D
+  - nom: ANON#838298 424565
+    licence: 0838298U
+  - nom: COTON Alain
+    licence: 0838305B
+  - nom: COTON Justine
+    licence: 0838308E
+  - nom: MONFORT Dimitri
+    licence: 0838316N
+  - nom: TEURNIER Eveline
+    licence: 0838321U
+  - nom: TEURNIER Jean-Yves
+    licence: 0838328B
+  - nom: TEURNIER Julie Marie
+    licence: 0798042M
+  - nom: MENARD Charles
+    licence: 0822156Y
+  - nom: BASSOT Coralie
+    licence: 0596747N
+  - nom: PETITJEAN Renaud
+    licence: 0839639B
+  - nom: ASKIN Yilmaz
+    licence: 0839649M
+  - nom: RAUX Gaelle
+    licence: 0839657W
+  - nom: FADEL Harry
+    licence: 0839664D
+  - nom: FILLON Florence
+    licence: 0839674P
+  - nom: RIVET Yona
+    licence: 0839685B
+  - nom: RIVET Marcel
+    licence: 0839693K
+  - nom: IENGO Sylvie
+    licence: 0818257K
+  - nom: BERTON Beatrice
+    licence: 0381081U
+  - nom: SCTRICK Huguette
+    licence: 0065719J
+  - nom: MORISSEAU Valerie
+    licence: 0330783X
+  - nom: SANDRET Emmanuel
+    licence: 0272681T
+  - nom: LE CORNIC Floriane
+    licence: 0706169A
+  - nom: GOSSELIN Clement
+    licence: 0466681M
+  - nom: DELVAS Maxime
+    licence: 0840427H
+  - nom: BOUFFON J Pierre
+    licence: 0011856M
+  - nom: LE BIHAN Didier
+    licence: 0289044D
+  - nom: WILLEMS Claude
+    licence: 0043965N
+  - nom: WILLEMS Patricia
+    licence: 0095807N
+  - nom: LEPEUC Jean-Francois
+    licence: 0343941Z
+  - nom: DECARPENTRIE Quentin
+    licence: 0466682N
+  - nom: MAFFRAY Yolande
+    licence: 0625683R
+  - nom: DUMORTIER Eric
+    licence: 0752768B
+  - nom: PHILIPPE Alphonse
+    licence: 0636229D
+  - nom: DEFRANCE DE TERSANT Thibaut
+    licence: 0275690N
+  - nom: SIMON Franck
+    licence: 0818127U
+  - nom: BACQUET Manon
+    licence: 0728432Z
+  - nom: BACQUET Axel
+    licence: 0706184S
+  - nom: BADIER Romain
+    licence: 0659063Y
+  - nom: DEGAND Ludivine
+    licence: 0651556N
+  - nom: DUFOURT Laurent
+    licence: 0797486H
+  - nom: FREYSSINET Eva
+    licence: 0754653A
+  - nom: GERBRON Elvina
+    licence: 0843121L
+  - nom: PELLIEUX Alexandre
+    licence: 0843145M
+  - nom: BEGUIN Floris
+    licence: 0843155Y
+  - nom: SRIVENKATTESVARAN Sriraam
+    licence: 0822193N
+  - nom: MAURICEAU Anais
+    licence: 0701373M
+  - nom: LATOUCHE Jeannine
+    licence: 0797497V
+  - nom: UYSAL Fatih
+    licence: 0845511J
+  - nom: DEBENEST Ambre-Noelie
+    licence: 0845513L
+  - nom: COURNET Olivier
+    licence: 0845515N
+  - nom: PAIN Alexandre
+    licence: 0845520U
+  - nom: RIBEIRO Cedric
+    licence: 0796672Y
+  - nom: DUFOURT Ludivine
+    licence: 0814486L
+  - nom: PERONNET Gaetan
+    licence: 0796669V
+  - nom: ANON#752752 214310
+    licence: 0752752J
+  - nom: MARQUET Philippe
+    licence: 0750057E
+  - nom: LASAUSSE Marc
+    licence: 0776977R
+  - nom: DEFRANCE DE TERSANT Marie
+    licence: 0409188V
+  - nom: RAZAFINDANDY Richy
+    licence: 0846654B
+  - nom: AUGEREAU Nicolas
+    licence: 0846659G
+  - nom: MERESSE Christophe
+    licence: 0343951K
+  - nom: MERCIER Jerome
+    licence: 0109925J
+  - nom: MERCIER Alban
+    licence: 0780309M
+  - nom: POISSY Dorian
+    licence: 0714047N
+  - nom: BARRE Guillaume
+    licence: 0693361D
+  - nom: KLEIN Theo
+    licence: 0847889U
+  - nom: FONTAINE Laurence
+    licence: 0229164S
+  - nom: BUHAGIAR Manon
+    licence: 0849851B
+  - nom: DEFRANCE DE TERSANT Aymeric
+    licence: 0305425J
+  - nom: SCTRICK Stephane
+    licence: 0364736C
+  - nom: BERTON Francis
+    licence: 0381082V
+  - nom: PERONNET Sebastien
+    licence: 0469135E
+  - nom: HAMEL Guillaume
+    licence: 0379722S
+  - nom: MAINGOT J Claude
+    licence: 0025334M
+  - nom: ALAIME Jean-Pierre
+    licence: 0857640T
+  '2015':
+  - nom: MULLER Didier
+    licence: 0466692Z
+  - nom: CUSSOT Bernard
+    licence: 0605717N
+  - nom: GARRIGUES Emmanuelle
+    licence: 0605718P
+  - nom: DEFRANCE DE TERSANT Thibaut
+    licence: 0275690N
+  - nom: GOSSELIN Clement
+    licence: 0466681M
+  - nom: DARRAS Ludovic
+    licence: 0454711B
+  - nom: GOLINSKY Joel
+    licence: 0590517S
+  - nom: LEDUCQ Jean-Jacques
+    licence: 0466688V
+  - nom: LEDUCQ Louisette
+    licence: 0466689W
+  - nom: DEFRANCE DE TERSANT Monique
+    licence: 0289048H
+  - nom: DEFRANCE DE TERSANT Thierry
+    licence: 0289047G
+  - nom: CHAMPION-HERIN Sophie
+    licence: 0818270Z
+  - nom: KEERSTOCK Sandrine
+    licence: 0814478C
+  - nom: LEMAIRE Thomas
+    licence: 0775608C
+  - nom: LEMAIRE Theo
+    licence: 0837151X
+  - nom: MOREAU Julien
+    licence: 0835879P
+  - nom: MOREAU Alain
+    licence: 0455329Y
+  - nom: MOREAU Sylvie
+    licence: 0455326V
+  - nom: FONTAINE Laurence
+    licence: 0229164S
+  - nom: CARDON Bernard
+    licence: 0314755A
+  - nom: CARDON Monique
+    licence: 0369409G
+  - nom: HUE Francoise
+    licence: 0400489P
+  - nom: LEBRETON Franck
+    licence: 0793043D
+  - nom: LEBRETON Florian
+    licence: 0798031A
+  - nom: INAJETOVIC Sead
+    licence: 0797494S
+  - nom: PRENAT Ugo
+    licence: 0793647K
+  - nom: PRENAT Nathalie
+    licence: 0752745B
+  - nom: THON Emmanuel
+    licence: 0224099L
+  - nom: GUZMANN Alain
+    licence: 0312518U
+  - nom: BOUFFON J Pierre
+    licence: 0011856M
+  - nom: BOUJU Christiane
+    licence: 0060045S
+  - nom: BOUJU Claude
+    licence: 0043968S
+  - nom: MAFFRAY Yolande
+    licence: 0625683R
+  - nom: GARRIGUES Francois
+    licence: 0796653C
+  - nom: MENARD Charles
+    licence: 0822156Y
+  - nom: BERTON Beatrice
+    licence: 0381081U
+  - nom: LE CORNIC Floriane
+    licence: 0706169A
+  - nom: LESNE David
+    licence: 0860605R
+  - nom: PAIN Alexandre
+    licence: 0845520U
+  - nom: RIVET Yona
+    licence: 0839685B
+  - nom: UYSAL Fatih
+    licence: 0845511J
+  - nom: MADEIRA Remi
+    licence: 0822175U
+  - nom: IENGO Sylvie
+    licence: 0818257K
+  - nom: MORISSEAU Valerie
+    licence: 0330783X
+  - nom: ALAIME Jean-Pierre
+    licence: 0857640T
+  - nom: PAROTY Antoine
+    licence: 0770909V
+  - nom: PAROTY Laurent
+    licence: 0837127W
+  - nom: MAURICEAU Anais
+    licence: 0701373M
+  - nom: CUSSOT Marie-Anne
+    licence: 0815551U
+  - nom: MULLER Claire
+    licence: 0466691Y
+  - nom: TEURNIER Jean-Yves
+    licence: 0838328B
+  - nom: TEURNIER Eveline
+    licence: 0838321U
+  - nom: TEURNIER Julie Marie
+    licence: 0798042M
+  - nom: BACQUET Axel
+    licence: 0706184S
+  - nom: COULANGE Quentin
+    licence: 0814492T
+  - nom: DELVAS Maxime
+    licence: 0840427H
+  - nom: KOLODZIEJ Vincent
+    licence: 0693353V
+  - nom: SANDRET Emmanuel
+    licence: 0272681T
+  - nom: LATOUCHE Jeannine
+    licence: 0797497V
+  - nom: DUFOURT Laurent
+    licence: 0797486H
+  - nom: PERONNET Sebastien
+    licence: 0469135E
+  - nom: PERONNET Gaetan
+    licence: 0796669V
+  - nom: PERONNET Florence
+    licence: 0863035G
+  - nom: COTON Alain
+    licence: 0838305B
+  - nom: MADEIRA Carlos
+    licence: 0818251D
+  - nom: DECARPENTRIE Quentin
+    licence: 0466682N
+  - nom: PETITJEAN Renaud
+    licence: 0839639B
+  - nom: SRIVENKATTESVARAN Sriraam
+    licence: 0822193N
+  - nom: PICOTTO Jean Marc
+    licence: 0657172T
+  - nom: PICOTTO Julien
+    licence: 0680000F
+  - nom: LOUIS Adrian
+    licence: 0775609D
+  - nom: LOUIS Jeremy
+    licence: 0797498W
+  - nom: CHOUC Thierry
+    licence: 0312526C
+  - nom: GUIONNET Arnaud
+    licence: 0864362Z
+  - nom: CHARMASSON Christophe
+    licence: 0864368F
+  - nom: GUNTHER Philippe
+    licence: 0864373L
+  - nom: KAMEL Rabab
+    licence: 0864380U
+  - nom: RIBEIRO Cedric
+    licence: 0796672Y
+  - nom: BADIER Romain
+    licence: 0659063Y
+  - nom: BULTEL Benoit
+    licence: 0865256W
+  - nom: NOIZET Gaele
+    licence: 0865262C
+  - nom: AUGEREAU Nicolas
+    licence: 0846659G
+  - nom: AGGOUN Lisa
+    licence: 0323532R
+  - nom: BASSOT Coralie
+    licence: 0596747N
+  - nom: VION Benoit
+    licence: 0866785H
+  - nom: LE BIHAN Didier
+    licence: 0289044D
+  - nom: DUMORTIER Eric
+    licence: 0752768B
+  - nom: NICOLLE Celine
+    licence: 0767256Z
+  - nom: DELAMARRE Jerome
+    licence: 0430707K
+  - nom: RIBEYROLLES Philippe
+    licence: 0867436R
+  - nom: POTTIER Annie
+    licence: 0867441W
+  - nom: MARTI CAVALLE Alice
+    licence: 0867445A
+  - nom: FOUCAN Sandrine
+    licence: 0867465X
+  - nom: MIGNOT Guillaume
+    licence: 0867600U
+  - nom: BIENFAIT Adrien
+    licence: 0867603X
+  - nom: HAMEL Guillaume
+    licence: 0379722S
+  - nom: RAMMAERT Jeremy
+    licence: 0728464J
+  - nom: PELLIEUX Alexandre
+    licence: 0843145M
+  - nom: LEPEUC Jean-Francois
+    licence: 0343941Z
+  - nom: WILLEMS Claude
+    licence: 0043965N
+  - nom: WILLEMS Patricia
+    licence: 0095807N
+  - nom: PHILIPPE Alphonse
+    licence: 0636229D
+  - nom: SCTRICK Huguette
+    licence: 0065719J
+  - nom: BERTON Francis
+    licence: 0381082V
+  - nom: GRAIN Lucas
+    licence: 0869840D
+  - nom: MONCEY Adele
+    licence: 0870022B
+  - nom: BARRERA Evan
+    licence: 0870926J
+  - nom: RUSSEIL-MULIER Edwina
+    licence: 0870928L
+  - nom: DECALUWE Thibault
+    licence: 0870935U
+  - nom: CORNEC Manon
+    licence: 0870939Y
+  - nom: FERREIRA Alexandre
+    licence: 0870942B
+  - nom: KLEB-BOSQUET Baptiste
+    licence: 0870948H
+  - nom: MAITRE Nicolas
+    licence: 0397013L
+  - nom: KOULIBALY BAH Issiagha
+    licence: 0872800W
+  - nom: BRODIN Theophane
+    licence: 0873481L
+  - nom: MERESSE Christophe
+    licence: 0343951K
+  - nom: DEGAND Ludivine
+    licence: 0651556N
+  - nom: ARGOUD Olivier
+    licence: 0419881T
+  - nom: MAINGOT J Claude
+    licence: 0025334M
+  - nom: RONDIER Amandine
+    licence: 0875601R
+  - nom: BUHAGIAR Manon
+    licence: 0849851B
+  - nom: DUFOURT Ludivine
+    licence: 0814486L
+  - nom: SCTRICK Stephane
+    licence: 0364736C
+  '2016':
+  - nom: CARDON Monique
+    licence: 0369409G
+  - nom: CARDON Bernard
+    licence: 0314755A
+  - nom: CUSSOT Bernard
+    licence: 0605717N
+  - nom: KEERSTOCK Sandrine
+    licence: 0814478C
+  - nom: CUSSOT Marie-Anne
+    licence: 0815551U
+  - nom: DEFRANCE DE TERSANT Thibaut
+    licence: 0275690N
+  - nom: MOREAU Julien
+    licence: 0835879P
+  - nom: MOREAU Sylvie
+    licence: 0455326V
+  - nom: MOREAU Alain
+    licence: 0455329Y
+  - nom: KOLODZIEJ Vincent
+    licence: 0693353V
+  - nom: CHOUC Thierry
+    licence: 0312526C
+  - nom: CHAMPION-HERIN Sophie
+    licence: 0818270Z
+  - nom: GUNTHER Philippe
+    licence: 0864373L
+  - nom: POTTIER Annie
+    licence: 0867441W
+  - nom: BULTEL Benoit
+    licence: 0865256W
+  - nom: GUZMANN Alain
+    licence: 0312518U
+  - nom: PRENAT Nathalie
+    licence: 0752745B
+  - nom: THON Emmanuel
+    licence: 0224099L
+  - nom: BOUJU Claude
+    licence: 0043968S
+  - nom: PASQUERAULT Thierry
+    licence: 0717608J
+  - nom: GUIONNET Arnaud
+    licence: 0864362Z
+  - nom: NICOLLE Celine
+    licence: 0767256Z
+  - nom: MORISSEAU Valerie
+    licence: 0330783X
+  - nom: DEFRANCE DE TERSANT Thierry
+    licence: 0289047G
+  - nom: DEFRANCE DE TERSANT Monique
+    licence: 0289048H
+  - nom: UYSAL Fatih
+    licence: 0845511J
+  - nom: GRAIN Lucas
+    licence: 0869840D
+  - nom: RIVET Yona
+    licence: 0839685B
+  - nom: PAIN Alexandre
+    licence: 0845520U
+  - nom: LE CORNIC Floriane
+    licence: 0706169A
+  - nom: PRENAT Ugo
+    licence: 0793647K
+  - nom: CORNEC Manon
+    licence: 0870939Y
+  - nom: PELLIEUX Alexandre
+    licence: 0843145M
+  - nom: MONCEY Adele
+    licence: 0870022B
+  - nom: BIENFAIT Adrien
+    licence: 0867603X
+  - nom: VION Benoit
+    licence: 0866785H
+  - nom: DELVAS Maxime
+    licence: 0840427H
+  - nom: MULLER Didier
+    licence: 0466692Z
+  - nom: MULLER Claire
+    licence: 0466691Y
+  - nom: GARRIGUES Emmanuelle
+    licence: 0605718P
+  - nom: LEMAIRE Thomas
+    licence: 0775608C
+  - nom: COULANGE Quentin
+    licence: 0814492T
+  - nom: IENGO Sylvie
+    licence: 0818257K
+  - nom: PETITJEAN Renaud
+    licence: 0839639B
+  - nom: MADEIRA Carlos
+    licence: 0818251D
+  - nom: HUE Francoise
+    licence: 0400489P
+  - nom: DARRAS Ludovic
+    licence: 0454711B
+  - nom: PICOTTO Jean Marc
+    licence: 0657172T
+  - nom: PICOTTO Julien
+    licence: 0680000F
+  - nom: MENARD Charles
+    licence: 0822156Y
+  - nom: LOUIS Adrian
+    licence: 0775609D
+  - nom: GUILLOT Francis
+    licence: 0863431M
+  - nom: AGGOUN Lisa
+    licence: 0323532R
+  - nom: MAURICEAU Anais
+    licence: 0701373M
+  - nom: SANDRET Emmanuel
+    licence: 0272681T
+  - nom: LOUIS Jeremy
+    licence: 0797498W
+  - nom: HAMEL Guillaume
+    licence: 0379722S
+  - nom: JOSSENT Jerome
+    licence: 0731891J
+  - nom: FONTAINE Laurence
+    licence: 0229164S
+  - nom: LEBRETON Franck
+    licence: 0793043D
+  - nom: RIBEYROLLES Philippe
+    licence: 0867436R
+  - nom: BOUJU Christiane
+    licence: 0060045S
+  - nom: BADIER Romain
+    licence: 0659063Y
+  - nom: LE BIHAN Didier
+    licence: 0289044D
+  - nom: LEDUCQ Louisette
+    licence: 0466689W
+  - nom: LEDUCQ Jean-Jacques
+    licence: 0466688V
+  - nom: LEPEUC Jean-Francois
+    licence: 0343941Z
+  - nom: LATOUCHE Jeannine
+    licence: 0797497V
+  - nom: BERTON Beatrice
+    licence: 0381081U
+  - nom: COTON Alain
+    licence: 0838305B
+  - nom: PERONNET Gaetan
+    licence: 0796669V
+  - nom: PERONNET Sebastien
+    licence: 0469135E
+  - nom: PERONNET Florence
+    licence: 0863035G
+  - nom: WILLEMS Claude
+    licence: 0043965N
+  - nom: WILLEMS Patricia
+    licence: 0095807N
+  - nom: RIGONI Emeline
+    licence: 0893898D
+  - nom: DUMORTIER Eric
+    licence: 0752768B
+  - nom: GARRIGUES Francois
+    licence: 0796653C
+  - nom: VOICU Catherine
+    licence: 0895996J
+  - nom: BASSOT Coralie
+    licence: 0596747N
+  - nom: EMBAREK Axel
+    licence: 0896658D
+  - nom: BRODIN Theophane
+    licence: 0873481L
+  - nom: BLANCHET Eric
+    licence: 0769854Y
+  - nom: CHABAUD Anne-Lise
+    licence: 0896666M
+  - nom: RAYNAL Maxime
+    licence: 0896676Y
+  - nom: DUFOURT Laurent
+    licence: 0797486H
+  - nom: DUFOURT Ludivine
+    licence: 0814486L
+  - nom: GUERINEAU Nicolas
+    licence: 0896978B
+  - nom: VANMARCKE Amadeo
+    licence: 0896987L
+  - nom: FRANCOIS Catherine
+    licence: 0897791K
+  - nom: DELANDRE Barbara
+    licence: 0897792L
+  - nom: METIVIER Carole
+    licence: 0897796R
+  - nom: BOBO Mathis
+    licence: 0897799U
+  - nom: VASHKEVICH Nikolya
+    licence: 0897800V
+  - nom: BOULVES CABRAL Veronique
+    licence: 0897803Y
+  - nom: VANBERGUE Maeva
+    licence: 0897806B
+  - nom: WALLMAN Caroline
+    licence: 0897817N
+  - nom: WALLMAN Veronique
+    licence: 0897823V
+  - nom: BELCOLLIN Damien
+    licence: 0897832E
+  - nom: BELCOLLIN Celine
+    licence: 0897839M
+  - nom: DUCROCQ Heloise
+    licence: 0430247K
+  - nom: GALL-VEILLE Fabrice
+    licence: 0757229A
+  - nom: DECARPENTRIE Quentin
+    licence: 0466682N
+  - nom: GENTILHOMME Justin
+    licence: 0898929X
+  - nom: BOUFFON J Pierre
+    licence: 0011856M
+  - nom: GUERINEAU Jeremy
+    licence: 0863255W
+  - nom: HERCE Lucas
+    licence: 0898942L
+  - nom: ALI CHERIF Hagar
+    licence: 0898945P
+  - nom: BOUDJERDA Nail
+    licence: 0898950V
+  - nom: BOUDJERDA Wail
+    licence: 0898953Y
+  - nom: PIRAUBE Killian
+    licence: 0898959E
+  - nom: CARRION Matis
+    licence: 0898963J
+  - nom: ARGOUD Olivier
+    licence: 0419881T
+  - nom: DEGAND Ludivine
+    licence: 0651556N
+  - nom: GOSSELIN Clement
+    licence: 0466681M
+  - nom: SCTRICK Huguette
+    licence: 0065719J
+  - nom: MERESSE Christophe
+    licence: 0343951K
+  - nom: MAITRE Nicolas
+    licence: 0397013L
+  - nom: MAFFRAY Yolande
+    licence: 0625683R
+  - nom: KLEB-BOSQUET Baptiste
+    licence: 0870948H
+  - nom: ALLAIN Wilfried
+    licence: 0903274V
+  - nom: KHELOUI Helene
+    licence: 0904137H
+  - nom: SCTRICK Stephane
+    licence: 0364736C
+  - nom: OMBEL Yanis
+    licence: 0905340R
+  - nom: SILBERSTEIN Mickael
+    licence: 0781294H
+  '2017':
+  - nom: CUSSOT Bernard
+    licence: 0605717N
+  - nom: HUE Francoise
+    licence: 0400489P
+  - nom: CARDON Bernard
+    licence: 0314755A
+  - nom: CARDON Monique
+    licence: 0369409G
+  - nom: VOICU Catherine
+    licence: 0895996J
+  - nom: DARRAS Ludovic
+    licence: 0454711B
+  - nom: BIENFAIT Adrien
+    licence: 0867603X
+  - nom: CHAMPION-HERIN Sophie
+    licence: 0818270Z
+  - nom: CHABAUD Anne-Lise
+    licence: 0896666M
+  - nom: LE CORNIC Floriane
+    licence: 0706169A
+  - nom: PELLIEUX Alexandre
+    licence: 0843145M
+  - nom: GUILLOT Francis
+    licence: 0863431M
+  - nom: LESNE David
+    licence: 0860605R
+  - nom: PRENAT Nathalie
+    licence: 0752745B
+  - nom: LATOUCHE Jeannine
+    licence: 0797497V
+  - nom: LOUIS Jeremy
+    licence: 0797498W
+  - nom: LOUIS Adrian
+    licence: 0775609D
+  - nom: VANBERGUE Maeva
+    licence: 0897806B
+  - nom: RIBEYROLLES Philippe
+    licence: 0867436R
+  - nom: LEBRETON Franck
+    licence: 0793043D
+  - nom: DUCROCQ Heloise
+    licence: 0430247K
+  - nom: GALL-VEILLE Fabrice
+    licence: 0757229A
+  - nom: GUZMANN Alain
+    licence: 0312518U
+  - nom: MOREAU Alain
+    licence: 0455329Y
+  - nom: MOREAU Sylvie
+    licence: 0455326V
+  - nom: MOREAU Julien
+    licence: 0835879P
+  - nom: LEPEUC Jean-Francois
+    licence: 0343941Z
+  - nom: MORISSEAU Valerie
+    licence: 0330783X
+  - nom: MULLER Claire
+    licence: 0466691Y
+  - nom: MULLER Didier
+    licence: 0466692Z
+  - nom: KOLODZIEJ Vincent
+    licence: 0693353V
+  - nom: BADIER Romain
+    licence: 0659063Y
+  - nom: FERNANDEZ ARRAYA Victor Hugo
+    licence: 0909257Y
+  - nom: THON Emmanuel
+    licence: 0224099L
+  - nom: POTTIER Annie
+    licence: 0867441W
+  - nom: WILLEMS Claude
+    licence: 0043965N
+  - nom: WILLEMS Patricia
+    licence: 0095807N
+  - nom: NICOLLE Celine
+    licence: 0767256Z
+  - nom: DELVAS Maxime
+    licence: 0840427H
+  - nom: PICOTTO Julien
+    licence: 0680000F
+  - nom: CUSSOT Marie-Anne
+    licence: 0815551U
+  - nom: BOUJU Claude
+    licence: 0043968S
+  - nom: DEFRANCE DE TERSANT Thierry
+    licence: 0289047G
+  - nom: DEFRANCE DE TERSANT Monique
+    licence: 0289048H
+  - nom: BASSOT Coralie
+    licence: 0596747N
+  - nom: GOSSELIN Clement
+    licence: 0466681M
+  - nom: KEERSTOCK Sandrine
+    licence: 0814478C
+  - nom: LE BIHAN Didier
+    licence: 0289044D
+  - nom: DECARPENTRIE Quentin
+    licence: 0466682N
+  - nom: IENGO Sylvie
+    licence: 0818257K
+  - nom: GUNTHER Philippe
+    licence: 0864373L
+  - nom: BOUFFON J Pierre
+    licence: 0011856M
+  - nom: CHOUC Thierry
+    licence: 0312526C
+  - nom: DUFOURT Laurent
+    licence: 0797486H
+  - nom: DUFOURT Ludivine
+    licence: 0814486L
+  - nom: DEFRANCE DE TERSANT Thibaut
+    licence: 0275690N
+  - nom: DUFOURT Maxence
+    licence: 0913104E
+  - nom: PERONNET Florence
+    licence: 0863035G
+  - nom: PAIN Alexandre
+    licence: 0845520U
+  - nom: VASHKEVICH Nikolya
+    licence: 0897800V
+  - nom: EMBAREK Axel
+    licence: 0896658D
+  - nom: RIBEIRO Cedric
+    licence: 0796672Y
+  - nom: ALI CHERIF Hagar
+    licence: 0898945P
+  - nom: BULTEL Benoit
+    licence: 0865256W
+  - nom: STEVENOOT Quentin
+    licence: 0914196S
+  - nom: VILLAIN Emma
+    licence: 0915007Y
+  - nom: DAGUES Ines
+    licence: 0915012D
+  - nom: HAMEL Guillaume
+    licence: 0379722S
+  - nom: CAUCANAS Alizee
+    licence: 0915512X
+  - nom: DONGE Cedric
+    licence: 0915518D
+  - nom: GUEGADEN Isabelle
+    licence: 0915522H
+  - nom: QUEMENER Thomas
+    licence: 0915526M
+  - nom: POUET Marina
+    licence: 0915530S
+  - nom: VOICU Litizia
+    licence: 0915532U
+  - nom: THIRARD Axel
+    licence: 0915538A
+  - nom: BARON Veronique
+    licence: 0915563C
+  - nom: LOISEAU Claude
+    licence: 0659116F
+  - nom: DOMISE Manon
+    licence: 0915630A
+  - nom: DA SILVA Gabriel
+    licence: 0916603H
+  - nom: AGGOUN Lisa
+    licence: 0323532R
+  - nom: BOUJU Christiane
+    licence: 0060045S
+  - nom: LEDUCQ Louisette
+    licence: 0466689W
+  - nom: SANDRET Emmanuel
+    licence: 0272681T
+  - nom: MENARD Charles
+    licence: 0822156Y
+  - nom: GAUTIER Pierre-Yves
+    licence: 0766479E
+  - nom: SCTRICK Huguette
+    licence: 0065719J
+  - nom: GARRIGUES Emmanuelle
+    licence: 0605718P
+  - nom: DESCHAMPS Loris
+    licence: 0918005G
+  - nom: PERONNET Erwann
+    licence: 0918006H
+  - nom: KERN Achille
+    licence: 0918007J
+  - nom: MOSBAH Sofiene
+    licence: 0918008K
+  - nom: PACKERT Axel
+    licence: 0918009L
+  - nom: DUPRE Pierre
+    licence: 0918010M
+  - nom: QUEMENER Romain
+    licence: 0918012P
+  - nom: SUIRE Nicolas
+    licence: 0918013R
+  - nom: SAGBO Ghislaine
+    licence: 0918172N
+  - nom: UYSAL Fatih
+    licence: 0845511J
+  - nom: DUMORTIER Eric
+    licence: 0752768B
+  - nom: SILBERSTEIN Mickael
+    licence: 0781294H
+  - nom: PERONNET Sebastien
+    licence: 0469135E
+  - nom: BLANCHET Eric
+    licence: 0769854Y
+  - nom: FRANCOIS Catherine
+    licence: 0897791K
+  - nom: FONTAINE Laurence
+    licence: 0229164S
+  - nom: ALALACHE Nolane
+    licence: 0921565B
+  - nom: ROMAO-SIMON Ewenn
+    licence: 0921568E
+  - nom: PEREIRA Mario
+    licence: 0921573K
+  - nom: LOUIS Sacha
+    licence: 0921574L
+  - nom: ALLAIN William
+    licence: 0924342V
+  - nom: TONY Alexandre
+    licence: 0924419D
+  - nom: DEPAUX Maxime
+    licence: 0925442R
+  - nom: METIVIER Carole
+    licence: 0897796R
+  - nom: MAFFRAY Yolande
+    licence: 0625683R
+  - nom: HADJ SABER Hany
+    licence: 0927969M
+  - nom: VION Benoit
+    licence: 0866785H
+  - nom: SCTRICK Stephane
+    licence: 0364736C
+  - nom: CHATEIGNE Terence
+    licence: 0934467A
+  '2018':
+  - nom: CUSSOT Marie-Anne
+    licence: 0815551U
+  - nom: CUSSOT Bernard
+    licence: 0605717N
+  - nom: CHABAUD Anne-Lise
+    licence: 0896666M
+  - nom: CHAMPION-HERIN Sophie
+    licence: 0818270Z
+  - nom: AGGOUN Lisa
+    licence: 0323532R
+  - nom: GUNTHER Philippe
+    licence: 0864373L
+  - nom: KOLODZIEJ Vincent
+    licence: 0693353V
+  - nom: GARRIGUES Emmanuelle
+    licence: 0605718P
+  - nom: GARRIGUES Francois
+    licence: 0796653C
+  - nom: RIBEYROLLES Philippe
+    licence: 0867436R
+  - nom: DAUDE Jean Baptiste
+    licence: 0441234C
+  - nom: DARRAS Ludovic
+    licence: 0454711B
+  - nom: HUE Francoise
+    licence: 0400489P
+  - nom: LEBRETON Franck
+    licence: 0793043D
+  - nom: GOSSELIN Clement
+    licence: 0466681M
+  - nom: CHOUC Thierry
+    licence: 0312526C
+  - nom: WILLEMS Claude
+    licence: 0043965N
+  - nom: WILLEMS Patricia
+    licence: 0095807N
+  - nom: MULLER Claire
+    licence: 0466691Y
+  - nom: MULLER Didier
+    licence: 0466692Z
+  - nom: MOREAU Alain
+    licence: 0455329Y
+  - nom: MOREAU Sylvie
+    licence: 0455326V
+  - nom: MOREAU Julien
+    licence: 0835879P
+  - nom: MORISSEAU Valerie
+    licence: 0330783X
+  - nom: KEERSTOCK Sandrine
+    licence: 0814478C
+  - nom: THIRARD Axel
+    licence: 0915538A
+  - nom: BARON Veronique
+    licence: 0915563C
+  - nom: DEFRANCE DE TERSANT Monique
+    licence: 0289048H
+  - nom: DEFRANCE DE TERSANT Thierry
+    licence: 0289047G
+  - nom: FERNANDEZ ARRAYA Victor Hugo
+    licence: 0909257Y
+  - nom: PRENAT Nathalie
+    licence: 0752745B
+  - nom: MALLET Benoit
+    licence: 0935289U
+  - nom: BADIER Romain
+    licence: 0659063Y
+  - nom: BOUJU Christiane
+    licence: 0060045S
+  - nom: BOUJU Claude
+    licence: 0043968S
+  - nom: BASSOT Coralie
+    licence: 0596747N
+  - nom: NICOLLE Celine
+    licence: 0767256Z
+  - nom: POUET Marina
+    licence: 0915530S
+  - nom: VOICU Litizia
+    licence: 0915532U
+  - nom: VOICU Catherine
+    licence: 0895996J
+  - nom: CARDON Bernard
+    licence: 0314755A
+  - nom: CARDON Monique
+    licence: 0369409G
+  - nom: BERTON Beatrice
+    licence: 0381081U
+  - nom: HAMEL Guillaume
+    licence: 0379722S
+  - nom: THON Emmanuel
+    licence: 0224099L
+  - nom: GUILLOT Francis
+    licence: 0863431M
+  - nom: FRANCOIS Catherine
+    licence: 0897791K
+  - nom: DUFOURT Laurent
+    licence: 0797486H
+  - nom: DEFRANCE DE TERSANT Thibaut
+    licence: 0275690N
+  - nom: FONTAINE Laurence
+    licence: 0229164S
+  - nom: SANDRET Emmanuel
+    licence: 0272681T
+  - nom: LEPEUC Jean-Francois
+    licence: 0343941Z
+  - nom: BOUFFON J Pierre
+    licence: 0011856M
+  - nom: GAUTIER Pierre-Yves
+    licence: 0766479E
+  - nom: LOUIS Jeremy
+    licence: 0797498W
+  - nom: SCTRICK Huguette
+    licence: 0065719J
+  - nom: SCTRICK Stephane
+    licence: 0364736C
+  - nom: PERONNET Sebastien
+    licence: 0469135E
+  - nom: PERONNET Florence
+    licence: 0863035G
+  - nom: LOUIS Adrian
+    licence: 0775609D
+  - nom: RAVIDAT Rachel
+    licence: 0250572L
+  - nom: VASHKEVICH Nikolya
+    licence: 0897800V
+  - nom: VILLAIN Emma
+    licence: 0915007Y
+  - nom: BIENFAIT Adrien
+    licence: 0867603X
+  - nom: PELLIEUX Alexandre
+    licence: 0843145M
+  - nom: RIBEIRO Cedric
+    licence: 0796672Y
+  - nom: DELVAS Maxime
+    licence: 0840427H
+  - nom: PAIN Alexandre
+    licence: 0845520U
+  - nom: DUPRE Pierre
+    licence: 0918010M
+  - nom: LOUIS Sacha
+    licence: 0921574L
+  - nom: DOMISE Manon
+    licence: 0915630A
+  - nom: PEREIRA Mario
+    licence: 0921573K
+  - nom: ALALACHE Nolane
+    licence: 0921565B
+  - nom: THIBURCE Gabriel
+    licence: 0941200U
+  - nom: MADRAY Ewan
+    licence: 0941210E
+  - nom: AVENEL Loric
+    licence: 0941224V
+  - nom: ROSSI-LANTZ Erwin
+    licence: 0941236H
+  - nom: GUILLEN Lou-Ann
+    licence: 0941263M
+  - nom: LE GALL Raphael
+    licence: 0941265P
+  - nom: ZILIO Margot
+    licence: 0941268T
+  - nom: GUEGADEN Isabelle
+    licence: 0915522H
+  - nom: IENGO Sylvie
+    licence: 0818257K
+  - nom: PERONNET Erwann
+    licence: 0918006H
+  - nom: MARTEAU Ambre
+    licence: 0861916R
+  - nom: MARTEL Amandine
+    licence: 0941572Y
+  - nom: PRAQUIN Loic
+    licence: 0941586N
+  - nom: SIEMON Alexis
+    licence: 0941594X
+  - nom: ZICAVO Yelena
+    licence: 0941611R
+  - nom: MARTINEZ Maxime
+    licence: 0941618Y
+  - nom: CAUWELIER Arnaud
+    licence: 0943170K
+  - nom: RICHARD Emilie
+    licence: 0943172M
+  - nom: FABIEN Veronique
+    licence: 0943178U
+  - nom: BOURDEAUX Thierry
+    licence: 0943182Y
+  - nom: MARTEAU Emmanuelle
+    licence: 0943187D
+  - nom: PERONNET Maiwenn
+    licence: 0944686H
+  - nom: DA SILVA Gabriel
+    licence: 0916603H
+  - nom: ALLAIN William
+    licence: 0924342V
+  - nom: DUFOURT Maxence
+    licence: 0913104E
+  - nom: HADJ SABER Hany
+    licence: 0927969M
+  - nom: DECARPENTRIE Quentin
+    licence: 0466682N
+  - nom: SZCZEBARA Mathilde
+    licence: 0944726B
+  - nom: PIERRU Sandrine
+    licence: 0944947S
+  - nom: DONGE Cedric
+    licence: 0915518D
+  - nom: DEFLANDRE Amandine
+    licence: 0945675H
+  - nom: GUZMANN Alain
+    licence: 0312518U
+  - nom: POTTIER Annie
+    licence: 0867441W
+  - nom: LEROUX Dylan
+    licence: 0947234C
+  - nom: CHATREFOU Elodie
+    licence: 0947236E
+  - nom: MAFFRAY Yolande
+    licence: 0625683R
+  - nom: GALL-VEILLE Fabrice
+    licence: 0757229A
+  - nom: DUCROCQ Heloise
+    licence: 0430247K
+  - nom: SPADIA Matthieu
+    licence: 0612758S
+  - nom: ZICAVO Franck
+    licence: 0752791B
+  - nom: PREVOST Jean Luc
+    licence: 0790490D
+  - nom: WILLEMS Bruno
+    licence: 0955284C
+  - nom: PERONNET Gaetan
+    licence: 0796669V
+  - nom: KERN Achille
+    licence: 0918007J
+  - nom: MOREAU Sebastien
+    licence: 0944673U
+  '2019':
+  - nom: CUSSOT Bernard
+    licence: 0605717N
+  - nom: CUSSOT Marie-Anne
+    licence: 0815551U
+  - nom: MULLER Didier
+    licence: 0466692Z
+  - nom: MALLET Benoit
+    licence: 0935289U
+  - nom: CHAMPION-HERIN Sophie
+    licence: 0818270Z
+  - nom: BOUJU Claude
+    licence: 0043968S
+  - nom: BOUJU Christiane
+    licence: 0060045S
+  - nom: DARRAS Ludovic
+    licence: 0454711B
+  - nom: DEFRANCE DE TERSANT Thierry
+    licence: 0289047G
+  - nom: DEFRANCE DE TERSANT Monique
+    licence: 0289048H
+  - nom: MULLER Claire
+    licence: 0466691Y
+  - nom: MOREAU Julien
+    licence: 0835879P
+  - nom: MOREAU Alain
+    licence: 0455329Y
+  - nom: MOREAU Sylvie
+    licence: 0455326V
+  - nom: MORISSEAU Valerie
+    licence: 0330783X
+  - nom: PERONNET Sebastien
+    licence: 0469135E
+  - nom: PERONNET Gaetan
+    licence: 0796669V
+  - nom: HUE Francoise
+    licence: 0400489P
+  - nom: DEFRANCE DE TERSANT Thibaut
+    licence: 0275690N
+  - nom: GUILLOT Francis
+    licence: 0863431M
+  - nom: BERTON Beatrice
+    licence: 0381081U
+  - nom: CHOUC Thierry
+    licence: 0312526C
+  - nom: PAIN Alexandre
+    licence: 0845520U
+  - nom: BARON Veronique
+    licence: 0915563C
+  - nom: GARRIGUES Francois
+    licence: 0796653C
+  - nom: GARRIGUES Emmanuelle
+    licence: 0605718P
+  - nom: KOLODZIEJ Vincent
+    licence: 0693353V
+  - nom: CAUWELIER Arnaud
+    licence: 0943170K
+  - nom: KEERSTOCK Sandrine
+    licence: 0814478C
+  - nom: BOUFFON J Pierre
+    licence: 0011856M
+  - nom: COTON Alain
+    licence: 0838305B
+  - nom: SANDRET Emmanuel
+    licence: 0272681T
+  - nom: DUFOURT Laurent
+    licence: 0797486H
+  - nom: LOUIS Jeremy
+    licence: 0797498W
+  - nom: DOMISE Manon
+    licence: 0915630A
+  - nom: IENGO Sylvie
+    licence: 0818257K
+  - nom: SIEMON Alexis
+    licence: 0941594X
+  - nom: ZILIO Margot
+    licence: 0941268T
+  - nom: PRAQUIN Loic
+    licence: 0941586N
+  - nom: DUPRE Pierre
+    licence: 0918010M
+  - nom: VILLAIN Emma
+    licence: 0915007Y
+  - nom: PERONNET Erwann
+    licence: 0918006H
+  - nom: PERONNET Maiwenn
+    licence: 0944686H
+  - nom: SZCZEBARA Mathilde
+    licence: 0944726B
+  - nom: MARTEL Amandine
+    licence: 0941572Y
+  - nom: PEREIRA Mario
+    licence: 0921573K
+  - nom: PELLIEUX Alexandre
+    licence: 0843145M
+  - nom: KERN Achille
+    licence: 0918007J
+  - nom: PRENAT Nathalie
+    licence: 0752745B
+  - nom: ALALACHE Nolane
+    licence: 0921565B
+  - nom: LOUIS Adrian
+    licence: 0775609D
+  - nom: LOUIS Sacha
+    licence: 0921574L
+  - nom: ALLAIN William
+    licence: 0924342V
+  - nom: DUFOURT Maxence
+    licence: 0913104E
+  - nom: DAUDE Jean Baptiste
+    licence: 0441234C
+  - nom: GOSSELIN Clement
+    licence: 0466681M
+  - nom: RIBEYROLLES Philippe
+    licence: 0867436R
+  - nom: NICOLLE Celine
+    licence: 0767256Z
+  - nom: POUET Marina
+    licence: 0915530S
+  - nom: THON Emmanuel
+    licence: 0224099L
+  - nom: LEBRETON Franck
+    licence: 0793043D
+  - nom: ZICAVO Franck
+    licence: 0752791B
+  - nom: PIERRU Sandrine
+    licence: 0944947S
+  - nom: DECARPENTRIE Quentin
+    licence: 0466682N
+  - nom: MOREAU Sebastien
+    licence: 0944673U
+  - nom: DROUILLAUX Serge
+    licence: 0963360F
+  - nom: NGUYEN Victoria
+    licence: 0963380C
+  - nom: MARTEAU Emmanuelle
+    licence: 0943187D
+  - nom: MARTEAU Ambre
+    licence: 0861916R
+  - nom: BIENFAIT Adrien
+    licence: 0867603X
+  - nom: RAVIDAT Rachel
+    licence: 0250572L
+  - nom: SCTRICK Huguette
+    licence: 0065719J
+  - nom: VOICU Catherine
+    licence: 0895996J
+  - nom: VOICU Litizia
+    licence: 0915532U
+  - nom: WILLEMS Claude
+    licence: 0043965N
+  - nom: WILLEMS Patricia
+    licence: 0095807N
+  - nom: WILLEMS Bruno
+    licence: 0955284C
+  - nom: WILLEMS Helene
+    licence: 0964581H
+  - nom: GALL-VEILLE Fabrice
+    licence: 0757229A
+  - nom: DUCROCQ Heloise
+    licence: 0430247K
+  - nom: SCTRICK Stephane
+    licence: 0364736C
+  - nom: AL HAYEK Ghassan
+    licence: 0715381N
+  - nom: GODERON Cindy
+    licence: 0965081B
+  - nom: JANOT Rayan
+    licence: 0965086G
+  - nom: CHABAUD Anne-Lise
+    licence: 0896666M
+  - nom: FONTAINE Laurence
+    licence: 0229164S
+  - nom: LEPEUC Jean-Francois
+    licence: 0343941Z
+  - nom: GUEGADEN Isabelle
+    licence: 0915522H
+  - nom: FRANCOIS Catherine
+    licence: 0897791K
+  - nom: ABAD Maximilien
+    licence: 0966332L
+  - nom: DAOUT Lionel
+    licence: 0966334N
+  - nom: BOREL Hugo
+    licence: 0966351G
+  - nom: THEBAUDEAU Maxime
+    licence: 0966356M
+  - nom: PIERSON Noemie
+    licence: 0966423K
+  - nom: VADEBEAUX Matthieu
+    licence: 0966429S
+  - nom: FERNANDES Tony-Matheo
+    licence: 0966433W
+  - nom: POURRET Clement
+    licence: 0966436Z
+  - nom: GOUDACHI Hamza
+    licence: 0966439C
+  - nom: HERMOUET Felix
+    licence: 0967583W
+  - nom: MOURIER Marc
+    licence: 0968130R
+  - nom: DHONT Justine
+    licence: 0968132T
+  - nom: BERTHIEU Benoit
+    licence: 0968136X
+  - nom: AGGOUN Lisa
+    licence: 0323532R
+  - nom: GAGE Lony
+    licence: 0968347B
+  - nom: CRINON Justin
+    licence: 0968352G
+  - nom: TAHRI Maissane
+    licence: 0970885K
+  - nom: ALLAIN Wilfried
+    licence: 0903274V
+  - nom: PREVOST Jean Luc
+    licence: 0790490D
+  - nom: PRATA Paul Hadrien
+    licence: 0974273T
+  - nom: ABAD Marie Astrid
+    licence: 0974274U
+  - nom: GAUTIER Pierre-Yves
+    licence: 0766479E
+  - nom: KROMWEL Marie
+    licence: 0690183Z
+  '2020':
+  - nom: MULLER Didier
+    licence: 0466692Z
+  - nom: CUSSOT Bernard
+    licence: 0605717N
+  - nom: CUSSOT Marie-Anne
+    licence: 0815551U
+  - nom: MOREAU Sylvie
+    licence: 0455326V
+  - nom: MOREAU Alain
+    licence: 0455329Y
+  - nom: MOREAU Julien
+    licence: 0835879P
+  - nom: BERTON Beatrice
+    licence: 0381081U
+  - nom: KEERSTOCK Sandrine
+    licence: 0814478C
+  - nom: DAUDE Jean Baptiste
+    licence: 0441234C
+  - nom: CAUWELIER Arnaud
+    licence: 0943170K
+  - nom: DEFRANCE DE TERSANT Monique
+    licence: 0289048H
+  - nom: DEFRANCE DE TERSANT Thierry
+    licence: 0289047G
+  - nom: CHOUC Thierry
+    licence: 0312526C
+  - nom: VOICU Catherine
+    licence: 0895996J
+  - nom: VOICU Litizia
+    licence: 0915532U
+  - nom: MORISSEAU Valerie
+    licence: 0330783X
+  - nom: HUE Francoise
+    licence: 0400489P
+  - nom: THON Emmanuel
+    licence: 0224099L
+  - nom: PRENAT Nathalie
+    licence: 0752745B
+  - nom: MOURIER Marc
+    licence: 0968130R
+  - nom: KOLODZIEJ Vincent
+    licence: 0693353V
+  - nom: DARRAS Ludovic
+    licence: 0454711B
+  - nom: PIERSON Noemie
+    licence: 0966423K
+  - nom: GOUDACHI Hamza
+    licence: 0966439C
+  - nom: PEREIRA Mario
+    licence: 0921573K
+  - nom: SIEMON Alexis
+    licence: 0941594X
+  - nom: DAOUT Lionel
+    licence: 0966334N
+  - nom: VADEBEAUX Matthieu
+    licence: 0966429S
+  - nom: DUPRE Pierre
+    licence: 0918010M
+  - nom: VILLAIN Emma
+    licence: 0915007Y
+  - nom: GUILLOT Francis
+    licence: 0863431M
+  - nom: ALLAIN Wilfried
+    licence: 0903274V
+  - nom: ALLAIN William
+    licence: 0924342V
+  - nom: PAIN Alexandre
+    licence: 0845520U
+  - nom: GARRIGUES Francois
+    licence: 0796653C
+  - nom: GARRIGUES Emmanuelle
+    licence: 0605718P
+  - nom: JANOT Rayan
+    licence: 0965086G
+  - nom: GODERON Cindy
+    licence: 0965081B
+  - nom: BARON Veronique
+    licence: 0915563C
+  - nom: DUCROCQ Heloise
+    licence: 0430247K
+  - nom: FONTAINE Laurence
+    licence: 0229164S
+  - nom: NICOLLE Celine
+    licence: 0767256Z
+  - nom: CHAMPION-HERIN Sophie
+    licence: 0818270Z
+  - nom: LEBRETON Franck
+    licence: 0793043D
+  - nom: WILLEMS Patricia
+    licence: 0095807N
+  - nom: WILLEMS Helene
+    licence: 0964581H
+  - nom: WILLEMS Bruno
+    licence: 0955284C
+  - nom: BOUJU Claude
+    licence: 0043968S
+  - nom: BOUJU Christiane
+    licence: 0060045S
+  - nom: MOREAU Sebastien
+    licence: 0944673U
+  - nom: MALLET Benoit
+    licence: 0935289U
+  - nom: PRAQUIN Loic
+    licence: 0941586N
+  - nom: FRANCOIS Catherine
+    licence: 0897791K
+  - nom: DECARPENTRIE Quentin
+    licence: 0466682N
+  - nom: POUET Marina
+    licence: 0915530S
+  - nom: MARTEAU Emmanuelle
+    licence: 0943187D
+  - nom: MARTEAU Ambre
+    licence: 0861916R
+  - nom: SANDRET Emmanuel
+    licence: 0272681T
+  - nom: DROUILLAUX Serge
+    licence: 0963360F
+  - nom: CORTES Jeremy
+    licence: 0988918L
+  - nom: PERONNET Sebastien
+    licence: 0469135E
+  - nom: PERONNET Maiwenn
+    licence: 0944686H
+  - nom: PERONNET Gaetan
+    licence: 0796669V
+  - nom: PERONNET Erwann
+    licence: 0918006H
+  - nom: PERONNET Florence
+    licence: 0863035G
+  - nom: GAGE Lony
+    licence: 0968347B
+  - nom: SCTRICK Stephane
+    licence: 0364736C
+  - nom: SCTRICK Huguette
+    licence: 0065719J
+  - nom: LEPEUC Jean-Francois
+    licence: 0343941Z
+  - nom: MULLER Claire
+    licence: 0466691Y
+  - nom: DEFRANCE DE TERSANT Thibaut
+    licence: 0275690N
+  - nom: PRATA Paul Hadrien
+    licence: 0974273T
+  - nom: THEBAUDEAU Maxime
+    licence: 0966356M
+  - nom: MORISSEAU Lea
+    licence: 0989264M
+  - nom: LEGOULLON Lindsey
+    licence: 0989268S
+  - nom: PLANCHON Corentin
+    licence: 0989285K
+  - nom: ALLAIN Martin
+    licence: 0989316U
+  - nom: TARDY-MENAULT Etienne
+    licence: 0989325D
+  - nom: HANG YING Tony
+    licence: 0989471M
+  - nom: HANG YING Camille
+    licence: 0989473P
+  - nom: HAMEL Juliette
+    licence: 0989475S
+  - nom: MILLOT Nathan
+    licence: 0989477U
+  - nom: CORRE Nathan
+    licence: 0989478V
+  - nom: ANAFLOUSS Samia
+    licence: 0989479W
+  - nom: LOUIS Sacha
+    licence: 0921574L
+  - nom: LOUIS Jeremy
+    licence: 0797498W
+  - nom: BOUFFON J Pierre
+    licence: 0011856M
+  - nom: DUFOURT Maxence
+    licence: 0913104E
+  - nom: DUFOURT Laurent
+    licence: 0797486H
+  - nom: DUFOURT Cyrielle
+    licence: 0993098E
+  - nom: ROY Eliott
+    licence: 0993104L
+  - nom: BARBA Loic
+    licence: 0993107P
+  - nom: LOPEZ ESCALANTE Luigi-Julian
+    licence: 0993108R
+  - nom: LECKI Bruno
+    licence: 0993299Y
+  - nom: KOWABIS Larissa
+    licence: 0993303C
+  - nom: WALEWSKI Luc
+    licence: 0993305E
+  - nom: DAUCHEZ Sylvain
+    licence: 0993307G
+  - nom: ALMEIDA Sandrine
+    licence: 0993309J
+  - nom: MANSOURI Fatima
+    licence: 0993362S
+  - nom: BAKAOOLLAH Farzan
+    licence: 0993364U
+  - nom: PHILIPPE Julien
+    licence: 0993366W
+  - nom: CORRE Bertrand
+    licence: 0993367X
+  - nom: PREVOST Jean Luc
+    licence: 0790490D
+  - nom: IENGO Sylvie
+    licence: 0818257K
+  - nom: AGGOUN Lisa
+    licence: 0323532R
+  - nom: RICHOMME Nathalie
+    licence: 0994253K
+  - nom: LOUIS Adrian
+    licence: 0775609D
+  - nom: FRUTIEAUX Adrian
+    licence: 0820934V
+  - nom: WILLEMS Claude
+    licence: 0043965N
+  - nom: REVILLOT Elise
+    licence: 0997119A
+  - nom: DOUMENC Etienne
+    licence: 0998565X
+  - nom: DECKER Bernard
+    licence: 0278444G
+  '2021':
+  - nom: CUSSOT Bernard
+    licence: 0605717N
+  - nom: MULLER Didier
+    licence: 0466692Z
+  - nom: KEERSTOCK Sandrine
+    licence: 0814478C
+  - nom: HUE Francoise
+    licence: 0400489P
+  - nom: DEFRANCE DE TERSANT Thierry
+    licence: 0289047G
+  - nom: DEFRANCE DE TERSANT Monique
+    licence: 0289048H
+  - nom: DARRAS Ludovic
+    licence: 0454711B
+  - nom: MOURIER Marc
+    licence: 0968130R
+  - nom: DAUCHEZ Sylvain
+    licence: 0993307G
+  - nom: MALLET Benoit
+    licence: 0935289U
+  - nom: KOLODZIEJ Vincent
+    licence: 0693353V
+  - nom: GARRIGUES Emmanuelle
+    licence: 0605718P
+  - nom: GARRIGUES Francois
+    licence: 0796653C
+  - nom: MORISSEAU Valerie
+    licence: 0330783X
+  - nom: BERTON Beatrice
+    licence: 0381081U
+  - nom: WILLEMS Helene
+    licence: 0964581H
+  - nom: WILLEMS Claude
+    licence: 0043965N
+  - nom: WILLEMS Patricia
+    licence: 0095807N
+  - nom: CHAMPION-HERIN Sophie
+    licence: 0818270Z
+  - nom: MOREAU Sylvie
+    licence: 0455326V
+  - nom: MOREAU Alain
+    licence: 0455329Y
+  - nom: MOREAU Julien
+    licence: 0835879P
+  - nom: DAOUT Lionel
+    licence: 0966334N
+  - nom: PERONNET Maiwenn
+    licence: 0944686H
+  - nom: PERONNET Florence
+    licence: 0863035G
+  - nom: PERONNET Gaetan
+    licence: 0796669V
+  - nom: PERONNET Sebastien
+    licence: 0469135E
+  - nom: DECKER Bernard
+    licence: 0278444G
+  - nom: DAUDE Jean Baptiste
+    licence: 0441234C
+  - nom: ROY Eliott
+    licence: 0993104L
+  - nom: GOUDACHI Hamza
+    licence: 0966439C
+  - nom: CORRE Nathan
+    licence: 0989478V
+  - nom: HANG YING Tony
+    licence: 0989471M
+  - nom: PRENAT Nathalie
+    licence: 0752745B
+  - nom: LOUIS Sacha
+    licence: 0921574L
+  - nom: LOUIS Adrian
+    licence: 0775609D
+  - nom: LOUIS Jeremy
+    licence: 0797498W
+  - nom: POISSY Dorian
+    licence: 0714047N
+  - nom: ALLAIN Martin
+    licence: 0989316U
+  - nom: ALLAIN William
+    licence: 0924342V
+  - nom: ALLAIN Wilfried
+    licence: 0903274V
+  - nom: TARDY-MENAULT Etienne
+    licence: 0989325D
+  - nom: SIEMON Alexis
+    licence: 0941594X
+  - nom: CUSSOT Marie-Anne
+    licence: 0815551U
+  - nom: CORRE Bertrand
+    licence: 0993367X
+  - nom: GUILLOT Francis
+    licence: 0863431M
+  - nom: DEFRANCE DE TERSANT Thibaut
+    licence: 0275690N
+  - nom: BOUJU Claude
+    licence: 0043968S
+  - nom: BOUJU Christiane
+    licence: 0060045S
+  - nom: WILLEMS Bruno
+    licence: 0955284C
+  - nom: BAKAOOLLAH Farzan
+    licence: 0993364U
+  - nom: FRANCOIS Catherine
+    licence: 0897791K
+  - nom: LEPEUC Jean-Francois
+    licence: 0343941Z
+  - nom: NICOLLE Celine
+    licence: 0767256Z
+  - nom: POUET Marina
+    licence: 0915530S
+  - nom: THON Emmanuel
+    licence: 0224099L
+  - nom: AGGOUN Lisa
+    licence: 0323532R
+  - nom: SANDRET Emmanuel
+    licence: 0272681T
+  - nom: SCTRICK Stephane
+    licence: 0364736C
+  - nom: DUFOURT Laurent
+    licence: 0797486H
+  - nom: DUFOURT Cyrielle
+    licence: 0993098E
+  - nom: DUFOURT Maxence
+    licence: 0913104E
+  - nom: PRATA Paul Hadrien
+    licence: 0974273T
+  - nom: BOUFFON J Pierre
+    licence: 0011856M
+  - nom: VOICU Litizia
+    licence: 0915532U
+  - nom: MULLER Claire
+    licence: 0466691Y
+  - nom: SCTRICK Huguette
+    licence: 0065719J
+  - nom: VOICU Catherine
+    licence: 0895996J
+  - nom: DARRAS Anne-Marie
+    licence: 0006532A
+  - nom: MORISSEAU Sebastien
+    licence: 0006533B
+  - nom: SETBON Laure
+    licence: 0006535D
+  - nom: HUMBERT-SETBON Christine
+    licence: 0006536E
+  - nom: JAPPELLE Julien
+    licence: 0006562H
+  - nom: CAPON Damien
+    licence: 0006569R
+  - nom: GRENET Claudine
+    licence: 0006570S
+  - nom: POTIER Stephane
+    licence: 0006619V
+  - nom: MILLOT Nathan
+    licence: 0989477U
+  - nom: LEGOULLON Lindsey
+    licence: 0989268S
+  - nom: PRAQUIN Loic
+    licence: 0941586N
+  - nom: BARBA Loic
+    licence: 0993107P
+  - nom: PLANCHON Corentin
+    licence: 0989285K
+  - nom: LOPEZ ESCALANTE Luigi-Julian
+    licence: 0993108R
+  - nom: MORISSEAU Lea
+    licence: 0989264M
+  - nom: DEREN Margaux
+    licence: 0006983R
+  - nom: DULHOSTE Ethan
+    licence: 0007034W
+  - nom: WARLET Balthazar
+    licence: 0007038A
+  - nom: THENUS-MAS Iann
+    licence: 0007042E
+  - nom: BELAMY-TILLIET Théo
+    licence: 0007069J
+  - nom: GOUEREC Yannis
+    licence: 0007279M
+  - nom: CHEMIN Octave
+    licence: 0007286V
+  - nom: PATOUX Elaïde
+    licence: 0007288X
+  - nom: LEGOULLON Keith
+    licence: 0007290Z
+  - nom: KEBAIER-LAPLAINE Donya
+    licence: 0007293C
+  - nom: BERNARD Lucie
+    licence: 0007296F
+  - nom: JOSSE Heloïse
+    licence: 0007299J
+  - nom: SOICHET Lucile
+    licence: 0007300K
+  - nom: AZAOUI Imrane
+    licence: 0007303N
+  - nom: PITOISET Emma
+    licence: 0007308U
+  - nom: GILBERT Leandre
+    licence: 0007313Z
+  - nom: JAPPELLE Laura
+    licence: 0007316C
+  - nom: DEFOORT Pascal
+    licence: 0962784E
+  - nom: DUCROCQ Heloise
+    licence: 0430247K
+  - nom: WALEWSKI Luc
+    licence: 0993305E
+  - nom: MOREAU Sebastien
+    licence: 0944673U
+  - nom: PEREIRA Mario
+    licence: 0921573K
+  - nom: ALLAIN-MONNIER Marie-Noëlle
+    licence: 0010476M
+  - nom: LACROIX Arthur
+    licence: 0696158U
+  - nom: LACOMBE Sebastien
+    licence: 0010480S
+  - nom: VALDENAIRE Alexis
+    licence: 0010481T
+  - nom: BLANCHARD Maxime
+    licence: 0010483V
+  - nom: DEPAUX Maxime
+    licence: 0925442R
+  - nom: DOUMENC Etienne
+    licence: 0998565X
+  - nom: RAJAN Ashwin
+    licence: 0011744R
+  - nom: LEBRETON Franck
+    licence: 0793043D
+  - nom: FONTAINE Laurence
+    licence: 0229164S
+  '2022':
+  - nom: MULLER Didier
+    licence: 0466692Z
+  - nom: KEERSTOCK Sandrine
+    licence: 0814478C
+  - nom: CHAMPION-HERIN Sophie
+    licence: 0818270Z
+  - nom: DEFRANCE DE TERSANT Monique
+    licence: 0289048H
+  - nom: DEFRANCE DE TERSANT Thierry
+    licence: 0289047G
+  - nom: KOLODZIEJ Vincent
+    licence: 0693353V
+  - nom: HUE Francoise
+    licence: 0400489P
+  - nom: LOUIS Jeremy
+    licence: 0797498W
+  - nom: CAPON Damien
+    licence: 0006569R
+  - nom: POTIER Stephane
+    licence: 0006619V
+  - nom: BERTON Beatrice
+    licence: 0381081U
+  - nom: GRENET Claudine
+    licence: 0006570S
+  - nom: DAUCHEZ Sylvain
+    licence: 0993307G
+  - nom: MOREAU Alain
+    licence: 0455329Y
+  - nom: MOREAU Sylvie
+    licence: 0455326V
+  - nom: MOREAU Julien
+    licence: 0835879P
+  - nom: LEPEUC Jean-Francois
+    licence: 0343941Z
+  - nom: LACOMBE Sebastien
+    licence: 0010480S
+  - nom: DAOUT Lionel
+    licence: 0966334N
+  - nom: PRAQUIN Loic
+    licence: 0941586N
+  - nom: PEREIRA Mario
+    licence: 0921573K
+  - nom: LOUIS Adrian
+    licence: 0775609D
+  - nom: MOREAU Sebastien
+    licence: 0944673U
+  - nom: GURGEY Vincent
+    licence: 0938699A
+  - nom: SETBON Laure
+    licence: 0006535D
+  - nom: HUMBERT-SETBON Christine
+    licence: 0006536E
+  - nom: THON Emmanuel
+    licence: 0224099L
+  - nom: DARRAS Anne-Marie
+    licence: 0006532A
+  - nom: DARRAS Ludovic
+    licence: 0454711B
+  - nom: VOICU Catherine
+    licence: 0895996J
+  - nom: VOICU Litizia
+    licence: 0915532U
+  - nom: DAUDE Jean Baptiste
+    licence: 0441234C
+  - nom: DEFOORT Pascal
+    licence: 0962784E
+  - nom: JOURDAIN Valerie
+    licence: 0673086R
+  - nom: LAMIAUD Pascal
+    licence: 0800941N
+  - nom: MORISSEAU Valerie
+    licence: 0330783X
+  - nom: BOUFFON J Pierre
+    licence: 0011856M
+  - nom: BOUJU Christiane
+    licence: 0060045S
+  - nom: BOUJU Claude
+    licence: 0043968S
+  - nom: WILLEMS Claude
+    licence: 0043965N
+  - nom: WILLEMS Patricia
+    licence: 0095807N
+  - nom: DUFOURT Cyrielle
+    licence: 0993098E
+  - nom: DUFOURT Laurent
+    licence: 0797486H
+  - nom: DUFOURT Maxence
+    licence: 0913104E
+  - nom: FRANCOIS Catherine
+    licence: 0897791K
+  - nom: CHOUC Thierry
+    licence: 0312526C
+  - nom: LABAINVILLE Guillaume
+    licence: 0020272K
+  - nom: LA POSTA Laurent
+    licence: 0020310B
+  - nom: CROMBEZ Jean Michel
+    licence: 0020315G
+  - nom: PERONNET Christian
+    licence: 0076584U
+  - nom: BOUCHERY Loic
+    licence: 0850383E
+  - nom: DEFRANCE DE TERSANT Thibaut
+    licence: 0275690N
+  - nom: ALLAIN Wilfried
+    licence: 0903274V
+  - nom: GONTIER Jules
+    licence: 0791525D
+  - nom: MUNCH Christine
+    licence: 0022182L
+  - nom: LANDRE Thierry
+    licence: 0022185P
+  - nom: NOLBAS Jeremy
+    licence: 0022188T
+  - nom: BOUTALEB Elias
+    licence: 0022191W
+  - nom: BENSALEM Pascale
+    licence: 0022196B
+  - nom: PERONNET Maiwenn
+    licence: 0944686H
+  - nom: PERONNET Sebastien
+    licence: 0469135E
+  - nom: PERONNET Florence
+    licence: 0863035G
+  - nom: LOUIS Sacha
+    licence: 0921574L
+  - nom: ALLAIN William
+    licence: 0924342V
+  - nom: MORISSEAU Lea
+    licence: 0989264M
+  - nom: MORISSEAU Sebastien
+    licence: 0006533B
+  - nom: MILLOT Nathan
+    licence: 0989477U
+  - nom: LEGOULLON Lindsey
+    licence: 0989268S
+  - nom: LEGOULLON Keith
+    licence: 0007290Z
+  - nom: GOUDACHI Hamza
+    licence: 0966439C
+  - nom: PRATA Paul Hadrien
+    licence: 0974273T
+  - nom: ROY Eliott
+    licence: 0993104L
+  - nom: SIEMON Alexis
+    licence: 0941594X
+  - nom: SOICHET Lucile
+    licence: 0007300K
+  - nom: BERNARD Lucie
+    licence: 0007296F
+  - nom: TARDY-MENAULT Etienne
+    licence: 0989325D
+  - nom: CORRE Nathan
+    licence: 0989478V
+  - nom: AZAOUI Imrane
+    licence: 0007303N
+  - nom: PATOUX Elaïde
+    licence: 0007288X
+  - nom: WARLET Balthazar
+    licence: 0007038A
+  - nom: CHEMIN Octave
+    licence: 0007286V
+  - nom: ALLAIN Martin
+    licence: 0989316U
+  - nom: HANG YING Tony
+    licence: 0989471M
+  - nom: THENUS-MAS Iann
+    licence: 0007042E
+  - nom: BELAMY-TILLIET Théo
+    licence: 0007069J
+  - nom: SULEJ Malorie
+    licence: 0024366K
+  - nom: GASPARD Kelligan
+    licence: 0024371R
+  - nom: LEFEBVRE Camille
+    licence: 0025409U
+  - nom: CARTIER-TAILLARD Darius
+    licence: 0025415A
+  - nom: LOPEZ ESCALANTE Luigi-Julian
+    licence: 0993108R
+  - nom: TURKASLAN Ahmet
+    licence: 0025423J
+  - nom: GUERVIL Emeline
+    licence: 0025435X
+  - nom: ARZE Leane
+    licence: 0025439B
+  - nom: BENSALEM Ynes
+    licence: 0025444G
+  - nom: BENSALEM Samy
+    licence: 0025448L
+  - nom: MASSON FABRE Juliette
+    licence: 0025457W
+  - nom: GOURLOT Camille
+    licence: 0025466F
+  - nom: THON Raphael
+    licence: 0025477T
+  - nom: CEVOST Augustin
+    licence: 0025481X
+  - nom: JUMEL Yoen
+    licence: 0025488E
+  - nom: EYMERY Margot
+    licence: 0025490G
+  - nom: CHABENAT Noa
+    licence: 0025494L
+  - nom: DEMONGEOT Theo
+    licence: 0025544R
+  - nom: BOUILHOL Elliot
+    licence: 0025551Y
+  - nom: MAHIEUX Nolan
+    licence: 0025559G
+  - nom: HEUGEBAERT Nathan
+    licence: 0025570U
+  - nom: CUSSOT Bernard
+    licence: 0605717N
+  - nom: BARBA Loic
+    licence: 0993107P
+  - nom: PERONNET Gaetan
+    licence: 0796669V
+  - nom: DECKER Bernard
+    licence: 0278444G
+  - nom: MALLET Benoit
+    licence: 0935289U
+  - nom: BARRE Guillaume
+    licence: 0693361D
+  - nom: MOURIER Marc
+    licence: 0968130R
+  - nom: GEORG Baptiste
+    licence: 0988653Y
+  - nom: ROBERT Lucas
+    licence: 0027560G
+  - nom: MULLER Claire
+    licence: 0466691Y
+  - nom: SCTRICK Huguette
+    licence: 0065719J
+  - nom: LEBRETON Franck
+    licence: 0793043D
+  - nom: BAKAOOLLAH Farzan
+    licence: 0993364U
+  - nom: WILLEMS Helene
+    licence: 0964581H
+  - nom: SCTRICK Stephane
+    licence: 0364736C
+  - nom: POUET Marina
+    licence: 0915530S
+  - nom: DOUMENC Etienne
+    licence: 0998565X
+  - nom: GILBERT Leandre
+    licence: 0007313Z
+  - nom: JAPPELLE Laura
+    licence: 0007316C
+  - nom: JOSSE Heloïse
+    licence: 0007299J
+  - nom: AUGUIN Raphael
+    licence: 0029911M
+  - nom: DUCROCQ Heloise
+    licence: 0430247K
+  - nom: WILLEMS Bruno
+    licence: 0955284C
+  - nom: SANDRET Emmanuel
+    licence: 0272681T
+  - nom: ROY Maxime
+    licence: 0032820Z
+  - nom: BENANE Chloe
+    licence: 0032821A
+  - nom: BOULAY Renaud
+    licence: 0034316A
+  - nom: BRESSY Pauline
+    licence: 0712376X
+  - nom: MARTIN Cyril
+    licence: 0035550S
+  - nom: LACROIX Arthur
+    licence: 0696158U
+  '2023':
+  - nom: KEERSTOCK Sandrine
+    licence: 0814478C
+  - nom: CUSSOT Bernard
+    licence: 0605717N
+  - nom: MULLER Didier
+    licence: 0466692Z
+  - nom: CHAMPION-HERIN Sophie
+    licence: 0818270Z
+  - nom: DEFRANCE DE TERSANT Thierry
+    licence: 0289047G
+  - nom: DEFRANCE DE TERSANT Monique
+    licence: 0289048H
+  - nom: CUSSOT Marie-Anne
+    licence: 0815551U
+  - nom: GARRIGUES Emmanuelle
+    licence: 0605718P
+  - nom: DARRAS Ludovic
+    licence: 0454711B
+  - nom: DARRAS Anne-Marie
+    licence: 0006532A
+  - nom: VOICU Litizia
+    licence: 0915532U
+  - nom: VOICU Catherine
+    licence: 0895996J
+  - nom: THON Emmanuel
+    licence: 0224099L
+  - nom: MOREAU Julien
+    licence: 0835879P
+  - nom: MOREAU Alain
+    licence: 0455329Y
+  - nom: MOREAU Sylvie
+    licence: 0455326V
+  - nom: HUE Francoise
+    licence: 0400489P
+  - nom: MORISSEAU Valerie
+    licence: 0330783X
+  - nom: LEPEUC Jean-Francois
+    licence: 0343941Z
+  - nom: DAOUT Lionel
+    licence: 0966334N
+  - nom: ALLAIN Wilfried
+    licence: 0903274V
+  - nom: MOREAU Sebastien
+    licence: 0944673U
+  - nom: LACOMBE Sebastien
+    licence: 0010480S
+  - nom: POUET Marina
+    licence: 0915530S
+  - nom: JOSSE Heloïse
+    licence: 0007299J
+  - nom: CHOUC Thierry
+    licence: 0312526C
+  - nom: BENSALEM Pascale
+    licence: 0022196B
+  - nom: BENSALEM Samy
+    licence: 0025448L
+  - nom: BENSALEM Ynes
+    licence: 0025444G
+  - nom: BAKAOOLLAH Farzan
+    licence: 0993364U
+  - nom: DUCROCQ Heloise
+    licence: 0430247K
+  - nom: KOLODZIEJ Vincent
+    licence: 0693353V
+  - nom: BARRE Guillaume
+    licence: 0693361D
+  - nom: RIGOULET Franck
+    licence: 0345753U
+  - nom: PERONNET Christian
+    licence: 0076584U
+  - nom: PERONNET Sebastien
+    licence: 0469135E
+  - nom: PERONNET Maiwenn
+    licence: 0944686H
+  - nom: PERONNET Gaetan
+    licence: 0796669V
+  - nom: FRANCOIS Catherine
+    licence: 0897791K
+  - nom: PEREIRA Mario
+    licence: 0921573K
+  - nom: PRAQUIN Loic
+    licence: 0941586N
+  - nom: BERTON Beatrice
+    licence: 0381081U
+  - nom: DAUCHEZ Sylvain
+    licence: 0993307G
+  - nom: LEBRETON Franck
+    licence: 0793043D
+  - nom: BARBA Loic
+    licence: 0993107P
+  - nom: DEFRANCE DE TERSANT Thibaut
+    licence: 0275690N
+  - nom: MULLER Claire
+    licence: 0466691Y
+  - nom: FONTAINE Laurence
+    licence: 0229164S
+  - nom: WILLEMS Patricia
+    licence: 0095807N
+  - nom: WILLEMS Helene
+    licence: 0964581H
+  - nom: SCTRICK Huguette
+    licence: 0065719J
+  - nom: SANDRET Emmanuel
+    licence: 0272681T
+  - nom: JUMEL Yoen
+    licence: 0025488E
+  - nom: HEUGEBAERT Nathan
+    licence: 0025570U
+  - nom: AZAOUI Imrane
+    licence: 0007303N
+  - nom: GOURLOT Camille
+    licence: 0025466F
+  - nom: CHABENAT Noa
+    licence: 0025494L
+  - nom: CARTIER-TAILLARD Darius
+    licence: 0025415A
+  - nom: THON Raphael
+    licence: 0025477T
+  - nom: ALLAIN Martin
+    licence: 0989316U
+  - nom: ALLAIN William
+    licence: 0924342V
+  - nom: HANG YING Tony
+    licence: 0989471M
+  - nom: MORISSEAU Lea
+    licence: 0989264M
+  - nom: TARDY-MENAULT Etienne
+    licence: 0989325D
+  - nom: WARLET Balthazar
+    licence: 0007038A
+  - nom: THENUS-MAS Iann
+    licence: 0007042E
+  - nom: GOUDACHI Hamza
+    licence: 0966439C
+  - nom: PATOUX Elaïde
+    licence: 0007288X
+  - nom: LOUIS Sacha
+    licence: 0921574L
+  - nom: ARZE Leane
+    licence: 0025439B
+  - nom: LEFEBVRE Camille
+    licence: 0025409U
+  - nom: ROY Eliott
+    licence: 0993104L
+  - nom: GUERVIL Emeline
+    licence: 0025435X
+  - nom: LEFEBVRE Charline
+    licence: 0044853D
+  - nom: JAPPELLE Laura
+    licence: 0007316C
+  - nom: BELAMY-TILLIET Théo
+    licence: 0007069J
+  - nom: CHEMIN Octave
+    licence: 0007286V
+  - nom: SCTRICK Stephane
+    licence: 0364736C
+  - nom: DUFOURT Laurent
+    licence: 0797486H
+  - nom: BOUJU Claude
+    licence: 0043968S
+  - nom: DUFOURT Cyrielle
+    licence: 0993098E
+  - nom: DAUDE Jean Baptiste
+    licence: 0441234C
+  - nom: GEORG Baptiste
+    licence: 0988653Y
+  - nom: JOURDAIN Valerie
+    licence: 0673086R
+  - nom: AUGUIN Raphael
+    licence: 0029911M
+  - nom: BOUJU Christiane
+    licence: 0060045S
+  - nom: POCHAT Marine
+    licence: 0054406M
+  - nom: DOT Nicolas
+    licence: 0054414W
+  - nom: MANCHEC Tanguy
+    licence: 0054422E
+  - nom: JORGE Amelie
+    licence: 0054427K
+  - nom: GERARD Gwendal
+    licence: 0054433S
+  - nom: POISSY Dorian
+    licence: 0714047N
+  - nom: HALLOUI Amar
+    licence: 0054469F
+  - nom: PITOU Jeremy
+    licence: 0056771H
+  - nom: BOUDIN Dylan
+    licence: 0056773K
+  - nom: BATBOLD Tishig
+    licence: 0056775M
+  - nom: RAJAN Ajeesh
+    licence: 0056850U
+  - nom: RAJAN Alwin
+    licence: 0056853X
+  - nom: RAJAN Ashwin
+    licence: 0011744R
+  - nom: MAYANGI Rayan
+    licence: 0056865K
+  - nom: VONDRA BERNET Tristan
+    licence: 0056903B
+  - nom: ANNAJAH Lina
+    licence: 0056906E
+  - nom: MARTIN William
+    licence: 0056909H
+  - nom: POIRIER-LIDOVE Selene
+    licence: 0056945X
+  - nom: DARRE Alyssia
+    licence: 0056949B
+  - nom: DELPEY Noomi
+    licence: 0056952E
+  - nom: BELEY Emma
+    licence: 0056960N
+  - nom: DOMINGUES Hugo
+    licence: 0056966V
+  - nom: BARRE Abigael
+    licence: 0056968X
+  - nom: VALLIER Oceane
+    licence: 0056970Z
+  - nom: FEDOTOVSKY Lisa
+    licence: 0056972B
+  - nom: BEAUDET Theophile
+    licence: 0057009S
+  - nom: JACQUIN Michel
+    licence: 0440291C
+  - nom: CEVOST Augustin
+    licence: 0025481X
+  - nom: BOUFFON J Pierre
+    licence: 0011856M
+  - nom: LOUIS Adrian
+    licence: 0775609D
+  - nom: LOUIS Jeremy
+    licence: 0797498W
+  - nom: RACHID Abdellah
+    licence: 0062588F
+  '2024':
+  - nom: KEERSTOCK Sandrine
+    licence: 0814478C
+  - nom: CUSSOT Bernard
+    licence: 0605717N
+  - nom: CUSSOT Marie-Anne
+    licence: 0815551U
+  - nom: MULLER Didier
+    licence: 0466692Z
+  - nom: DEFRANCE DE TERSANT Thierry
+    licence: 0289047G
+  - nom: DEFRANCE DE TERSANT Monique
+    licence: 0289048H
+  - nom: GARRIGUES Emmanuelle
+    licence: 0605718P
+  - nom: GARRIGUES Francois
+    licence: 0796653C
+  - nom: GARRIGUES Elena
+    licence: 1000208G
+  - nom: DARRAS Anne-Marie
+    licence: 0006532A
+  - nom: DARRAS Ludovic
+    licence: 0454711B
+  - nom: CHAMPION-HERIN Sophie
+    licence: 0818270Z
+  - nom: MAILLIART Jade
+    licence: 1000252Y
+  - nom: DUFOURT Laurent
+    licence: 0797486H
+  - nom: DUFOURT Maxence
+    licence: 0913104E
+  - nom: DUFOURT Cyrielle
+    licence: 0993098E
+  - nom: LEPEUC Jean-Francois
+    licence: 0343941Z
+  - nom: POISSY Dorian
+    licence: 0714047N
+  - nom: LEBRETON Franck
+    licence: 0793043D
+  - nom: MOREAU Sylvie
+    licence: 0455326V
+  - nom: MOREAU Alain
+    licence: 0455329Y
+  - nom: MOREAU Julien
+    licence: 0835879P
+  - nom: KOLODZIEJ Vincent
+    licence: 0693353V
+  - nom: GASTALDI Jean-Pierre
+    licence: 0746524P
+  - nom: PERONNET Christian
+    licence: 0076584U
+  - nom: THON Emmanuel
+    licence: 0224099L
+  - nom: THON Raphael
+    licence: 0025477T
+  - nom: SCTRICK Huguette
+    licence: 0065719J
+  - nom: BRIDOT Nirina
+    licence: 0770723T
+  - nom: JORGE Amelie
+    licence: 0054427K
+  - nom: SCTRICK Stephane
+    licence: 0364736C
+  - nom: WILLEMS Helene
+    licence: 0964581H
+  - nom: WILLEMS Patricia
+    licence: 0095807N
+  - nom: BOUJU Christiane
+    licence: 0060045S
+  - nom: BOUJU Claude
+    licence: 0043968S
+  - nom: BARRE Abigael
+    licence: 0056968X
+  - nom: BARRE Guillaume
+    licence: 0693361D
+  - nom: AUGUIN Raphael
+    licence: 0029911M
+  - nom: JUMEL Yoen
+    licence: 0025488E
+  - nom: MORISSEAU Lea
+    licence: 0989264M
+  - nom: JAPPELLE Laura
+    licence: 0007316C
+  - nom: POIRIER-LIDOVE Selene
+    licence: 0056945X
+  - nom: TARDY-MENAULT Etienne
+    licence: 0989325D
+  - nom: THENUS-MAS Iann
+    licence: 0007042E
+  - nom: WARLET Balthazar
+    licence: 0007038A
+  - nom: LEFEBVRE Charline
+    licence: 0044853D
+  - nom: ARZE Leane
+    licence: 0025439B
+  - nom: ALLAIN William
+    licence: 0924342V
+  - nom: LOUIS Adrian
+    licence: 0775609D
+  - nom: LOUIS Jeremy
+    licence: 0797498W
+  - nom: LOUIS Sacha
+    licence: 0921574L
+  - nom: DOMINGUES Hugo
+    licence: 0056966V
+  - nom: ANNAJAH Lina
+    licence: 0056906E
+  - nom: HANG YING Tony
+    licence: 0989471M
+  - nom: HEUGEBAERT Nathan
+    licence: 0025570U
+  - nom: GOUDACHI Hamza
+    licence: 0966439C
+  - nom: JACQUIN Michel
+    licence: 0440291C
+  - nom: DAUCHEZ Sylvain
+    licence: 0993307G
+  - nom: GRENET Claudine
+    licence: 0006570S
+  - nom: RIGOULET Franck
+    licence: 0345753U
+  - nom: LEFEBVRE Camille
+    licence: 0025409U
+  - nom: LEGOULLON Keith
+    licence: 0007290Z
+  - nom: GUERVIL Emeline
+    licence: 0025435X
+  - nom: BELAMY-TILLIET Théo
+    licence: 0007069J
+  - nom: DEFRANCE DE TERSANT Thibaut
+    licence: 0275690N
+  - nom: MORISSEAU Valerie
+    licence: 0330783X
+  - nom: PIERSON Noemie
+    licence: 0966423K
+  - nom: CARTIER-TAILLARD Darius
+    licence: 0025415A
+  - nom: DUCROCQ Heloise
+    licence: 0430247K
+  - nom: BERTON Beatrice
+    licence: 0381081U
+  - nom: NICOLLE Celine
+    licence: 0767256Z
+  - nom: CHOUC Thierry
+    licence: 0312526C
+  - nom: POUET Marina
+    licence: 0915530S
+  - nom: SANDRET Emmanuel
+    licence: 0272681T
+  - nom: MOREAU Sebastien
+    licence: 0944673U
+  - nom: FRANCOIS Catherine
+    licence: 0897791K
+  - nom: PRAQUIN Loic
+    licence: 0941586N
+  - nom: BARBA Loic
+    licence: 0993107P
+  - nom: BAKAOOLLAH Farzan
+    licence: 0993364U
+  - nom: LOPEZ Quentin
+    licence: 0600301B
+  - nom: BASSOT Coralie
+    licence: 0596747N
+  - nom: JOURDAIN Valerie
+    licence: 0673086R
+  - nom: HUE Francoise
+    licence: 0400489P
+  - nom: NICOLAS Robin
+    licence: 1008011J
+  - nom: AMARRAT Manal
+    licence: 1008032E
+  - nom: MEKKAS Zeynab
+    licence: 1009793X
+  - nom: JOLLY Flavie
+    licence: 1009807L
+  - nom: JIJON PLATZER Arwen
+    licence: 1009838Q
+  - nom: DARRE Morgane
+    licence: 1009857J
+  - nom: DELPEY Noomi
+    licence: 0056952E
+  - nom: LOPEZ Aryana
+    licence: 1009883J
+  - nom: CAZAUX Maxime
+    licence: 1009890Q
+  - nom: DARRE Alyssia
+    licence: 0056949B
+  - nom: CHAN FAN Axel
+    licence: 1009944S
+  - nom: SAINTOT-MAFFRAY Alena
+    licence: 1009952A
+  - nom: KACAR Hugo
+    licence: 1009959H
+  - nom: CHEMIN Octave
+    licence: 0007286V
+  - nom: PATOUX Elaïde
+    licence: 0007288X
+  - nom: DOT Nicolas
+    licence: 0054414W
+  - nom: LOUPAN Oscar
+    licence: 1010893F
+  - nom: FOUQUEREL Paul
+    licence: 1010919F
+  - nom: BEAUDET Theophile
+    licence: 0057009S
+  - nom: FONTAINE Laurence
+    licence: 0229164S
+  - nom: PERONNET Gaetan
+    licence: 0796669V
+  - nom: BENSALEM Samy
+    licence: 0025448L
+  - nom: MEROT Gregory
+    licence: 1013571F
+  - nom: PRIMAULT Emmanuel
+    licence: 1013582Q
+  - nom: RODRIGUEZ BENKARROUM Yasmine
+    licence: 1013588W
+  - nom: SALLEM Wajdi
+    licence: 1013591Z
+  - nom: BELAMY Olivier
+    licence: 1013595D
+  - nom: BACOUEL MALIK Pauline
+    licence: 1013606O
+  - nom: COMBETTES Elise
+    licence: 1013611T
+  - nom: LORIOT Sophie
+    licence: 1013622E
+  - nom: CORDIER Meline
+    licence: 1013625H
+  - nom: DEUX Claude
+    licence: 1013632O
+  - nom: LAFOREST Clemence
+    licence: 1013641X
+  - nom: FOUQUEREL Sebastien
+    licence: 1013715T
+  - nom: KUNTZMANN Pierre-Andre
+    licence: 1013721Z
+  - nom: PEREIRA Mario
+    licence: 0921573K
+  - nom: POCHAT Marine
+    licence: 0054406M
+  - nom: BENSALEM Ynes
+    licence: 0025444G
+  - nom: BOUFFON J Pierre
+    licence: 0011856M
+  - nom: DOUMENC Etienne
+    licence: 0998565X
+  - nom: BENSALEM Pascale
+    licence: 0022196B
+  - nom: MEKKAS Asmaa
+    licence: 1009800E
+  '2025':
+  - nom: KEERSTOCK Sandrine
+    licence: 0814478C
+  - nom: CUSSOT Bernard
+    licence: 0605717N
+  - nom: DUFOURT Laurent
+    licence: 0797486H
+  - nom: DEFRANCE DE TERSANT Monique
+    licence: 0289048H
+  - nom: DEFRANCE DE TERSANT Thierry
+    licence: 0289047G
+  - nom: DEFRANCE DE TERSANT Thibaut
+    licence: 0275690N
+  - nom: KOLODZIEJ Vincent
+    licence: 0693353V
+  - nom: CUSSOT Marie-Anne
+    licence: 0815551U
+  - nom: PERONNET Christian
+    licence: 0076584U
+  - nom: LEPEUC Jean-Francois
+    licence: 0343941Z
+  - nom: CARLET Patrice
+    licence: 0765542L
+  - nom: SALLEM Wajdi
+    licence: 1013591Z
+  - nom: GASTALDI Jean-Pierre
+    licence: 0746524P
+  - nom: JORGE Amelie
+    licence: 0054427K
+  - nom: CHAMPION-HERIN Sophie
+    licence: 0818270Z
+  - nom: GUERVIL Emeline
+    licence: 0025435X
+  - nom: MORISSEAU Lea
+    licence: 0989264M
+  - nom: WARLET Balthazar
+    licence: 0007038A
+  - nom: JAPPELLE Laura
+    licence: 0007316C
+  - nom: MOREAU Sebastien
+    licence: 0944673U
+  - nom: CHOUC Thierry
+    licence: 0312526C
+  - nom: BELAMY Olivier
+    licence: 1013595D
+  - nom: KUNTZMANN Pierre-Andre
+    licence: 1013721Z
+  - nom: HANG YING Tony
+    licence: 0989471M
+  - nom: THON Emmanuel
+    licence: 0224099L
+  - nom: MOREAU Julien
+    licence: 0835879P
+  - nom: MOREAU Alain
+    licence: 0455329Y
+  - nom: MOREAU Sylvie
+    licence: 0455326V
+  - nom: GARRIGUES Emmanuelle
+    licence: 0605718P
+  - nom: GARRIGUES Francois
+    licence: 0796653C
+  - nom: POISSY Dorian
+    licence: 0714047N
+  - nom: DARRAS Ludovic
+    licence: 0454711B
+  - nom: DARRAS Anne-Marie
+    licence: 0006532A
+  - nom: MULLER Didier
+    licence: 0466692Z
+  - nom: BARRE Guillaume
+    licence: 0693361D
+  - nom: BARRE Abigael
+    licence: 0056968X
+  - nom: DARRE Morgane
+    licence: 1009857J
+  - nom: TARDY-MENAULT Etienne
+    licence: 0989325D
+  - nom: BEAUDET Theophile
+    licence: 0057009S
+  - nom: LEFEBVRE Charline
+    licence: 0044853D
+  - nom: THON Raphael
+    licence: 0025477T
+  - nom: ARZE Leane
+    licence: 0025439B
+  - nom: LEFEBVRE Camille
+    licence: 0025409U
+  - nom: THENUS-MAS Iann
+    licence: 0007042E
+  - nom: BELAMY-TILLIET Théo
+    licence: 0007069J
+  - nom: GOUDACHI Hamza
+    licence: 0966439C
+  - nom: CORDIER Meline
+    licence: 1013625H
+  - nom: PETROFF Sarah
+    licence: 0783216X
+  - nom: LADAGUE Francois
+    licence: 0024619K
+  - nom: RAMOS Valerie
+    licence: 1019813H
+  - nom: BOUJU Christiane
+    licence: 0060045S
+  - nom: CARTIER-TAILLARD Darius
+    licence: 0025415A
+  - nom: SCTRICK Stephane
+    licence: 0364736C
+  - nom: FONTAINE Laurence
+    licence: 0229164S
+  - nom: DOT Nicolas
+    licence: 0054414W
+  - nom: DIAS Joao Carlos
+    licence: 0909316M
+  - nom: CHAMPOTRAY Christophe
+    licence: 0697976V
+  - nom: PROT Laurent
+    licence: 0279066H
+  - nom: JOURDAIN Valerie
+    licence: 0673086R
+  - nom: AUGUIN Raphael
+    licence: 0029911M
+  - nom: LOPEZ Quentin
+    licence: 0600301B
+  - nom: BARBA Loic
+    licence: 0993107P
+  - nom: FERRAND Herve
+    licence: 0783489U
+  - nom: BACOUEL MALIK Pauline
+    licence: 1013606O
+  - nom: LORIOT Sophie
+    licence: 1013622E
+  - nom: LUSARDI Leo
+    licence: 0042726S
+  - nom: ROUBA Siham
+    licence: 1027634C
+  - nom: SERIDI Hana
+    licence: 1027645N
+  - nom: TESTA Romain
+    licence: 1027740E
+  - nom: GEANT Lucile
+    licence: 1027751P
+  - nom: BEN AHMED Zied
+    licence: 1027758W
+  - nom: VERPLAETSE Oceane
+    licence: 1027770I
+  - nom: SENE AMATMOUNTRY Adeline
+    licence: 1027862W
+  - nom: DJIVAKOV Bassan
+    licence: 1027865Z
+  - nom: LEFEBVRE Solene
+    licence: 1027866A
+  - nom: SIVAPRAGASSAME Raghunath
+    licence: 1027867B
+  - nom: WILS Virginie
+    licence: 1027892A
+  - nom: COLEZ Thieffen
+    licence: 1027894C
+  - nom: CHARLES Jefte
+    licence: 1027900I
+  - nom: BONINE Elysha
+    licence: 1027904M
+  - nom: COUDERT Celia
+    licence: 1027909R
+  - nom: DELAVAULT Kyllian
+    licence: 1027933P
+  - nom: BIANAY Jade
+    licence: 1027941X
+  - nom: LENNE-AUNEAU Ulysse
+    licence: 1027946C
+  - nom: HUREAU Elena
+    licence: 1027948E
+  - nom: BONINO Elliot
+    licence: 1027950G
+  - nom: SADAOUI Asma
+    licence: 1029570O
+  - nom: SADAOUI Arezki
+    licence: 1029573R
+  - nom: GARRIGUES Elena
+    licence: 1000208G
+  - nom: GARRIGUES Julian
+    licence: 1029578W
+  - nom: ANGOT Jean
+    licence: 0941360T
+  - nom: LOUPAN Oscar
+    licence: 1010893F
+  - nom: SAINTOT-MAFFRAY Alena
+    licence: 1009952A
+  - nom: LOPEZ Aryana
+    licence: 1009883J
+  - nom: FOUQUEREL Sebastien
+    licence: 1013715T
+  - nom: FOUQUEREL Paul
+    licence: 1010919F
+  - nom: POUET Marina
+    licence: 0915530S
+  - nom: FRANCOIS Catherine
+    licence: 0897791K
+  - nom: PRAQUIN Loic
+    licence: 0941586N
+  - nom: RIGOULET Franck
+    licence: 0345753U
+  - nom: MAILLIART Jade
+    licence: 1000252Y
+  - nom: SCTRICK Huguette
+    licence: 0065719J
+  - nom: LAFOREST Clemence
+    licence: 1013641X
+  - nom: GURGEY Vincent
+    licence: 0938699A
+  - nom: LEBRETON Franck
+    licence: 0793043D
+  - nom: WILLEMS Helene
+    licence: 0964581H
+  - nom: WILLEMS Patricia
+    licence: 0095807N
+  - nom: BENSALEM Samy
+    licence: 0025448L
+  - nom: BENSALEM Ynes
+    licence: 0025444G
+  - nom: SANDRET Emmanuel
+    licence: 0272681T
+  - nom: HUE Francoise
+    licence: 0400489P
+  - nom: DUCROCQ Heloise
+    licence: 0430247K
+  - nom: PERONNET Gaetan
+    licence: 0796669V
+  - nom: BOUFFON J Pierre
+    licence: 0011856M
+  - nom: CUGUEN Laiyna
+    licence: 0663635T
+  - nom: THOMAS Florian
+    licence: 1041174W
+  - nom: TURKASLAN Ahmet
+    licence: 0025423J
+  - nom: PRIMAULT Emmanuel
+    licence: 1013582Q
+  - nom: PROT-DESVIGNES Anne
+    licence: 0278041U
+  - nom: GUERE Adelie
+    licence: 1045431P
+  - nom: BOUDIER RIVOALLAN Leo
+    licence: 1045438W
+  - nom: SIEMON Romain
+    licence: 1045445D
+  - nom: RIBEIRO GONCALVES Emilie
+    licence: 1045450I
+  - nom: RIBEIRO GONCALVES Gabriel
+    licence: 1045452K
+  - nom: BAKAOOLLAH Wissem
+    licence: 1045461T
+  - nom: BAKAOOLLAH Farzan
+    licence: 0993364U
+  - nom: AHMAD Sultan
+    licence: 1045469B
+  - nom: WROBEL Maelys
+    licence: 1045475H
+  - nom: JACQUIN Michel
+    licence: 0440291C
+  - nom: DUCHATELET Julien
+    licence: 0967660E
+  - nom: PIERSON Noemie
+    licence: 0966423K
+  - nom: WROBEL Frederic
+    licence: 1053630Y
+  '2026':
+  - nom: KEERSTOCK Sandrine
+    licence: 0814478C
+  - nom: CUSSOT Bernard
+    licence: 0605717N
+  - nom: DUFOURT Laurent
+    licence: 0797486H
+  - nom: MULLER Didier
+    licence: 0466692Z
+  - nom: PERONNET Christian
+    licence: 0076584U
+  - nom: CUSSOT Marie-Anne
+    licence: 0815551U
+  - nom: FONTAINE Laurence
+    licence: 0229164S
+  - nom: DEFRANCE DE TERSANT Thierry
+    licence: 0289047G
+  - nom: DEFRANCE DE TERSANT Monique
+    licence: 0289048H
+  - nom: TESTA Romain
+    licence: 1027740E
+  - nom: SCTRICK Stephane
+    licence: 0364736C
+  - nom: LEPEUC Jean-Francois
+    licence: 0343941Z
+  - nom: LADAGUE Francois
+    licence: 0024619K
+  - nom: BARRE Guillaume
+    licence: 0693361D
+  - nom: BARRE Abigael
+    licence: 0056968X
+  - nom: POUET Marina
+    licence: 0915530S
+  - nom: CHOUC Thierry
+    licence: 0312526C
+  - nom: LOPEZ Quentin
+    licence: 0600301B
+  - nom: POISSY Dorian
+    licence: 0714047N
+  - nom: GARRIGUES Elena
+    licence: 1000208G
+  - nom: GARRIGUES Julian
+    licence: 1029578W
+  - nom: GARRIGUES Emmanuelle
+    licence: 0605718P
+  - nom: GARRIGUES Francois
+    licence: 0796653C
+  - nom: MAILLIART Jade
+    licence: 1000252Y
+  - nom: MOREAU Sebastien
+    licence: 0944673U
+  - nom: RAMOS Valerie
+    licence: 1019813H
+  - nom: CARLET Patrice
+    licence: 0765542L
+  - nom: GASTALDI Jean-Pierre
+    licence: 0746524P
+  - nom: CHAMPION-HERIN Sophie
+    licence: 0818270Z
+  - nom: KOLODZIEJ Vincent
+    licence: 0693353V
+  - nom: BACOUEL MALIK Pauline
+    licence: 1013606O
+  - nom: GUERVIL Emeline
+    licence: 0025435X
+  - nom: HUE Francoise
+    licence: 0400489P
+  - nom: LORIOT Sophie
+    licence: 1013622E
+  - nom: BAKAOOLLAH Wissem
+    licence: 1045461T
+  - nom: BAKAOOLLAH Farzan
+    licence: 0993364U
+  - nom: THON Emmanuel
+    licence: 0224099L
+  - nom: THON Raphael
+    licence: 0025477T
+  - nom: THOMAS Florian
+    licence: 1041174W
+  - nom: CUGUEN Laiyna
+    licence: 0663635T
+  - nom: HANG YING Tony
+    licence: 0989471M
+  - nom: SIEMON Romain
+    licence: 1045445D
+  - nom: CARTIER-TAILLARD Darius
+    licence: 0025415A
+  - nom: PROT Laurent
+    licence: 0279066H
+  - nom: MOREAU Julien
+    licence: 0835879P
+  - nom: MOREAU Sylvie
+    licence: 0455326V
+  - nom: SIVAPRAGASSAME Raghunath
+    licence: 1027867B
+  - nom: SALLEM Wajdi
+    licence: 1013591Z
+  - nom: GURGEY Vincent
+    licence: 0938699A
+  - nom: WARLET Balthazar
+    licence: 0007038A
+  - nom: BELAMY Olivier
+    licence: 1013595D
+  - nom: PROT-DESVIGNES Anne
+    licence: 0278041U
+  - nom: FRANCOIS Catherine
+    licence: 0897791K
+  - nom: WILLEMS Patricia
+    licence: 0095807N
+  - nom: PRAQUIN Loic
+    licence: 0941586N
+  - nom: FOUQUEREL Paul
+    licence: 1010919F
+  - nom: SADAOUI Asma
+    licence: 1029570O
+  - nom: MORISSEAU Lea
+    licence: 0989264M
+  - nom: GOUDACHI Hamza
+    licence: 0966439C
+  - nom: JAPPELLE Laura
+    licence: 0007316C
+  - nom: DEFRANCE DE TERSANT Thibaut
+    licence: 0275690N
+  - nom: PHU Davy
+    licence: 0949273U
+  - nom: LOUIS Adrian
+    licence: 0775609D
+  - nom: ANGOT Jean
+    licence: 0941360T
+  - nom: JOURDAIN Valerie
+    licence: 0673086R
+  - nom: AUGUIN Raphael
+    licence: 0029911M
+  - nom: LEBRETON Franck
+    licence: 0793043D
+  - nom: HADRZYNSKI Baptiste
+    licence: 1056074Y
+  - nom: ARZE Leane
+    licence: 0025439B
+  - nom: HUREAU Elena
+    licence: 1027948E
+  - nom: CORDIER Meline
+    licence: 1013625H
+  - nom: BONINO Elliot
+    licence: 1027950G
+  - nom: LENNE-AUNEAU Ulysse
+    licence: 1027946C
+  - nom: BIANAY Jade
+    licence: 1027941X
+  - nom: LERAT Zoé
+    licence: 1002064Q
+  - nom: TARDY-MENAULT Etienne
+    licence: 0989325D
+  - nom: BEAUDET Theophile
+    licence: 0057009S
+  - nom: DARRE Morgane
+    licence: 1009857J
+  - nom: PIERSON Noemie
+    licence: 0966423K
+  - nom: SENHADJI Reda
+    licence: 1056941H
+  - nom: GRACIAN Elodie
+    licence: 1057425X
+  - nom: TRAORE Kagny
+    licence: 1057430C
+  - nom: LEFEBVRE Charline
+    licence: 0044853D
+  - nom: LEFEBVRE Camille
+    licence: 0025409U
+  - nom: BELAMY-TILLIET Théo
+    licence: 0007069J
+  - nom: JORGE Amelie
+    licence: 0054427K
+  - nom: SWIDERSKI Remi
+    licence: 1057742C
+  - nom: DEKKICHE Amina
+    licence: 1057751L
+  - nom: GIDEL Cecile
+    licence: 1057756Q
+  - nom: RABLAT Severine
+    licence: 1057763X
+  - nom: NGOMBA Audrey
+    licence: 1057774I
+  - nom: TONNERRE Gilda
+    licence: 0670855R
+  - nom: WEI Zizhen
+    licence: 1057926E
+  - nom: DOUMENC Etienne
+    licence: 0998565X
+  - nom: WACOGNE Didier
+    licence: 0611956V
+  - nom: BOUJU Christiane
+    licence: 0060045S
+  - nom: DUCROCQ Heloise
+    licence: 0430247K
+  - nom: SANDRET Emmanuel
+    licence: 0272681T
+  - nom: GAMBIN Estelle
+    licence: 1062281R
+  - nom: GMIDEN Lojeyne
+    licence: 1062309T
+  - nom: ABIGNANO Pierre
+    licence: 1062410Q
+  - nom: ABIGNANO Valentina
+    licence: 1062412S
+  - nom: JARAMILLO CANOA Valentina
+    licence: 1062414U
+  - nom: DEMONGEOT Zoe
+    licence: 1062415V
+  - nom: LALES Mathilde
+    licence: 1062418Y
+  - nom: NEEZ Joan
+    licence: 1062460O
+  - nom: MARIAUZOULS Lucas
+    licence: 1062467V
+  - nom: AURIBAULT DUCAULE Alice
+    licence: 1062471Z
+  - nom: CARBONNIER Robin
+    licence: 1062476E
+  - nom: MERESSE Noemie
+    licence: 1062486O
+  - nom: FERRATY Eva
+    licence: 0789435G
+  - nom: LUSARDI Leo
+    licence: 0042726S
+  - nom: LEURET-OTTAVI Jeanne
+    licence: 1047281T
+  - nom: SCTRICK Huguette
+    licence: 0065719J
+  - nom: ROUBA Siham
+    licence: 1027634C
+  - nom: CHAMPOTRAY Christophe
+    licence: 0697976V
+  - nom: DEMONGEOT Theo
+    licence: 0025544R
+  - nom: KUNTZMANN Pierre-Andre
+    licence: 1013721Z
+  - nom: FERRAND Herve
+    licence: 0783489U
+  - nom: JEANTET Clement
+    licence: 1068827L
+  - nom: RINGEVAL Selena
+    licence: 1068837V
+  - nom: BOURGEOIS Ethan
+    licence: 1068846E
+  - nom: FANIELLE Noe
+    licence: 1068851J
+  - nom: BELAMY-TILLIET Gwendoline
+    licence: 1068881N
+  - nom: GHOULAM NABI Wassim
+    licence: 1068889V
+  - nom: TRUCHOT GRESSANI Hermes
+    licence: 1068920A
+  - nom: DOT Nicolas
+    licence: 0054414W
+  - nom: VINEL Lucie
+    licence: 0877653W
+  - nom: PERONNET Gaetan
+    licence: 0796669V
+  - nom: RIGOULET Franck
+    licence: 0345753U
+  - nom: GAGLIARDI Mickael
+    licence: 1073504I
+
+grands_concours_mots_cles:
+  - "championnat de france"
+  - "championnat régional"
+  - "championnat regional"
+  - "^cr\\b"
+  - "idf"
+  - "coupe de france"
+  - "3D  - BOIS D'ARCY"
