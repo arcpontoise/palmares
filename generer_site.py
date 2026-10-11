@@ -65,7 +65,7 @@ DISCIPLINES_RECORDS = [
 ]
 # Le tir 3D est passé de 40 à 24 cibles (sans zone « 11 ») : les scores ne sont
 # pas comparables de part et d'autre. Première saison au format 24 cibles.
-PREMIERE_SAISON_3D_24_CIBLES = 2016
+PREMIERE_SAISON_3D_24_CIBLES = 2017
 
 
 # --- Modèle ----------------------------------------------------------------

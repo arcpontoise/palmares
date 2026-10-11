@@ -26,7 +26,7 @@ Le travail se fait en deux temps :
 
 Règles de comptage principales : un archer et un concours = une participation
 (classements scratch et de catégorie fusionnés, meilleure place retenue) ;
-podium = place 1 à 3 ; le tir 3D est scindé avant/après la saison 2016 (40
+podium = place 1 à 3 ; le tir 3D est scindé avant/après la saison 2017 (40
 puis 24 cibles, scores non comparables) via `PREMIERE_SAISON_3D_24_CIBLES`
 dans `generer_site.py`.
 
