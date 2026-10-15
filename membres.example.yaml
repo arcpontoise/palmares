@@ -13,3 +13,11 @@ grands_concours_mots_cles:
   - "^cr\\b"
   - "idf"
   - "coupe de france"
+
+# Expressions retirées du nom avant d'appliquer les mots-clés ci-dessus :
+# « SÉLECTIF AU CHAMPIONNAT DE FRANCE - SANNOIS » n'est pas un grand concours,
+# « CR IDF … SÉLECTIF AU CHAMPIONNAT DE FRANCE » le reste (grâce à « ^cr »).
+# Les championnats et coupes de France signalés par la FFTA (pictogramme) sont
+# toujours retenus, même si leur nom n'est qu'une ville.
+grands_concours_exclusions:
+  - "(s[ée]lectif|qualificatif)s?\\s+((au|aux|pour\\s+les?)\\s+)?championnats?\\s+de\\s+france"

@@ -15,6 +15,7 @@ Pages produites dans le dossier de sortie (``site/`` par défaut) :
     archers/<licence>.html  carrière d'un archer
     grands-concours.html  podiums des championnats et grands concours
     records.html          classement des médaillés et meilleurs scores
+    distinctions.html     badges et écussons que les scores permettent de demander
     a-propos.html         méthode de calcul
 
 Règles de comptage : plusieurs lignes d'un même archer pour un même
@@ -30,6 +31,7 @@ import html as html_lib
 import logging
 import re
 import shutil
+import unicodedata
 from collections import defaultdict
 from dataclasses import dataclass
 from datetime import date
@@ -51,6 +53,11 @@ DEFAULT_MOTS_CLES = [
     r"^crte\b",
     r"coupe de france",
 ]
+# Retirés du nom avant d'appliquer les mots-clés : un « sélectif au championnat
+# de France » n'est pas un championnat (mais « CR … sélectif … » reste un CR).
+DEFAULT_EXCLUSIONS = [
+    r"(s[ée]lectif|qualificatif)s?\s+((au|aux|pour\s+les?)\s+)?championnats?\s+de\s+france",
+]
 # Disciplines pour lesquelles un record de points est comparable.
 DISCIPLINES_RECORDS = [
     "Salle (18 m)",
@@ -58,9 +65,11 @@ DISCIPLINES_RECORDS = [
     "2x70 m",
     "2x50 m",
     "Fédéral",
+    "TAE DI",
+    "TAE DN",
     "TAE",
     "Campagne",
-    "3D (24 cibles)",
+    "3D",
     "3D (40 cibles)",
 ]
 # Le tir 3D est passé de 40 à 24 cibles (sans zone « 11 ») : les scores ne sont
@@ -88,6 +97,11 @@ class Epreuve:
     sexe: str
     categorie: str
     grand: bool
+    age: str = ""  # Poussin, Benjamin, Minime, Cadet, Junior, Adulte ("" si inconnu)
+    distance: int | None = None  # en mètres, quand la catégorie la précise
+    blason: int | None = None  # en cm, idem
+    piquet: int | None = None  # 3D, campagne, nature : 1 rouge, 2 bleu, 3 blanc
+    piquet_deduit: bool = False  # piquet non précisé par la FFTA, déduit de l'âge et de l'arc
 
     @property
     def podium(self) -> bool:
@@ -98,7 +112,7 @@ def normaliser_discipline(brut: str, saison: str = "") -> str:
     d = re.sub(r"\b(19|20)\d\d\b", "", brut).lower()
     if "3d" in d:
         if saison.isdigit() and int(saison) >= PREMIERE_SAISON_3D_24_CIBLES:
-            return "3D (24 cibles)"
+            return "3D"
         return "3D (40 cibles)"
     if "campagne" in d:
         return "Campagne"
@@ -121,6 +135,22 @@ def normaliser_discipline(brut: str, saison: str = "") -> str:
     return "Autre"
 
 
+def discipline_tae(arme: str, distance: int | None, blason: int | None) -> str:
+    """TAE international (DI) ou national (DN), déduit de la distance et du blason.
+
+    DI : classique à 60 m (U18, Senior 3) ou 70 m, poulies sur 80 cm.
+    DN : classique à 50 m, poulies sur 122 cm. Sinon (jeunes, arc nu) : « TAE ».
+    """
+    if arme == "Poulies" and blason in (80, 122):
+        return "TAE DI" if blason == 80 else "TAE DN"
+    if arme == "Classique" and distance:
+        if distance >= 60:
+            return "TAE DI"
+        if distance == 50:
+            return "TAE DN"
+    return "TAE"
+
+
 def normaliser_arme(categorie: str) -> str:
     c = categorie.lower()
     if "poulies" in c and re.search(r"\bnu\b", c):
@@ -131,13 +161,41 @@ def normaliser_arme(categorie: str) -> str:
         return "Arc nu"
     if "chasse" in c:
         return "Arc chasse"
-    if "droit" in c:
+    if "droit" in c or "longbow" in c:
         return "Arc droit"
     if "libre" in c:
         return "Arc libre"
     if "classique" in c:
         return "Classique"
     return "Autre"
+
+
+def deduire_piquet(discipline: str, arme: str, age: str) -> int | None:
+    """Piquet habituel d'une catégorie, pour les résultats où la FFTA ne le précise pas.
+
+    Règles relevées sur les résultats récents (292 sur 293 retrouvés). La 3D sur
+    40 cibles (avant 2017) avait d'autres distances : pas de déduction.
+    """
+    jeune = age in ("Benjamin", "Minime")
+    if discipline == "3D":
+        if jeune:
+            return 3
+        if age == "Cadet":
+            return 2 if arme == "Arc libre" else None
+        if age in ("Junior", "Adulte"):
+            return 1 if arme == "Arc libre" else 2
+    if discipline == "Campagne":
+        if jeune:
+            return 3
+        if arme in ("Classique", "Poulies"):
+            return 2 if age == "Cadet" else 1
+        if arme == "Arc nu":
+            return 3 if age == "Cadet" else 2
+        if arme == "Arc droit" and age in ("Junior", "Adulte"):
+            return 3
+    if discipline == "Parcours nature" and age in ("Junior", "Adulte"):
+        return 1
+    return None
 
 
 def normaliser_sexe(categorie: str) -> str:
@@ -149,8 +207,31 @@ def normaliser_sexe(categorie: str) -> str:
     return ""
 
 
+def normaliser_age(categorie: str) -> str:
+    """Classe d'âge (anciennes et nouvelles appellations) ; "" pour un classement scratch."""
+    c = categorie.lower()
+    if re.match(r"sc(ra|ar)tch", c):
+        return ""
+    for motif, age in (
+        (r"poussin|\bu11\b", "Poussin"),
+        (r"benjamin|\bu13\b", "Benjamin"),
+        (r"minime|\bu15\b", "Minime"),
+        (r"u18-u21|junior|\bu21\b", "Junior"),
+        (r"cadet|\bu18\b", "Cadet"),
+    ):
+        if re.search(motif, c):
+            return age
+    return "Adulte"
+
+
+def distance_blason(categorie: str) -> tuple[int | None, int | None]:
+    """Première distance et premier blason indiqués après l'année (« … 2026 - 70m - 122cm »)."""
+    m = re.search(r"\b(19|20)\d\d\b.*?(\d+)\s*m\s*-\s*(\d+)\s*cm", categorie)
+    return (int(m.group(2)), int(m.group(3))) if m else (None, None)
+
+
 def _iso(date_fr: str) -> str:
-    m = re.match(r"(\d{2})/(\d{2})/(\d{4})", date_fr)
+    m = re.search(r"(\d{2})/(\d{2})/(\d{4})", date_fr)
     return f"{m.group(3)}-{m.group(2)}-{m.group(1)}" if m else date_fr
 
 
@@ -159,11 +240,18 @@ def _entier(texte: str) -> int | None:
     return int(m.group(0)) if m else None
 
 
-def est_grand_concours(nom: str, mots_cles: list[str]) -> bool:
+def est_grand_concours(nom: str, mots_cles: list[str], exclusions: list[str] = DEFAULT_EXCLUSIONS) -> bool:
+    for motif in exclusions:
+        nom = re.sub(motif, " ", nom, flags=re.IGNORECASE)
     return any(re.search(m, nom.lower(), flags=re.IGNORECASE) for m in mots_cles)
 
 
-def construire_epreuves(rows: list[dict[str, Any]], mots_cles: list[str]) -> list[Epreuve]:
+def _vrai(valeur: Any) -> bool:
+    return str(valeur).strip().lower() == "true"
+
+
+def construire_epreuves(rows: list[dict[str, Any]], mots_cles: list[str],
+                        exclusions: list[str] = DEFAULT_EXCLUSIONS) -> list[Epreuve]:
     """Fusionne les lignes d'un même archer/concours et normalise les champs."""
     groupes: dict[tuple[str, str, str], list[dict[str, Any]]] = defaultdict(list)
     for row in rows:
@@ -180,12 +268,16 @@ def construire_epreuves(rows: list[dict[str, Any]], mots_cles: list[str]) -> lis
         place = _entier(str(meilleure["place"]))
         points = [p for p in (_entier(str(x["points"])) for x in lignes) if p]
         categorie = str(meilleure["sous_categorie"])
+        toutes = [str(x["sous_categorie"]) for x in lignes]
+        age = next((a for a in map(normaliser_age, toutes) if a), "")
+        distance, blason = next((db for db in map(distance_blason, toutes) if db[0]), (None, None))
+        piquet = next((int(m.group(1)) for c in toutes if (m := re.search(r"piquet\s*(\d)", c, re.I))), None)
         epreuves.append(
             Epreuve(
                 licence=meilleure["archer_licence"],
                 nom=meilleure["archer_nom"],
                 saison=str(meilleure["saison"]),
-                date=meilleure["date"],
+                date=re.sub(r"^\D+", "", meilleure["date"]),  # anciens CSV : « **10/08/2002 »
                 iso=_iso(meilleure["date"]),
                 concours=meilleure["concours"],
                 place=place or None,
@@ -194,11 +286,212 @@ def construire_epreuves(rows: list[dict[str, Any]], mots_cles: list[str]) -> lis
                 arme=normaliser_arme(categorie),
                 sexe=normaliser_sexe(categorie),
                 categorie=re.sub(r"\s*\b(19|20)\d\d\b.*", "", categorie).strip(),
-                grand=est_grand_concours(meilleure["concours"], mots_cles),
+                # Pictogramme FFTA (championnat ou coupe de France) ou nom du concours.
+                grand=any(_vrai(x.get("championnat_france")) for x in lignes)
+                or est_grand_concours(meilleure["concours"], mots_cles, exclusions),
+                age=age,
+                distance=distance,
+                blason=blason,
+                piquet=piquet,
             )
         )
+    for e in epreuves:
+        if e.discipline == "TAE":
+            e.discipline = discipline_tae(e.arme, e.distance, e.blason)
+    # Classement scratch seul : classe d'âge reprise d'un autre concours de la saison.
+    ages = {(e.licence, e.saison): e.age for e in epreuves if e.age}
+    for e in epreuves:
+        e.age = e.age or ages.get((e.licence, e.saison), "Adulte")
+        if e.piquet is None:
+            e.piquet = deduire_piquet(e.discipline, e.arme, e.age)
+            e.piquet_deduit = e.piquet is not None
     epreuves.sort(key=lambda e: (e.saison, e.iso), reverse=True)
     return epreuves
+
+
+# --- Distinctions ----------------------------------------------------------
+# Barèmes FFTA d'après https://fr.wikipedia.org/wiki/Distinctions_au_tir_%C3%A0_l%27arc
+# Les distinctions sont théoriques : elles doivent être demandées par l'archer,
+# et certaines conditions (blason, nombre de cibles) ne sont pas vérifiables.
+
+SOURCE_DISTINCTIONS = "https://fr.wikipedia.org/wiki/Distinctions_au_tir_%C3%A0_l%27arc"
+_COULEURS = ["Vert", "Blanc", "Noir", "Bleu", "Rouge", "Jaune", "★", "★★", "★★★"]
+_ECUSSONS = ["Vert sur fond blanc", "Argent sur fond vert", "Or sur fond blanc",
+             "Or sur fond noir", "Or sur fond bleu", "Or sur fond rouge"]
+_ORANGE = ["Noir sur fond orange", "Argent sur fond orange", "Or sur fond orange"]
+JEUNES = {"Poussin", "Benjamin", "Minime", "Cadet"}
+
+
+@dataclass(frozen=True)
+class Bareme:
+    nom: str
+    niveaux: tuple[str, ...]
+    seuils: dict[str, tuple[int, ...]]  # colonne du barème -> points minimaux par niveau
+
+    def image(self, niveau: int) -> str:
+        """Insigne découpé par ``decouper_insignes.py`` (« Écureuil » -> ecureuil-0.png)."""
+        sans_accents = unicodedata.normalize("NFKD", self.nom).encode("ascii", "ignore").decode()
+        return f"{sans_accents.lower().replace(' ', '-')}-{niveau}.png"
+
+
+BAREMES = {
+    b.nom: b
+    for b in (
+        Bareme("Salle", tuple(_COULEURS), {
+            "Classique": (455, 480, 500, 515, 530, 545, 555, 565, 575),
+            "Poulies": (540, 550, 555, 560, 565, 570, 575, 580, 585),
+        }),
+        Bareme("FITA", tuple(_COULEURS), {
+            "Classique": (480, 510, 535, 560, 585, 605, 625, 645, 660),
+            "Poulies": (620, 635, 645, 655, 665, 675, 685, 695, 700),
+        }),
+        Bareme("Fédéral", ("1 archer", "2 archers", "3 archers", "4 archers", "1 archer noir"), {
+            "Classique": (500, 550, 600, 640, 670),
+            "Poulies": (550, 600, 640, 670, 690),
+        }),
+        Bareme("Marcassin campagne", tuple(_ECUSSONS[:4]), {"Classique": (160, 210, 270, 320)}),
+        Bareme("Écureuil", tuple(_ECUSSONS), {
+            "Classique": (200, 240, 260, 300, 340, 380),
+            "Poulies": (220, 260, 280, 320, 360, 400),
+            "Arc nu cadet": (160, 200, 220, 260, 300, 340),
+            "Arc nu": (180, 220, 240, 280, 320, 360),
+        }),
+        Bareme("Marcassin nature", tuple(_ORANGE), {"Arc nu": (325, 550, 775)}),
+        Bareme("Sanglier", tuple(_ECUSSONS), {
+            "Arc droit": (240, 475, 700, 850, 1000, 1075),
+            "Arc chasse": (350, 575, 800, 950, 1100, 1175),
+            "Arc nu": (400, 625, 850, 1000, 1150, 1225),
+            "Poulies": (450, 675, 900, 1050, 1200, 1275),
+            "Arc libre": (600, 825, 1050, 1200, 1350, 1425),
+        }),
+        Bareme("Lynx", tuple(_ORANGE), {"Arc nu": (150, 175, 210)}),
+        Bareme("Chevreuil", tuple(_ECUSSONS), {
+            "Arc droit": (70, 125, 185, 235, 270, 335),
+            "Arc chasse": (85, 140, 195, 260, 300, 360),
+            "Arc nu": (110, 160, 220, 270, 315, 375),
+            "Poulies": (140, 210, 280, 330, 385, 435),
+            "Arc libre": (185, 260, 330, 380, 435, 460),
+        }),
+        Bareme("Beursault", ("1 marmot", "2 marmots", "3 marmots", "4 marmots"), {
+            "Classique": (32, 35, 38, 40),
+            "Poulies": (32, 35, 38, 40),
+        }),
+    )
+}
+DISCIPLINES_FITA = {"FITA / extérieur", "2x70 m", "2x50 m", "TAE DI", "TAE"}  # pas le TAE DN
+
+
+def _distance_fita(age: str, arme: str) -> int | None:
+    """Distance à laquelle les badges FITA se gagnent, selon l'âge et l'arc."""
+    if age == "Benjamin":
+        return 30
+    if age == "Minime":
+        return 40
+    if age == "Poussin":
+        return None
+    if arme == "Poulies":
+        return 50
+    return 60 if age == "Cadet" else 70
+
+
+def _bareme_epreuve(e: Epreuve) -> tuple[str, str, int, int] | None:
+    """(barème, colonne, score, niveau maximal) applicables à une épreuve, sinon None."""
+    score = e.points
+    if not score:
+        return None
+    arme = "Poulies" if e.arme == "Poulies nu" else e.arme
+    cible = "Classique" if arme == "Arc nu" else arme  # salle, FITA, fédéral
+    jeune = e.age in JEUNES
+    if e.discipline == "Salle (18 m)" and cible in ("Classique", "Poulies"):
+        # Les 3 étoiles se gagnent obligatoirement sur blason de 40 cm.
+        petit = e.blason == 40 if e.blason else e.age not in ("Poussin", "Benjamin", "Minime")
+        return "Salle", cible, score, 9 if petit else 6
+    if e.discipline in DISCIPLINES_FITA and cible in ("Classique", "Poulies"):
+        distance = e.distance or {"2x70 m": 70, "2x50 m": 50}.get(e.discipline)
+        attendue = _distance_fita(e.age, e.arme)
+        if attendue is None or (distance and distance != attendue):
+            return None
+        if e.arme == "Poulies" and e.blason and e.blason != 80:
+            return None  # barème poulies : blason de 80 cm réduit
+        return "FITA", cible, score, 9
+    if e.discipline == "Fédéral" and cible in ("Classique", "Poulies"):
+        return "Fédéral", cible, score, 5
+    if e.discipline == "Campagne" and score <= 432 and e.age != "Poussin":  # 24 cibles
+        if arme == "Classique":
+            return ("Marcassin campagne", "Classique", score, 4) if jeune else ("Écureuil", "Classique", score, 6)
+        if arme == "Poulies" and e.age not in JEUNES - {"Cadet"}:
+            return "Écureuil", "Poulies", score, 6
+        if arme == "Arc nu" and e.age not in JEUNES - {"Cadet"}:
+            return "Écureuil", "Arc nu cadet" if e.age == "Cadet" else "Arc nu", score, 6
+        return None
+    for discipline, maxi, jeunes, adultes in (
+        ("Parcours nature", 1470, "Marcassin nature", "Sanglier"),
+        ("3D", 528, "Lynx", "Chevreuil"),
+    ):
+        if e.discipline == discipline and score <= maxi:
+            if jeune and not (e.age == "Cadet" and arme == "Arc libre"):
+                return (jeunes, arme, score, 3) if arme == "Arc nu" else None
+            return (adultes, arme, score, 6) if arme in BAREMES[adultes].seuils else None
+    if e.discipline == "Beursault" and arme in ("Classique", "Poulies") and score >= 1000:
+        return "Beursault", arme, score // 1000, 4  # points notés « honneurs × 1000 + points »
+    return None
+
+
+@dataclass
+class Distinction:
+    bareme: Bareme
+    niveau: int  # indice dans bareme.niveaux
+
+    @property
+    def libelle(self) -> str:
+        return f"{self.bareme.nom} – {self.bareme.niveaux[self.niveau]}"
+
+
+def distinction(e: Epreuve) -> Distinction | None:
+    """Distinction la plus haute que permet le score d'une épreuve."""
+    regle = _bareme_epreuve(e)
+    if regle is None:
+        return None
+    nom, colonne, score, plafond = regle
+    bareme = BAREMES[nom]
+    atteints = [i for i, seuil in enumerate(bareme.seuils[colonne][:plafond]) if score >= seuil]
+    return Distinction(bareme, atteints[-1]) if atteints else None
+
+
+@dataclass
+class Obtention:
+    """Progression d'un archer pour un barème et un arc donnés."""
+
+    bareme: Bareme
+    arme: str
+    etapes: list[tuple[int, Epreuve]]  # (niveau, épreuve) à chaque nouveau niveau, dans l'ordre
+
+    @property
+    def niveau(self) -> int:
+        return self.etapes[-1][0]
+
+    @property
+    def epreuve(self) -> Epreuve:
+        return self.etapes[-1][1]
+
+    def niveau_avant(self, saison: str) -> int | None:
+        avant = [n for n, e in self.etapes if e.saison < saison]
+        return avant[-1] if avant else None
+
+
+def obtentions(liste: list[Epreuve]) -> list[Obtention]:
+    """Distinctions d'un archer, la plus récente en premier."""
+    par_cle: dict[tuple[str, str], Obtention] = {}
+    for e in sorted(liste, key=lambda x: x.iso):
+        d = distinction(e)
+        if d is None:
+            continue
+        cle = (d.bareme.nom, e.arme)
+        if cle not in par_cle:
+            par_cle[cle] = Obtention(d.bareme, e.arme, [(d.niveau, e)])
+        elif d.niveau > par_cle[cle].niveau:
+            par_cle[cle].etapes.append((d.niveau, e))
+    return sorted(par_cle.values(), key=lambda o: o.epreuve.iso, reverse=True)
 
 
 # --- Briques HTML ----------------------------------------------------------
@@ -286,6 +579,16 @@ svg.chart rect.m2 { fill: var(--m2); } svg.chart rect.m3 { fill: var(--m3); }
 svg.chart rect.b { stroke: var(--carte); stroke-width: 2; }
 .i0 { background: var(--m0); } .i1 { background: var(--m1); }
 .i2 { background: var(--m2); } .i3 { background: var(--m3); }
+.participant { white-space: nowrap; }
+.piquet { white-space: nowrap; }
+.piquet.deduit { font-style: italic; color: var(--gris); }
+.piquet i { display: inline-block; width: 0.75rem; height: 0.75rem; border-radius: 50%;
+  border: 1px solid var(--gris-doux); margin-right: 0.35rem; vertical-align: -1px; }
+.distinction { white-space: nowrap; }
+img.insigne { height: 32px; width: auto; vertical-align: middle; margin-left: 0.3rem; }
+.etoiles { color: #9a6b00; font-size: 0.85rem; margin-left: 0.1rem; }
+.etapes { color: var(--gris); font-size: 0.85rem; white-space: nowrap; }
+.etapes img.insigne { height: 22px; margin: 0 0.15rem 0 0; }
 details { margin: 0.6rem 0; }
 summary { cursor: pointer; font-weight: 600; padding: 0.3rem 0; color: var(--bleu); }
 @media (max-width: 600px) {
@@ -325,6 +628,13 @@ document.querySelectorAll('table.tri').forEach(function (table) {
     });
   });
 });
+// Un lien vers une section repliée (#s2024) l'ouvre.
+function ouvrirAncre() {
+  const cible = location.hash && document.getElementById(location.hash.slice(1));
+  if (cible && cible.tagName === 'DETAILS') { cible.open = true; cible.scrollIntoView(); }
+}
+window.addEventListener('hashchange', ouvrirAncre);
+ouvrirAncre();
 document.querySelectorAll('input[data-filtre]').forEach(function (input) {
   const table = document.getElementById(input.dataset.filtre);
   input.addEventListener('input', function () {
@@ -347,6 +657,61 @@ def place_html(place: int | None) -> str:
     return f"{MEDAILLES[place]} {place}" if place in MEDAILLES else str(place)
 
 
+PIQUETS = {1: ("Rouge", "#c62828"), 2: ("Bleu", "#2445b8"), 3: ("Blanc", "#ffffff")}
+
+
+def piquet_html(e: Epreuve) -> str:
+    if e.piquet not in PIQUETS:
+        return ""
+    nom, couleur = PIQUETS[e.piquet]
+    if e.piquet_deduit:
+        return (f"<span class='piquet deduit' title=\"Piquet {e.piquet}, déduit de la catégorie (non précisé par "
+                f"la FFTA)\"><i style='background:{couleur}'></i>{nom}</span>")
+    return f"<span class='piquet' title='Piquet {e.piquet}'><i style='background:{couleur}'></i>{nom}</span>"
+
+
+def insigne(bareme: Bareme, niveau: int, profondeur: int) -> str:
+    """Image de l'insigne ; le nom du niveau apparaît au survol."""
+    nom = bareme.niveaux[niveau]
+    libelle = esc(f"{bareme.nom} – {nom}")
+    # Les insignes à étoiles ne se distinguent pas en petit : on écrit les étoiles.
+    etoiles = f"<span class='etoiles'>{nom}</span>" if "★" in nom else ""
+    return (f"<img class='insigne' src='{'../' * profondeur}static/distinctions/{bareme.image(niveau)}' "
+            f"alt='{libelle}' title='{libelle}' />{etoiles}")
+
+
+def distinction_html(d: Distinction | None, profondeur: int) -> str:
+    """Nom du barème suivi de l'insigne ; le niveau, masqué, reste cherchable par le filtre."""
+    if d is None:
+        return ""
+    return (f"<span class='distinction'>{esc(d.bareme.nom)}{insigne(d.bareme, d.niveau, profondeur)}"
+            f"<span hidden>{esc(d.bareme.niveaux[d.niveau])}</span></span>")
+
+
+def tableau_obtentions(obts: list[tuple[str, str, Obtention]], profondeur: int, ident: str,
+                       avec_archer: bool = True, saison: str = "") -> str:
+    """``obts`` : (licence, nom, obtention). Avec ``saison`` : niveau atteint avant cette saison."""
+    entetes = [("Archer", False)] if avec_archer else []
+    entetes += [("Discipline", False), ("Arc", False)]
+    if saison:
+        entetes.append(("Avant la saison", False))
+    entetes += [("Distinction", False), ("Score", True), ("Date", False), ("Concours", False), ("Progression", False)]
+    lignes = []
+    for licence, nom, o in obts:
+        e = o.epreuve
+        cel = [lien_archer(licence, nom, profondeur)] if avec_archer else []
+        cel += [esc(e.discipline), esc(e.arme)]
+        if saison:
+            avant = o.niveau_avant(saison)
+            cel.append(insigne(o.bareme, avant, profondeur) if avant is not None else "–")
+        cel.append(distinction_html(Distinction(o.bareme, o.niveau), profondeur))
+        etapes = " → ".join(f"{insigne(o.bareme, n, profondeur)}{esc(x.saison)}" for n, x in o.etapes)
+        score = f"{(e.points or 0) // 1000} honneurs" if o.bareme.nom == "Beursault" else str(e.points)
+        cel += [score, esc(e.date), esc(e.concours), f"<span class='etapes'>{etapes}</span>"]
+        lignes.append(tr(cel, {len(cel) - 4}))
+    return tableau(entetes, lignes, ident)
+
+
 def page(titre: str, corps: str, profondeur: int, actif: str, saisons: list[str]) -> str:
     racine = "../" * profondeur
     liens = [
@@ -354,6 +719,7 @@ def page(titre: str, corps: str, profondeur: int, actif: str, saisons: list[str]
         ("archers", "archers/index.html", "Archers"),
         ("grands", "grands-concours.html", "Grands concours"),
         ("records", "records.html", "Records"),
+        ("distinctions", "distinctions.html", "Distinctions"),
         ("apropos", "a-propos.html", "À propos"),
     ]
     nav = "".join(
@@ -441,7 +807,8 @@ def graphique(
         cumul = 0
         details = ", ".join(f"{n} : {v}" for n, v in zip(noms, valeurs) if len(noms) > 1)
         infobulle = f"{label} – {sum(valeurs)} {unite}" + (f" ({details})" if details else "")
-        for valeur, classe in zip(valeurs, classes):
+        # Empilement depuis la dernière série : l'or (1re série) se retrouve en haut.
+        for valeur, classe in reversed(list(zip(valeurs, classes))):
             if valeur <= 0:
                 continue
             haut_barre = y(cumul + valeur)
@@ -523,13 +890,16 @@ def page_accueil(epreuves: list[Epreuve], par_saison: dict[str, list[Epreuve]], 
         for s in saisons
     )
     derniere = saisons[0]
-    recents = [e for e in par_saison[derniere] if e.podium and e.grand][:8] or [
-        e for e in par_saison[derniere] if e.podium
-    ][:8]
+    # Podiums en grands concours d'abord, complétés par les plus récents (8 au plus).
+    podiums_saison = [e for e in par_saison[derniere] if e.podium]
+    retenus = ([e for e in podiums_saison if e.grand] + [e for e in podiums_saison if not e.grand])[:8]
+    recents = sorted(retenus, key=lambda e: e.iso, reverse=True)
     recents_html = ""
     if recents:
-        recents_html = f"<h2>Derniers podiums ({derniere})</h2>" + tableau_epreuves(
-            recents, 0, "recents", avec_saison=False
+        recents_html = (
+            f"<h2>Derniers podiums ({derniere})</h2><p class='fil'>Surlignés : grands concours. "
+            f"<a href='saisons/{derniere}.html'>Les {len(podiums_saison)} podiums de la saison</a></p>"
+            + tableau_epreuves(recents, 0, "recents", avec_saison=False)
         )
     return f"""
 <h1>Palmarès de la {CLUB}</h1>
@@ -666,14 +1036,22 @@ def page_archer(liste: list[Epreuve]) -> str:
             if cle not in meilleurs or e.points > (meilleurs[cle].points or 0):
                 meilleurs[cle] = e
     lignes_scores = [
-        tr([esc(d), esc(a), str(e.points), esc(e.date), esc(e.concours)], {2})
+        tr([esc(d), esc(a), str(e.points), distinction_html(distinction(e), 1), esc(e.date), esc(e.concours)], {2})
         for (d, a), e in sorted(meilleurs.items(), key=lambda kv: (DISCIPLINES_RECORDS.index(kv[0][0]), kv[0][1]))
     ]
     bloc_scores = (
         "<h2>Meilleurs scores</h2>"
-        + tableau([("Discipline", False), ("Arc", False), ("Points", True), ("Date", False), ("Concours", False)],
-                  lignes_scores)
+        + tableau([("Discipline", False), ("Arc", False), ("Points", True), ("Distinction", False),
+                   ("Date", False), ("Concours", False)], lignes_scores)
         if lignes_scores
+        else ""
+    )
+    obts = obtentions(liste)
+    bloc_distinctions = (
+        "<h2>Distinctions</h2><p class='fil'>Plus haut niveau atteint par barème et par arc, d'après les scores "
+        "en concours officiel (<a href='../distinctions.html'>détails</a>).</p>"
+        + tableau_obtentions([(o.epreuve.licence, nom, o) for o in obts], 1, "distinctions", avec_archer=False)
+        if obts
         else ""
     )
     bloc_gc = (
@@ -697,6 +1075,7 @@ def page_archer(liste: list[Epreuve]) -> str:
 {graph}
 {bloc_gc}
 {bloc_scores}
+{bloc_distinctions}
 <h2>Parcours saison par saison</h2>
 {parcours}
 {bloc_podiums}
@@ -714,13 +1093,28 @@ def page_grands_concours(epreuves: list[Epreuve], saisons: list[str]) -> str:
         if not d:
             continue
         podiums = [e for e in d if e.podium]
-        corps = (
-            tableau_epreuves(podiums, 0, f"gc{s}", avec_saison=False)
-            if podiums
-            else "<p>Pas de podium cette saison.</p>"
-        )
+        # Une ligne par concours, avec tous les participants du club (médaillés en tête).
+        par_concours: dict[tuple[str, str], list[Epreuve]] = defaultdict(list)
+        for e in d:
+            par_concours[(e.iso, e.concours)].append(e)
+        lignes = []
+        for (_, concours), liste in sorted(par_concours.items(), reverse=True):
+            liste.sort(key=lambda e: (e.place is None, e.place or 0, e.nom))
+            participants = " · ".join(
+                f"<span class='participant'>{MEDAILLES[e.place] + ' ' if e.podium else ''}"
+                f"{lien_archer(e.licence, e.nom, 0)}"
+                f"{f' <span class=etapes>{e.place}e</span>' if e.place and not e.podium else ''}</span>"
+                for e in liste
+            )
+            disciplines = ", ".join(sorted({e.discipline for e in liste}))
+            lignes.append(tr([esc(liste[0].date), esc(concours), esc(disciplines), participants],
+                             grand=any(e.podium for e in liste)))
+        tab = tableau([("Date", False), ("Concours", False), ("Discipline", False), ("Participants", False)],
+                      lignes)
         sections.append(
-            f"<h2 id='s{s}'>{lien_saison(s, 0)} – {len(d)} participations, {len(podiums)} podium(s)</h2>{corps}"
+            f"<details id='s{s}'{' open' if s == saisons[0] else ''}><summary>Saison {esc(s)} – "
+            f"{len(par_concours)} concours, {len(d)} participations, {len(podiums)} podium(s)</summary>"
+            f"<p class='fil'>{lien_saison(s, 0)}</p>{tab}</details>"
         )
     lignes_ancre = " · ".join(f"<a href='#s{s}'>{s}</a>" for s in saisons if any(e.saison == s for e in gc))
     items = [(s, medailles([e for e in gc if e.saison == s])) for s in reversed(saisons)]
@@ -728,7 +1122,8 @@ def page_grands_concours(epreuves: list[Epreuve], saisons: list[str]) -> str:
 <p class="fil"><a href="index.html">Accueil</a> › Grands concours</p>
 <h1>Grands concours</h1>
 <p>Championnats de France et régionaux, coupes de France et assimilés
-(<a href="a-propos.html">critères</a>). Les lignes surlignées sont les grands concours.</p>
+(<a href="a-propos.html">critères</a>). Pour chaque concours, tous les archers du club qui y ont tiré :
+médaillés en tête, puis place obtenue. Les lignes surlignées sont celles avec au moins un podium.</p>
 {graphique(items, ["m1", "m2", "m3"], ["Or", "Argent", "Bronze"], "podiums", "Podiums en grands concours par saison")}
 <p>Aller à : {lignes_ancre}</p>
 {''.join(sections)}
@@ -766,14 +1161,18 @@ def page_records(epreuves: list[Epreuve], par_archer: dict[str, list[Epreuve]]) 
         sous = []
         for (arme, sexe), par_licence in sorted(groupes.items()):
             top = sorted(par_licence.values(), key=lambda e: -(e.points or 0))[:5]
+            avec_piquet = any(e.piquet for e in top)
             lignes_r = [
-                tr([str(r), lien_archer(e.licence, e.nom, 0), str(e.points), lien_saison(e.saison, 0),
-                    esc(e.concours)], {0, 2})
+                tr([str(r), lien_archer(e.licence, e.nom, 0), str(e.points)]
+                   + ([piquet_html(e) or "–"] if avec_piquet else [])
+                   + [lien_saison(e.saison, 0), esc(e.concours)], {0, 2})
                 for r, e in enumerate(top, start=1)
             ]
             sous.append(
                 f"<h3>{esc(arme)}{' – ' + esc(sexe) if sexe else ''}</h3>"
-                + tableau([("#", True), ("Archer", False), ("Points", True), ("Saison", False), ("Concours", False)],
+                + tableau([("#", True), ("Archer", False), ("Points", True)]
+                          + ([("Piquet", False)] if avec_piquet else [])
+                          + [("Saison", False), ("Concours", False)],
                           lignes_r, tri=False)
             )
         blocs.append(f"<details><summary>{esc(discipline)}</summary>{''.join(sous)}</details>")
@@ -783,13 +1182,65 @@ def page_records(epreuves: list[Epreuve], par_archer: dict[str, list[Epreuve]]) 
 <h2>Les plus médaillés (30 premiers)</h2>
 {tab_medailles}
 <h2>Meilleurs scores par discipline</h2>
-<p>Meilleure performance de chaque archer, 5 premiers par arc et par sexe.</p>
+<p>Meilleure performance de chaque archer, 5 premiers par arc et par sexe. En 3D, campagne et nature, le piquet
+de tir est indiqué : rouge (1), bleu (2) ou blanc (3). La FFTA ne le précise que depuis 2020 environ ; avant, il est
+<i>déduit</i> de la catégorie d'âge et de l'arc (en italique), sauf pour la 3D sur 40 cibles.</p>
 {''.join(blocs)}
 """
 
 
-def page_apropos(mots_cles: list[str], nb_lignes: int) -> str:
+def page_distinctions(par_archer: dict[str, list[Epreuve]], saisons: list[str]) -> str:
+    derniere = saisons[0]
+    toutes = sorted(
+        ((licence, liste[0].nom, o) for licence, liste in par_archer.items() for o in obtentions(liste)),
+        key=lambda t: (t[1], t[2].bareme.nom, t[2].arme),
+    )
+    actifs = {licence for licence, liste in par_archer.items() if liste[0].saison == derniere}
+
+    sections = []
+    for s in saisons:
+        # Progression arrêtée à la saison s, pour chaque distinction qui y a progressé.
+        lignes = [
+            (licence, nom, Obtention(o.bareme, o.arme, [et for et in o.etapes if et[1].saison <= s]))
+            for licence, nom, o in toutes
+            if any(e.saison == s for _, e in o.etapes)
+        ]
+        if not lignes:
+            continue
+        nb_archers = len({licence for licence, _, _ in lignes})
+        sections.append(
+            f"<details{' open' if s == derniere else ''}><summary>Saison {esc(s)} – {len(lignes)} distinction(s), "
+            f"{nb_archers} archer(s)</summary>{tableau_obtentions(lignes, 0, f'saison{s}', saison=s)}</details>"
+        )
+    nouvelles = [t for t in toutes if any(e.saison == derniere for _, e in t[2].etapes)]
+    en_cours = [t for t in toutes if t[0] in actifs]
+    anciens = [t for t in toutes if t[0] not in actifs]
+    return f"""
+<p class="fil"><a href="index.html">Accueil</a> › Distinctions</p>
+<h1>Distinctions</h1>
+<p>Badges et écussons fédéraux que les scores obtenus en concours officiel permettent de demander, d'après les
+barèmes de la page <a href="{SOURCE_DISTINCTIONS}">Distinctions au tir à l'arc</a> (<a href="a-propos.html#distinctions">règles
+et limites</a>). Les distinctions ne sont pas attribuées automatiquement : à vérifier avant de les remettre.</p>
+<div class="chiffres">
+{chiffre(len({t[0] for t in toutes}), "archers concernés")}
+{chiffre(len({t[0] for t in en_cours}), f"archers de la saison {derniere}")}
+{chiffre(len(nouvelles), f"distinctions gagnées ou améliorées en {derniere}")}
+</div>
+<h2>Nouvelles distinctions, saison par saison</h2>
+<p>Chaque ligne indique le niveau atteint à la fin de la saison et celui qui était déjà acquis avant.</p>
+{''.join(sections)}
+<h2>Archers de la saison {esc(derniere)} : plus haut niveau atteint</h2>
+<p><input class="filtre" data-filtre="actifs" placeholder="Filtrer (archer, badge, arc…)" /></p>
+{tableau_obtentions(en_cours, 0, "actifs")}
+<details><summary>Anciens archers ({len({t[0] for t in anciens})})</summary>
+{tableau_obtentions(anciens, 0, "anciens")}
+</details>
+"""
+
+
+def page_apropos(mots_cles: list[str], exclusions: list[str], nb_lignes: int) -> str:
     motifs = "".join(f"<li><code>{esc(m)}</code></li>" for m in mots_cles)
+    exclus = "".join(f"<li><code>{esc(m)}</code></li>" for m in exclusions)
     return f"""
 <p class="fil"><a href="index.html">Accueil</a> › À propos</p>
 <h1>À propos et méthode</h1>
@@ -806,21 +1257,65 @@ catégorie d'un même concours sont fusionnés, la meilleure place est retenue.<
 <li><b>Disciplines</b> : regroupées (Salle et 18 m, FITA et tir extérieur…) pour comparer les saisons
 entre elles ; les records n'existent que pour les disciplines à score comparable.
 Le tir 3D est scindé en deux : jusqu'à la saison {PREMIERE_SAISON_3D_24_CIBLES - 1} (40 cibles, sans zone 11)
-et depuis {PREMIERE_SAISON_3D_24_CIBLES} (24 cibles, avec zone 11), dont les scores ne sont pas comparables.</li>
+et depuis {PREMIERE_SAISON_3D_24_CIBLES} (24 cibles, avec zone 11), dont les scores ne sont pas comparables.
+Le TAE est séparé en <b>TAE DI</b> (international : arc classique à 60 ou 70 m, poulies sur blason de 80 cm) et
+<b>TAE DN</b> (national : arc classique à 50 m, poulies sur blason de 122 cm), d'après la distance et le blason de
+la catégorie ; « TAE » seul quand ils ne permettent pas de trancher (jeunes à courte distance, arc nu).</li>
+<li><b>Piquets</b> (3D, campagne, nature) : rouge (1), bleu (2), blanc (3), lus dans la catégorie FFTA (depuis
+2020 environ). Avant, ils sont déduits de l'âge et de l'arc, d'après les règles observées sur les résultats récents :
+en 3D, rouge pour l'arc libre, bleu pour les autres arcs (et les cadets en arc libre), blanc pour les benjamins et
+minimes ; en campagne, rouge pour le classique et les poulies, bleu pour l'arc nu et les cadets, blanc pour les
+jeunes, l'arc nu cadet et l'arc droit ; en nature, rouge pour les adultes. Pas de déduction pour la 3D sur 40 cibles
+(avant {PREMIERE_SAISON_3D_24_CIBLES}), dont les distances étaient différentes.</li>
 <li><b>Nom affiché</b> : celui de la saison la plus récente.</li>
 </ul>
 <h2>Grands concours</h2>
-<p>Un concours est « grand » si son nom correspond à l'un de ces motifs (insensibles à la casse) :</p>
-<ul>{motifs}</ul>
+<p>Un concours est « grand » dans deux cas :</p>
+<ul>
+<li>la FFTA le signale comme championnat ou coupe de France (pictogramme dans le palmarès), même si son nom
+n'est qu'une ville ;</li>
+<li>son nom correspond à l'un de ces motifs (insensibles à la casse) :<ul>{motifs}</ul></li>
+</ul>
+<p>Avant d'appliquer les motifs, ces expressions sont retirées du nom : un concours « sélectif au championnat
+de France » n'est donc grand que si le reste de son nom l'indique (par exemple un championnat régional).</p>
+<ul>{exclus}</ul>
+<h2 id="distinctions">Distinctions</h2>
+<p>Les barèmes viennent de la page Wikipédia
+<a href="{SOURCE_DISTINCTIONS}">Distinctions au tir à l'arc</a>. Seules les distinctions fédérales gagnées en concours
+sont calculées (pas les plumes ni les flèches de progression, ni les distinctions WA). Chaque score est comparé au
+barème de sa discipline, de son arc et de la classe d'âge de l'archer :</p>
+<ul>
+<li><b>Salle</b> : arc classique et arc nu, ou arc à poulies. Les étoiles exigent un blason de 40 cm : elles ne sont
+pas comptées sur blason de 60/80 cm, ni pour les poussins, benjamins et minimes quand le blason n'est pas indiqué.</li>
+<li><b>FITA</b> (FITA, 2x70 m, 2x50 m, tir extérieur, TAE DI) : uniquement à la distance du barème (benjamin 30 m,
+minime 40 m, cadet classique 60 m, classique junior et plus 70 m, poulies 50 m sur blason de 80 cm). Le TAE DN
+ne compte donc pas, ni le TAE DI à 60 m d'un Senior 3 (le barème prévoit 70 m). Quand la distance n'est pas indiquée
+(anciennes saisons FITA), le score est supposé tiré à la bonne distance.</li>
+<li><b>Fédéral</b> : arc classique et arc nu, ou arc à poulies.</li>
+<li><b>Campagne</b> : Marcassin (classique, jeunes jusqu'à cadet) ou Écureuil. Seuls les scores de 432 points
+au plus sont retenus (parcours de 24 cibles).</li>
+<li><b>Nature</b> : Marcassin (arc nu, jeunes) ou Sanglier (scores de 1 470 au plus, parcours de 42 cibles
+supposé). <b>3D</b> (depuis {PREMIERE_SAISON_3D_24_CIBLES}) : Lynx (arc nu, jeunes) ou Chevreuil ; un
+cadet en arc libre relève du barème adulte. En 3D et en nature, l'arc à poulies nu suit la colonne « arc à poulies ».
+Les scores 3D sur 40 cibles ne sont pas pris en compte.</li>
+<li><b>Beursault</b> : marmots selon le nombre d'honneurs de la partie (32, 35, 38, 40).</li>
+<li>Un classement scratch seul reprend la classe d'âge d'un autre concours de la même saison (adulte à défaut).</li>
+</ul>
+<p>Ces barèmes sont ceux d'aujourd'hui : ils sont appliqués tels quels aux anciennes saisons. Une distinction doit
+être demandée par l'archer : la liste indique ce qui est possible, pas ce qui a été remis.</p>
+<p>Images des insignes : <a href="https://commons.wikimedia.org/wiki/User:Nhhi">Nhhi</a>, Wikimedia Commons,
+licence <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.fr">CC BY-SA 4.0</a> (planches découpées
+par niveau).</p>
 """
 
 
 # --- Orchestration ---------------------------------------------------------
 
 
-def generer_site(rows: list[dict[str, Any]], mots_cles: list[str], sortie: Path) -> None:
+def generer_site(rows: list[dict[str, Any]], mots_cles: list[str], sortie: Path,
+                 exclusions: list[str] = DEFAULT_EXCLUSIONS) -> None:
     """Écrit le site complet dans ``sortie`` à partir des lignes de résultats."""
-    epreuves = construire_epreuves(rows, mots_cles)
+    epreuves = construire_epreuves(rows, mots_cles, exclusions)
     if not epreuves:
         logger.warning("Aucune donnée : site non généré")
         return
@@ -846,6 +1341,7 @@ def generer_site(rows: list[dict[str, Any]], mots_cles: list[str], sortie: Path)
     (sortie / "static").mkdir(exist_ok=True)
     for fichier in ("logo.png", "caveat.woff2"):
         shutil.copyfile(ASSETS / fichier, sortie / "static" / fichier)
+    shutil.copytree(ASSETS / "distinctions", sortie / "static" / "distinctions", dirs_exist_ok=True)
     (sortie / "style.css").write_text(_CSS, encoding="utf-8")
     (sortie / "site.js").write_text(_JS, encoding="utf-8")
     ecrire("index.html", "Palmarès", page_accueil(epreuves, par_saison, saisons), 0, "accueil")
@@ -856,7 +1352,8 @@ def generer_site(rows: list[dict[str, Any]], mots_cles: list[str], sortie: Path)
         ecrire(f"archers/{licence}.html", liste[0].nom, page_archer(liste), 1, "archers")
     ecrire("grands-concours.html", "Grands concours", page_grands_concours(epreuves, saisons), 0, "grands")
     ecrire("records.html", "Records", page_records(epreuves, par_archer), 0, "records")
-    ecrire("a-propos.html", "À propos", page_apropos(mots_cles, len(rows)), 0, "apropos")
+    ecrire("distinctions.html", "Distinctions", page_distinctions(par_archer, saisons), 0, "distinctions")
+    ecrire("a-propos.html", "À propos", page_apropos(mots_cles, exclusions, len(rows)), 0, "apropos")
     logger.info(
         "Site généré dans %s : %d saisons, %d archers, %d participations",
         sortie, len(saisons), len(par_archer), len(epreuves),
@@ -870,6 +1367,13 @@ def lire_mots_cles(config: Path) -> list[str]:
     return DEFAULT_MOTS_CLES
 
 
+def lire_exclusions(config: Path) -> list[str]:
+    if config.exists():
+        data = yaml.safe_load(config.read_text(encoding="utf-8")) or {}
+        return list(data.get("grands_concours_exclusions", DEFAULT_EXCLUSIONS))
+    return DEFAULT_EXCLUSIONS
+
+
 def main() -> None:
     logging.basicConfig(level=logging.INFO, format="%(levelname)-8s %(message)s")
     parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
@@ -879,7 +1383,7 @@ def main() -> None:
     args = parser.parse_args()
     with args.detail.open(encoding="utf-8", newline="") as handle:
         rows = list(csv.DictReader(handle))
-    generer_site(rows, lire_mots_cles(args.config), args.out)
+    generer_site(rows, lire_mots_cles(args.config), args.out, lire_exclusions(args.config))
 
 
 if __name__ == "__main__":

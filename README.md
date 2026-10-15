@@ -19,9 +19,15 @@ Le travail se fait en deux temps :
   aux saisons.
 - **Saisons** : une page par saison (podiums, grands concours, archers).
 - **Archers** : annuaire filtrable et une fiche par archer (médailles par
-  saison, podiums en grands concours, meilleurs scores, parcours).
+  saison, podiums en grands concours, meilleurs scores avec la distinction
+  correspondante, distinctions, parcours).
 - **Grands concours** : podiums des championnats et coupes, année par année.
 - **Records** : plus médaillés et meilleurs scores par discipline.
+- **Distinctions** : badges et écussons fédéraux que les scores permettent de
+  demander (barèmes de la page Wikipédia « Distinctions au tir à l'arc »),
+  nouvelles distinctions saison par saison et niveau atteint par archer.
+  Insignes : planches de Nhhi (Wikimedia Commons, CC BY-SA 4.0) découpées par
+  `decouper_insignes.py` dans `assets/distinctions/`.
 - **À propos** : règles de comptage et critères « grand concours ».
 
 Règles de comptage principales : un archer et un concours = une participation
@@ -40,7 +46,8 @@ dans `generer_site.py`.
 | `membres.example.yaml`        | Modèle de `membres.yaml`                           |
 | `detail_pontoise.csv`         | Données collectées (une ligne par performance)     |
 | `requirements.txt`            | Dépendances Python de la collecte                  |
-| `assets/`                     | Blason de la compagnie, police Caveat |
+| `assets/`                     | Blason de la compagnie, police Caveat, insignes des distinctions |
+| `decouper_insignes.py`        | Découpe les planches d'insignes Wikimedia (Pillow) |
 | `.github/workflows/pages.yml` | Publication sur GitHub Pages                       |
 | `.cache_ffta/`                | Cache des pages FFTA (généré, non versionné)       |
 | `site/`                       | Site généré (non versionné)                        |
@@ -78,7 +85,12 @@ grands_concours_mots_cles:
   récente).
 - `grands_concours_mots_cles` : expressions régulières (insensibles à la
   casse) appliquées au nom du concours pour repérer les championnats de
-  France, régionaux, etc. Pour lister les intitulés réels :
+  France, régionaux, etc. Les championnats et coupes de France signalés par
+  la FFTA (pictogramme dans le palmarès, colonne `championnat_france` du CSV)
+  sont retenus d'office, même quand leur nom n'est qu'une ville.
+- `grands_concours_exclusions` : expressions retirées du nom avant
+  d'appliquer les mots-clés (ex. « sélectif au championnat de France »).
+  Pour lister les intitulés réels :
 
   ```bash
   python3 -c "import csv;print(*sorted({r['concours'] for r in csv.DictReader(open('detail_pontoise.csv'))}),sep='\n')"
@@ -116,6 +128,8 @@ Options (valeurs par défaut entre parenthèses) :
   (répétable)
 - `--refresh-licence LICENCE` : retélécharge cet archer en ignorant le cache
   (répétable)
+- `--cache-seulement` : reconstruit le CSV et le site à partir du seul cache,
+  sans session ni réseau (utile après une évolution de l'analyse des pages)
 
 À la fin, le script écrit le CSV puis génère le site. Le site peut aussi être
 régénéré à tout moment sans réseau : `python3 generer_site.py` (options

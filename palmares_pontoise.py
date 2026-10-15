@@ -39,6 +39,11 @@ Usage:
         python3 palmares_pontoise.py --refresh-saison 2026
         python3 palmares_pontoise.py --refresh-licence 0693361D
         python3 palmares_pontoise.py --refresh-saison 2026 --refresh-licence 0693361D
+
+    Pour reconstruire le CSV et le site à partir du seul cache, sans session
+    ni réseau (les pages absentes du cache sont signalées) :
+
+        python3 palmares_pontoise.py --cache-seulement
 """
 
 from __future__ import annotations
@@ -69,6 +74,8 @@ DELAY_SECONDS = 5.0  # politesse + évite le blocage anti-abus de la FFTA (captc
 CAPTCHA_MARKERS = ("captcha-container", "altcha-widget")
 MAX_RETRIES = 3
 REQUEST_TIMEOUT = 60  # secondes : les palmarès très fournis sont lents à générer
+# Pictogrammes placés par la FFTA devant les championnats et coupes de France.
+PICTOS_CHAMPIONNAT_FRANCE = {"France.gif", "Coupe-fr.png"}
 
 class SessionExpiree(Exception):
     """La FFTA a renvoyé la page de connexion : le cookie n'est plus valide."""
@@ -105,6 +112,7 @@ class CompetitionResult:
     place: str
     points: str
     resultat_id: str
+    championnat_france: bool = False  # pictogramme FFTA (drapeau ou coupe de France)
 
 
 def load_membership(config_path: Path) -> dict[str, list[ArcherRef]]:
@@ -256,12 +264,16 @@ def parse_palmares(
 
             if "epRow" in classes:
                 cells = row.find_all("td")
-                if len(cells) < 4:
+                if len(cells) < 3:
                     continue
-                date_texte = _clean_text(cells[0])
+                # Certaines lignes (Beursault récent, anciennes saisons) n'ont
+                # pas de colonne « place » : date, concours, points.
+                date_match = re.search(r"\d{2}/\d{2}/\d{4}", _clean_text(cells[0]))
+                date_texte = date_match.group(0) if date_match else _clean_text(cells[0])
                 concours = _clean_text(cells[1])
-                place = _clean_text(cells[2])
-                points_texte = _clean_text(cells[3])
+                place = _clean_text(cells[2]) if len(cells) >= 4 else ""
+                points_texte = _clean_text(cells[-1] if len(cells) < 4 else cells[3])
+                pictos = {img.get("src", "").rsplit("/", 1)[-1] for img in cells[0].find_all("img")}
                 points_match = re.search(r"\d+", points_texte)
                 points = points_match.group(0) if points_match else points_texte
                 resultat_id = row.get("data-rid", "")
@@ -278,6 +290,7 @@ def parse_palmares(
                     place=place,
                     points=points,
                     resultat_id=str(resultat_id),
+                    championnat_france=bool(pictos & PICTOS_CHAMPIONNAT_FRANCE),
                 )
 
 
@@ -326,20 +339,28 @@ def main() -> None:
         metavar="LICENCE",
         help="Retélécharge (en ignorant le cache) cet archer. Répétable.",
     )
+    parser.add_argument(
+        "--cache-seulement",
+        action="store_true",
+        help="N'utilise que .cache_ffta/ : aucune requête, pas de session requise.",
+    )
     args = parser.parse_args()
     refresh_saisons = set(args.refresh_saison)
     refresh_licences = {lic.upper() for lic in args.refresh_licence}
 
     session_id = os.environ.get("FFTA_SESSION_ID")
-    if not session_id:
+    if args.cache_seulement:
+        session_id, own_licence = "", ""
+    elif not session_id:
         raise SystemExit(
             "Variable d'environnement FFTA_SESSION_ID manquante. "
             "Récupère la valeur du cookie PHPSESSID depuis ton navigateur "
             "(DevTools > Application > Cookies) et exporte-la avant de "
             "relancer le script."
         )
-    own_licence = args.own_licence or os.environ.get("FFTA_OWN_LICENCE")
-    if not own_licence:
+    else:
+        own_licence = args.own_licence or os.environ.get("FFTA_OWN_LICENCE") or ""
+    if not args.cache_seulement and not own_licence:
         raise SystemExit(
             "Ta propre licence est requise (--own-licence ou FFTA_OWN_LICENCE)."
         )
@@ -369,6 +390,13 @@ def main() -> None:
             (not refresh_saisons or saison in refresh_saisons)
             and (not refresh_licences or archer.licence.upper() in refresh_licences)
         )
+        cache_file = CACHE_DIR / f"{archer.licence}_{saison}.html"
+        if args.cache_seulement:
+            if not cache_file.exists():
+                echecs.append(f"{archer.nom} ({archer.licence}) saison {saison} (absent du cache)")
+                continue
+            all_rows.extend(parse_palmares(cache_file.read_text(encoding="utf-8"), archer, saison))
+            continue
         try:
             page_html, depuis_cache = fetch_palmares_html(
                 session, archer, saison, own_licence, refresh=refresh
@@ -383,9 +411,14 @@ def main() -> None:
 
     export_csv(all_rows, args.out_detail)
 
-    from generer_site import generer_site, lire_mots_cles
+    from generer_site import generer_site, lire_exclusions, lire_mots_cles
 
-    generer_site([asdict(row) for row in all_rows], lire_mots_cles(args.config), args.out_site)
+    generer_site(
+        [asdict(row) for row in all_rows],
+        lire_mots_cles(args.config),
+        args.out_site,
+        lire_exclusions(args.config),
+    )
 
     if echecs:
         logger.warning(
