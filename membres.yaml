@@ -5841,3 +5841,4 @@ grands_concours_mots_cles:
 # toujours retenus, même si leur nom n'est qu'une ville.
 grands_concours_exclusions:
   - "(s[ée]lectif|qualificatif)s?\\s+((au|aux|pour\\s+les?)\\s+)?championnats?\\s+de\\s+france"
+  - "TIR 3D CHAMPIONNAT RÉGIONAL - DEMUIN"
