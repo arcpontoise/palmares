@@ -29,6 +29,7 @@ import argparse
 import csv
 import html as html_lib
 import logging
+import os
 import re
 import shutil
 import unicodedata
@@ -41,7 +42,9 @@ from typing import Any
 import yaml
 
 logger = logging.getLogger("generer_site")
-ASSETS = Path(__file__).parent / "assets"  # logo du club et police manuscrite
+ASSETS = Path(__file__).parent / "assets"  # insignes des distinctions
+# Shared visual identity (colours, fonts, logo), loaded directly by every page
+CHARTE = os.environ.get("CHARTE_URL", "https://charte.arcpontoise.fr").rstrip("/")
 
 CLUB = "Cie Archers de Pontoise"
 MEDAILLES = {1: "🥇", 2: "🥈", 3: "🥉"}
@@ -497,105 +500,36 @@ def obtentions(liste: list[Epreuve]) -> list[Obtention]:
 # --- Briques HTML ----------------------------------------------------------
 
 _CSS = """
-/* Charte graphique de la compagnie */
-@font-face {
-  font-family: "Caveat";
-  src: url("static/caveat.woff2") format("woff2");
-  font-weight: 400 700;
-  font-display: swap;
-}
-:root {
-  --accent: #3f60aa; --bleu: #1b2b5a; --bleu-moyen: #475b8b; --encre: #09132d;
-  --fond: #f3ebe7; --carte: #fffdfb; --gris: #3b3f50; --gris-doux: #767e98;
-  --filet: #acafc1; --pale: #eef1f8; --hover: #e8edf7; --grand: #fff4d1;
-  --m0: #3f60aa; --m1: #c99a06; --m2: #8d99a3; --m3: #a8602d;
-}
-* { box-sizing: border-box; }
-body { margin: 0; background: var(--fond); color: var(--encre);
-  font: 16px/1.55 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
-a { color: var(--accent); }
-a:focus-visible, :focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
-h1, h2 { font-weight: 700; text-transform: uppercase; letter-spacing: 0.03em; }
-h1 { font-size: 1.55rem; margin: 0.3rem 0 0.2rem; }
-h2 { font-size: 1.2rem; margin: 2rem 0 0.6rem; color: var(--bleu); }
-h3 { margin: 1rem 0 0.4rem; color: var(--bleu); }
-.manuscrit { font-family: "Caveat", "Segoe Script", "Bradley Hand", cursive;
-  text-transform: none; letter-spacing: 0; }
-.gabarit { max-width: 1240px; margin: 0 auto; }
-header.site { background: var(--bleu); color: var(--fond); padding: 1.4rem 1.25rem 1.1rem;
-  border-bottom: 4px solid var(--accent); }
-header.site .entete-flex { display: flex; align-items: center; gap: 1rem; }
-header.site a.marque { display: flex; align-items: center; gap: 1rem; color: inherit;
-  text-decoration: none; }
-.logo { height: 64px; width: auto; flex: none; }
-header.site .manuscrit { margin: 0; font-size: 1.55rem; line-height: 1.1; color: #ccd4ea; }
-header.site .titre { margin: 0.15rem 0 0; font-size: 1.55rem; font-weight: 700;
-  text-transform: uppercase; letter-spacing: 0.03em; }
-nav.site { display: flex; flex-wrap: wrap; gap: 0.4rem 1.4rem; padding: 0.8rem 1.25rem 0; }
-nav.site a { color: var(--accent); font-weight: 600; }
-nav.site a[aria-current] { color: var(--encre); text-decoration: none; }
-main { padding: 1.25rem 1.25rem 1.5rem; }
-footer { padding: 0 1.25rem 1.5rem; font-size: 0.88rem; color: var(--gris); }
-.fil { color: var(--gris); font-size: 0.9rem; }
-.fil a { color: var(--gris); }
-.chiffres { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-  gap: 1rem; margin: 1rem 0; }
-.chiffre { background: var(--carte); border: 1px solid var(--filet);
-  border-left: 4px solid var(--accent); border-radius: 6px; padding: 0.7rem 0.9rem; }
-.chiffre b { display: block; font-size: 1.7rem; line-height: 1.2; color: var(--bleu); }
-.chiffre span { color: var(--gris); font-size: 0.9rem; }
-.carte { background: var(--carte); border: 1px solid var(--filet); border-radius: 6px;
-  padding: 0.8rem 1rem; margin: 1rem 0; }
-.saisons { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 0.8rem; }
-.saisons a { display: block; background: var(--carte); border: 1px solid var(--filet);
-  border-left: 4px solid var(--accent); border-radius: 6px; padding: 0.5rem 0.8rem;
-  text-decoration: none; color: var(--encre); }
-.saisons a:hover { background: var(--pale); }
-.saisons a b { font-size: 1.1rem; color: var(--bleu); }
-.saisons a span { display: block; font-size: 0.85rem; color: var(--gris); }
-.table-wrap { overflow-x: auto; }
-table { border-collapse: collapse; width: 100%; background: var(--carte); font-size: 0.92rem; }
-th, td { border: 1px solid var(--filet); padding: 0.4rem 0.65rem; text-align: left; }
-th { background: var(--bleu); color: #fff; font-weight: 600; white-space: nowrap; }
-tbody tr:hover { background: var(--hover); }
-tr.grand { background: var(--grand); }
-td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; }
+/* Palmarès-specific rules; shared styles come from the charte */
 th.triable { cursor: pointer; user-select: none; }
 th.triable::after { content: " \\2195"; color: #aab4d4; font-weight: normal; }
 th.triable.asc::after { content: " \\25B2"; color: #fff; }
 th.triable.desc::after { content: " \\25BC"; color: #fff; }
 input.filtre { width: 100%; max-width: 360px; padding: 0.5rem 0.7rem; font-size: 1rem;
-  border: 1px solid var(--filet); border-radius: 6px; background: var(--carte); color: var(--encre); }
+  border: 1px solid var(--border); border-radius: 6px; background: var(--card); color: var(--ink); }
 .pager { display: flex; justify-content: space-between; margin: 0.8rem 0; font-weight: 600; }
-.legende { display: flex; gap: 1rem; flex-wrap: wrap; font-size: 0.9rem; color: var(--gris);
+.legende { display: flex; gap: 1rem; flex-wrap: wrap; font-size: 0.9rem; color: var(--gray);
   margin: 0.3rem 0; }
 .legende i { display: inline-block; width: 0.8rem; height: 0.8rem; border-radius: 2px;
   margin-right: 0.35rem; vertical-align: -1px; }
 svg.chart { width: 100%; height: auto; display: block; }
-svg.chart text { fill: var(--gris); font-size: 11px; }
-svg.chart .grille { stroke: var(--filet); stroke-width: 1; }
-svg.chart rect.m0 { fill: var(--m0); } svg.chart rect.m1 { fill: var(--m1); }
-svg.chart rect.m2 { fill: var(--m2); } svg.chart rect.m3 { fill: var(--m3); }
-svg.chart rect.b { stroke: var(--carte); stroke-width: 2; }
-.i0 { background: var(--m0); } .i1 { background: var(--m1); }
-.i2 { background: var(--m2); } .i3 { background: var(--m3); }
+svg.chart text { fill: var(--gray); font-size: 11px; }
+svg.chart .grille { stroke: var(--border); stroke-width: 1; }
+svg.chart rect.m0 { fill: var(--accent); } svg.chart rect.m1 { fill: var(--gold); }
+svg.chart rect.m2 { fill: var(--silver); } svg.chart rect.m3 { fill: var(--bronze); }
+svg.chart rect.b { stroke: var(--card); stroke-width: 2; }
+.i0 { background: var(--accent); } .i1 { background: var(--gold); }
+.i2 { background: var(--silver); } .i3 { background: var(--bronze); }
 .participant { white-space: nowrap; }
 .piquet { white-space: nowrap; }
-.piquet.deduit { font-style: italic; color: var(--gris); }
+.piquet.deduit { font-style: italic; color: var(--gray); }
 .piquet i { display: inline-block; width: 0.75rem; height: 0.75rem; border-radius: 50%;
-  border: 1px solid var(--gris-doux); margin-right: 0.35rem; vertical-align: -1px; }
+  border: 1px solid var(--gray-soft); margin-right: 0.35rem; vertical-align: -1px; }
 .distinction { white-space: nowrap; }
-img.insigne { height: 32px; width: auto; vertical-align: middle; margin-left: 0.3rem; }
+img.insigne { height: 32px; width: auto; max-width: none; vertical-align: middle; margin-left: 0.3rem; }
 .etoiles { color: #9a6b00; font-size: 0.85rem; margin-left: 0.1rem; }
-.etapes { color: var(--gris); font-size: 0.85rem; white-space: nowrap; }
+.etapes { color: var(--gray); font-size: 0.85rem; white-space: nowrap; }
 .etapes img.insigne { height: 22px; margin: 0 0.15rem 0 0; }
-details { margin: 0.6rem 0; }
-summary { cursor: pointer; font-weight: 600; padding: 0.3rem 0; color: var(--bleu); }
-@media (max-width: 600px) {
-  header.site { padding: 0.8rem 1rem; }
-  .logo { height: 44px; }
-  header.site .manuscrit, header.site .titre { font-size: 1.2rem; }
-}
 """
 
 _JS = """
@@ -732,13 +666,15 @@ def page(titre: str, corps: str, profondeur: int, actif: str, saisons: list[str]
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>{esc(titre)} – {CLUB}</title>
-<link rel="icon" href="{racine}static/logo.png" />
+<link rel="icon" href="{CHARTE}/img/logo.png" />
+<link rel="stylesheet" href="{CHARTE}/css/tokens.css" />
+<link rel="stylesheet" href="{CHARTE}/css/charte.css" />
 <link rel="stylesheet" href="{racine}style.css" />
 </head>
 <body>
 <header class="site"><div class="gabarit">
 <a class="marque" href="{racine}index.html">
-<img class="logo" src="{racine}static/logo.png" alt="Blason de Pontoise" />
+<img class="logo" src="{CHARTE}/img/logo.png" alt="Blason de Pontoise" />
 <div><p class="manuscrit">Compagnie d'archers de Pontoise</p>
 <p class="titre">Palmarès</p></div>
 </a>
@@ -747,7 +683,7 @@ def page(titre: str, corps: str, profondeur: int, actif: str, saisons: list[str]
 <main class="gabarit">
 {corps}
 </main>
-<footer class="gabarit">Palmarès issu de l'extranet FFTA – généré le {date.today():%d/%m/%Y}.
+<footer class="site gabarit">Palmarès issu de l'extranet FFTA – généré le {date.today():%d/%m/%Y}.
 Voir <a href="{racine}a-propos.html">la méthode de calcul</a>.</footer>
 <script src="{racine}site.js"></script>
 </body>
@@ -915,7 +851,7 @@ def page_accueil(epreuves: list[Epreuve], par_saison: dict[str, list[Epreuve]], 
 {graphique(items_medailles, ["m1", "m2", "m3"], ["Or", "Argent", "Bronze"], "podiums", "Podiums par saison")}
 {graphique(items_archers, ["m0"], ["Archers"], "archers", "Archers ayant tiré au moins un concours, par saison")}
 <h2>Les saisons</h2>
-<div class="saisons">{cartes}</div>
+<div class="tuiles">{cartes}</div>
 {recents_html}
 <h2>Explorer</h2>
 <ul>
@@ -1143,7 +1079,10 @@ def page_records(epreuves: list[Epreuve], par_archer: dict[str, list[Epreuve]]) 
                 str(sum(1 for e in liste if e.podium and e.grand))], {0, 2, 3, 4, 5, 6})
         )
     tab_medailles = tableau(
-        [("#", True), ("Archer", False), ("🥇", True), ("🥈", True), ("🥉", True), ("Total", True), ("Podiums GC", True)],
+        [
+            ("#", True), ("Archer", False), ("🥇", True), ("🥈", True), ("🥉", True),
+            ("Total", True), ("Podiums GC", True),
+        ],
         lignes,
     )
 
@@ -1219,8 +1158,9 @@ def page_distinctions(par_archer: dict[str, list[Epreuve]], saisons: list[str]) 
 <p class="fil"><a href="index.html">Accueil</a> › Distinctions</p>
 <h1>Distinctions</h1>
 <p>Badges et écussons fédéraux que les scores obtenus en concours officiel permettent de demander, d'après les
-barèmes de la page <a href="{SOURCE_DISTINCTIONS}">Distinctions au tir à l'arc</a> (<a href="a-propos.html#distinctions">règles
-et limites</a>). Les distinctions ne sont pas attribuées automatiquement : à vérifier avant de les remettre.</p>
+barèmes de la page <a href="{SOURCE_DISTINCTIONS}">Distinctions au tir à l'arc</a>
+(<a href="a-propos.html#distinctions">règles et limites</a>). Les distinctions ne sont pas
+attribuées automatiquement : à vérifier avant de les remettre.</p>
 <div class="chiffres">
 {chiffre(len({t[0] for t in toutes}), "archers concernés")}
 {chiffre(len({t[0] for t in en_cours}), f"archers de la saison {derniere}")}
@@ -1339,8 +1279,6 @@ def generer_site(rows: list[dict[str, Any]], mots_cles: list[str], sortie: Path,
         (sortie / chemin).write_text(page(titre, corps, profondeur, actif, saisons), encoding="utf-8")
 
     (sortie / "static").mkdir(exist_ok=True)
-    for fichier in ("logo.png", "caveat.woff2"):
-        shutil.copyfile(ASSETS / fichier, sortie / "static" / fichier)
     shutil.copytree(ASSETS / "distinctions", sortie / "static" / "distinctions", dirs_exist_ok=True)
     (sortie / "style.css").write_text(_CSS, encoding="utf-8")
     (sortie / "site.js").write_text(_JS, encoding="utf-8")

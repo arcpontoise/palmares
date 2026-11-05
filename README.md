@@ -36,6 +36,21 @@ podium = place 1 à 3 ; le tir 3D est scindé avant/après la saison 2017 (40
 puis 24 cibles, scores non comparables) via `PREMIERE_SAISON_3D_24_CIBLES`
 dans `generer_site.py`.
 
+### Charte graphique
+
+Couleurs, polices, blason et styles communs proviennent de la
+[charte de la compagnie](https://github.com/arcpontoise/charte), chargée
+directement depuis <https://charte.arcpontoise.fr/> par chaque page : une
+modification de la charte s'applique au palmarès sans le régénérer.
+`generer_site.py` ne produit que les styles propres au palmarès (`style.css`),
+avec les variables de la charte (`--ink`, `--blue`, `--accent`, `--gold`…).
+
+Pour tester avec une copie locale de la charte :
+
+```bash
+CHARTE_URL=file://$HOME/git/arcpontoise_charte python3 generer_site.py --out site
+```
+
 ## Fichiers
 
 | Fichier                       | Rôle                                               |
@@ -46,7 +61,7 @@ dans `generer_site.py`.
 | `membres.example.yaml`        | Modèle de `membres.yaml`                           |
 | `detail_pontoise.csv`         | Données collectées (une ligne par performance)     |
 | `requirements.txt`            | Dépendances Python de la collecte                  |
-| `assets/`                     | Blason de la compagnie, police Caveat, insignes des distinctions |
+| `assets/`                     | Insignes des distinctions                          |
 | `decouper_insignes.py`        | Découpe les planches d'insignes Wikimedia (Pillow) |
 | `.github/workflows/pages.yml` | Publication sur GitHub Pages                       |
 | `.cache_ffta/`                | Cache des pages FFTA (généré, non versionné)       |
