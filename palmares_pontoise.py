@@ -54,9 +54,10 @@ import logging
 import os
 import re
 import time
+from collections.abc import Iterator
 from dataclasses import asdict, dataclass
 from pathlib import Path
-from typing import Any, Iterator
+from typing import Any
 
 import requests
 import yaml
@@ -76,6 +77,7 @@ MAX_RETRIES = 3
 REQUEST_TIMEOUT = 60  # secondes : les palmarès très fournis sont lents à générer
 # Pictogrammes placés par la FFTA devant les championnats et coupes de France.
 PICTOS_CHAMPIONNAT_FRANCE = {"France.gif", "Coupe-fr.png"}
+
 
 class SessionExpiree(Exception):
     """La FFTA a renvoyé la page de connexion : le cookie n'est plus valide."""
@@ -133,8 +135,7 @@ def load_membership(config_path: Path) -> dict[str, list[ArcherRef]]:
     """
     data: dict[str, Any] = yaml.safe_load(config_path.read_text(encoding="utf-8"))
     membership: dict[str, list[ArcherRef]] = {
-        str(saison): [ArcherRef(**item) for item in archers]
-        for saison, archers in data["archers_par_saison"].items()
+        str(saison): [ArcherRef(**item) for item in archers] for saison, archers in data["archers_par_saison"].items()
     }
     total_combos = sum(len(archers) for archers in membership.values())
     logger.info(
@@ -200,8 +201,7 @@ def fetch_palmares_html(
             page_html = response.text
             if "Utilisez vos identifiants" in page_html:
                 raise SessionExpiree(
-                    "Session expirée (page de connexion reçue) : "
-                    "rafraîchis FFTA_SESSION_ID depuis le navigateur."
+                    "Session expirée (page de connexion reçue) : rafraîchis FFTA_SESSION_ID depuis le navigateur."
                 )
             if _est_captcha(page_html):
                 raise CaptchaRequis(
@@ -224,18 +224,14 @@ def fetch_palmares_html(
             )
             time.sleep(DELAY_SECONDS * attempt)
 
-    raise EchecTelechargement(
-        f"{archer.licence}/{saison} : {type(last_error).__name__}"
-    ) from last_error
+    raise EchecTelechargement(f"{archer.licence}/{saison} : {type(last_error).__name__}") from last_error
 
 
 def _clean_text(tag: Tag | None) -> str:
     return tag.get_text(strip=True) if tag is not None else ""
 
 
-def parse_palmares(
-    page_html: str, archer: ArcherRef, saison: str
-) -> Iterator[CompetitionResult]:
+def parse_palmares(page_html: str, archer: ArcherRef, saison: str) -> Iterator[CompetitionResult]:
     """Parcourt le HTML d'un palmarès et produit une ligne par performance.
 
     La page peut contenir deux tableaux ``table.crh`` : un pour les
@@ -361,20 +357,14 @@ def main() -> None:
     else:
         own_licence = args.own_licence or os.environ.get("FFTA_OWN_LICENCE") or ""
     if not args.cache_seulement and not own_licence:
-        raise SystemExit(
-            "Ta propre licence est requise (--own-licence ou FFTA_OWN_LICENCE)."
-        )
+        raise SystemExit("Ta propre licence est requise (--own-licence ou FFTA_OWN_LICENCE).")
 
     membership = load_membership(args.config)
     session = build_session(session_id)
 
     all_rows: list[CompetitionResult] = []
     echecs: list[str] = []
-    combos = [
-        (archer, saison)
-        for saison, archers in membership.items()
-        for archer in archers
-    ]
+    combos = [(archer, saison) for saison, archers in membership.items() for archer in archers]
     for index, (archer, saison) in enumerate(combos, start=1):
         logger.info(
             "[%d/%d] %s (%s) - saison %s",
@@ -398,9 +388,7 @@ def main() -> None:
             all_rows.extend(parse_palmares(cache_file.read_text(encoding="utf-8"), archer, saison))
             continue
         try:
-            page_html, depuis_cache = fetch_palmares_html(
-                session, archer, saison, own_licence, refresh=refresh
-            )
+            page_html, depuis_cache = fetch_palmares_html(session, archer, saison, own_licence, refresh=refresh)
         except EchecTelechargement as exc:
             logger.error("Abandon de %s", exc)
             echecs.append(f"{archer.nom} ({archer.licence}) saison {saison}")

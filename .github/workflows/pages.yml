@@ -1,6 +1,7 @@
+---
 # Génère le site statique à partir de detail_pontoise.csv (commité) et le
 # publie sur GitHub Pages. Aucun accès à la FFTA ici : le CSV est produit en
-# local par palmares_pontoise.py puis poussé sur le dépôt.
+# local par palmares_pontoise.py puis versionné via une pull request.
 name: Publier le site
 
 on:
@@ -9,41 +10,79 @@ on:
     paths:
       - detail_pontoise.csv
       - membres.yaml
+      - palmares_national.yaml
       - generer_site.py
       - assets/**
       - .github/workflows/pages.yml
+  # No path filter: lint is the required status check of main
+  pull_request:
   workflow_dispatch:
 
 permissions:
   contents: read
-  pages: write
-  id-token: write
 
+# A new push to a pull request cancels its previous run; main runs always finish
 concurrency:
-  group: pages
-  cancel-in-progress: true
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
 
 jobs:
-  build:
+  # Required status check of the main branch ruleset
+  lint:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v7
+        with:
+          python-version: "3.12"
+      - name: Outils de lint
+        run: pip install ruff yamllint
+      - name: Lint YAML
+        run: yamllint .
+      - name: Lint Python
+        run: |
+          ruff check .
+          ruff format --check .
+      - uses: actions/setup-node@v7
+        with:
+          node-version: "24"
+      - name: Lint Markdown
+        run: npx --yes markdownlint-cli2@0.24.0 "**/*.md"
+
+  build:
+    needs: lint
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v7
         with:
           python-version: "3.12"
       - run: pip install pyyaml
       - run: python3 generer_site.py --out site
-      - uses: actions/configure-pages@v5
-      - uses: actions/upload-pages-artifact@v3
+      - if: github.event_name != 'pull_request'
+        uses: actions/upload-pages-artifact@v5
         with:
           path: site
 
   deploy:
     needs: build
+    if: github.event_name != 'pull_request'
     runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    # Never interrupt a deployment in progress
+    concurrency:
+      group: pages
+      cancel-in-progress: false
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
+      - uses: actions/configure-pages@v6
       - id: deployment
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@v5
