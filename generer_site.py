@@ -16,6 +16,7 @@ Pages produites dans le dossier de sortie (``site/`` par défaut) :
     grands-concours.html  podiums des championnats et grands concours
     records.html          classement des médaillés et meilleurs scores
     distinctions.html     badges et écussons que les scores permettent de demander
+    national.html         palmarès national (palmares_national.yaml, saisi à la main)
     a-propos.html         méthode de calcul
 
 Règles de comptage : plusieurs lignes d'un même archer pour un même
@@ -253,8 +254,9 @@ def _vrai(valeur: Any) -> bool:
     return str(valeur).strip().lower() == "true"
 
 
-def construire_epreuves(rows: list[dict[str, Any]], mots_cles: list[str],
-                        exclusions: list[str] = DEFAULT_EXCLUSIONS) -> list[Epreuve]:
+def construire_epreuves(
+    rows: list[dict[str, Any]], mots_cles: list[str], exclusions: list[str] = DEFAULT_EXCLUSIONS
+) -> list[Epreuve]:
     """Fusionne les lignes d'un même archer/concours et normalise les champs."""
     groupes: dict[tuple[str, str, str], list[dict[str, Any]]] = defaultdict(list)
     for row in rows:
@@ -319,8 +321,14 @@ def construire_epreuves(rows: list[dict[str, Any]], mots_cles: list[str],
 
 SOURCE_DISTINCTIONS = "https://fr.wikipedia.org/wiki/Distinctions_au_tir_%C3%A0_l%27arc"
 _COULEURS = ["Vert", "Blanc", "Noir", "Bleu", "Rouge", "Jaune", "★", "★★", "★★★"]
-_ECUSSONS = ["Vert sur fond blanc", "Argent sur fond vert", "Or sur fond blanc",
-             "Or sur fond noir", "Or sur fond bleu", "Or sur fond rouge"]
+_ECUSSONS = [
+    "Vert sur fond blanc",
+    "Argent sur fond vert",
+    "Or sur fond blanc",
+    "Or sur fond noir",
+    "Or sur fond bleu",
+    "Or sur fond rouge",
+]
 _ORANGE = ["Noir sur fond orange", "Argent sur fond orange", "Or sur fond orange"]
 JEUNES = {"Poussin", "Benjamin", "Minime", "Cadet"}
 
@@ -340,45 +348,73 @@ class Bareme:
 BAREMES = {
     b.nom: b
     for b in (
-        Bareme("Salle", tuple(_COULEURS), {
-            "Classique": (455, 480, 500, 515, 530, 545, 555, 565, 575),
-            "Poulies": (540, 550, 555, 560, 565, 570, 575, 580, 585),
-        }),
-        Bareme("FITA", tuple(_COULEURS), {
-            "Classique": (480, 510, 535, 560, 585, 605, 625, 645, 660),
-            "Poulies": (620, 635, 645, 655, 665, 675, 685, 695, 700),
-        }),
-        Bareme("Fédéral", ("1 archer", "2 archers", "3 archers", "4 archers", "1 archer noir"), {
-            "Classique": (500, 550, 600, 640, 670),
-            "Poulies": (550, 600, 640, 670, 690),
-        }),
+        Bareme(
+            "Salle",
+            tuple(_COULEURS),
+            {
+                "Classique": (455, 480, 500, 515, 530, 545, 555, 565, 575),
+                "Poulies": (540, 550, 555, 560, 565, 570, 575, 580, 585),
+            },
+        ),
+        Bareme(
+            "FITA",
+            tuple(_COULEURS),
+            {
+                "Classique": (480, 510, 535, 560, 585, 605, 625, 645, 660),
+                "Poulies": (620, 635, 645, 655, 665, 675, 685, 695, 700),
+            },
+        ),
+        Bareme(
+            "Fédéral",
+            ("1 archer", "2 archers", "3 archers", "4 archers", "1 archer noir"),
+            {
+                "Classique": (500, 550, 600, 640, 670),
+                "Poulies": (550, 600, 640, 670, 690),
+            },
+        ),
         Bareme("Marcassin campagne", tuple(_ECUSSONS[:4]), {"Classique": (160, 210, 270, 320)}),
-        Bareme("Écureuil", tuple(_ECUSSONS), {
-            "Classique": (200, 240, 260, 300, 340, 380),
-            "Poulies": (220, 260, 280, 320, 360, 400),
-            "Arc nu cadet": (160, 200, 220, 260, 300, 340),
-            "Arc nu": (180, 220, 240, 280, 320, 360),
-        }),
+        Bareme(
+            "Écureuil",
+            tuple(_ECUSSONS),
+            {
+                "Classique": (200, 240, 260, 300, 340, 380),
+                "Poulies": (220, 260, 280, 320, 360, 400),
+                "Arc nu cadet": (160, 200, 220, 260, 300, 340),
+                "Arc nu": (180, 220, 240, 280, 320, 360),
+            },
+        ),
         Bareme("Marcassin nature", tuple(_ORANGE), {"Arc nu": (325, 550, 775)}),
-        Bareme("Sanglier", tuple(_ECUSSONS), {
-            "Arc droit": (240, 475, 700, 850, 1000, 1075),
-            "Arc chasse": (350, 575, 800, 950, 1100, 1175),
-            "Arc nu": (400, 625, 850, 1000, 1150, 1225),
-            "Poulies": (450, 675, 900, 1050, 1200, 1275),
-            "Arc libre": (600, 825, 1050, 1200, 1350, 1425),
-        }),
+        Bareme(
+            "Sanglier",
+            tuple(_ECUSSONS),
+            {
+                "Arc droit": (240, 475, 700, 850, 1000, 1075),
+                "Arc chasse": (350, 575, 800, 950, 1100, 1175),
+                "Arc nu": (400, 625, 850, 1000, 1150, 1225),
+                "Poulies": (450, 675, 900, 1050, 1200, 1275),
+                "Arc libre": (600, 825, 1050, 1200, 1350, 1425),
+            },
+        ),
         Bareme("Lynx", tuple(_ORANGE), {"Arc nu": (150, 175, 210)}),
-        Bareme("Chevreuil", tuple(_ECUSSONS), {
-            "Arc droit": (70, 125, 185, 235, 270, 335),
-            "Arc chasse": (85, 140, 195, 260, 300, 360),
-            "Arc nu": (110, 160, 220, 270, 315, 375),
-            "Poulies": (140, 210, 280, 330, 385, 435),
-            "Arc libre": (185, 260, 330, 380, 435, 460),
-        }),
-        Bareme("Beursault", ("1 marmot", "2 marmots", "3 marmots", "4 marmots"), {
-            "Classique": (32, 35, 38, 40),
-            "Poulies": (32, 35, 38, 40),
-        }),
+        Bareme(
+            "Chevreuil",
+            tuple(_ECUSSONS),
+            {
+                "Arc droit": (70, 125, 185, 235, 270, 335),
+                "Arc chasse": (85, 140, 195, 260, 300, 360),
+                "Arc nu": (110, 160, 220, 270, 315, 375),
+                "Poulies": (140, 210, 280, 330, 385, 435),
+                "Arc libre": (185, 260, 330, 380, 435, 460),
+            },
+        ),
+        Bareme(
+            "Beursault",
+            ("1 marmot", "2 marmots", "3 marmots", "4 marmots"),
+            {
+                "Classique": (32, 35, 38, 40),
+                "Poulies": (32, 35, 38, 40),
+            },
+        ),
     )
 }
 DISCIPLINES_FITA = {"FITA / extérieur", "2x70 m", "2x50 m", "TAE DI", "TAE"}  # pas le TAE DN
@@ -599,8 +635,10 @@ def piquet_html(e: Epreuve) -> str:
         return ""
     nom, couleur = PIQUETS[e.piquet]
     if e.piquet_deduit:
-        return (f"<span class='piquet deduit' title=\"Piquet {e.piquet}, déduit de la catégorie (non précisé par "
-                f"la FFTA)\"><i style='background:{couleur}'></i>{nom}</span>")
+        return (
+            f"<span class='piquet deduit' title=\"Piquet {e.piquet}, déduit de la catégorie (non précisé par "
+            f"la FFTA)\"><i style='background:{couleur}'></i>{nom}</span>"
+        )
     return f"<span class='piquet' title='Piquet {e.piquet}'><i style='background:{couleur}'></i>{nom}</span>"
 
 
@@ -610,20 +648,25 @@ def insigne(bareme: Bareme, niveau: int, profondeur: int) -> str:
     libelle = esc(f"{bareme.nom} – {nom}")
     # Les insignes à étoiles ne se distinguent pas en petit : on écrit les étoiles.
     etoiles = f"<span class='etoiles'>{nom}</span>" if "★" in nom else ""
-    return (f"<img class='insigne' src='{'../' * profondeur}static/distinctions/{bareme.image(niveau)}' "
-            f"alt='{libelle}' title='{libelle}' />{etoiles}")
+    return (
+        f"<img class='insigne' src='{'../' * profondeur}static/distinctions/{bareme.image(niveau)}' "
+        f"alt='{libelle}' title='{libelle}' />{etoiles}"
+    )
 
 
 def distinction_html(d: Distinction | None, profondeur: int) -> str:
     """Nom du barème suivi de l'insigne ; le niveau, masqué, reste cherchable par le filtre."""
     if d is None:
         return ""
-    return (f"<span class='distinction'>{esc(d.bareme.nom)}{insigne(d.bareme, d.niveau, profondeur)}"
-            f"<span hidden>{esc(d.bareme.niveaux[d.niveau])}</span></span>")
+    return (
+        f"<span class='distinction'>{esc(d.bareme.nom)}{insigne(d.bareme, d.niveau, profondeur)}"
+        f"<span hidden>{esc(d.bareme.niveaux[d.niveau])}</span></span>"
+    )
 
 
-def tableau_obtentions(obts: list[tuple[str, str, Obtention]], profondeur: int, ident: str,
-                       avec_archer: bool = True, saison: str = "") -> str:
+def tableau_obtentions(
+    obts: list[tuple[str, str, Obtention]], profondeur: int, ident: str, avec_archer: bool = True, saison: str = ""
+) -> str:
     """``obts`` : (licence, nom, obtention). Avec ``saison`` : niveau atteint avant cette saison."""
     entetes = [("Archer", False)] if avec_archer else []
     entetes += [("Discipline", False), ("Arc", False)]
@@ -654,6 +697,7 @@ def page(titre: str, corps: str, profondeur: int, actif: str, saisons: list[str]
         ("grands", "grands-concours.html", "Grands concours"),
         ("records", "records.html", "Records"),
         ("distinctions", "distinctions.html", "Distinctions"),
+        ("national", "national.html", "Palmarès national"),
         ("apropos", "a-propos.html", "À propos"),
     ]
     nav = "".join(
@@ -670,16 +714,21 @@ def page(titre: str, corps: str, profondeur: int, actif: str, saisons: list[str]
 <link rel="stylesheet" href="{CHARTE}/css/tokens.css" />
 <link rel="stylesheet" href="{CHARTE}/css/charte.css" />
 <link rel="stylesheet" href="{racine}style.css" />
+<script src="{CHARTE}/js/menu.js" defer></script>
 </head>
 <body>
-<header class="site"><div class="gabarit">
+<header class="site"><div class="gabarit entete-flex">
 <a class="marque" href="{racine}index.html">
 <img class="logo" src="{CHARTE}/img/logo.png" alt="Blason de Pontoise" />
 <div><p class="manuscrit">Compagnie d'archers de Pontoise</p>
 <p class="titre">Palmarès</p></div>
 </a>
+<arc-menu actuel="competitions">
+<a href="https://arcpontoise.fr/">Accueil</a>
+<a href="https://contact.arcpontoise.fr/">Contact</a>
+</arc-menu>
 </div></header>
-<nav class="site gabarit">{nav}</nav>
+<nav class="site gabarit" aria-label="Palmarès">{nav}</nav>
 <main class="gabarit">
 {corps}
 </main>
@@ -703,9 +752,7 @@ def tableau(entetes: list[tuple[str, bool]], lignes: list[str], ident: str = "",
 
 
 def tr(cellules: list[str], numeriques: set[int] = frozenset(), grand: bool = False) -> str:  # type: ignore[assignment]
-    tds = "".join(
-        f"<td{' class=num' if i in numeriques else ''}>{c}</td>" for i, c in enumerate(cellules)
-    )
+    tds = "".join(f"<td{' class=num' if i in numeriques else ''}>{c}</td>" for i, c in enumerate(cellules))
     return f"<tr{' class=grand' if grand else ''}>{tds}</tr>"
 
 
@@ -741,10 +788,10 @@ def graphique(
     for i, (label, valeurs) in enumerate(items):
         x = gauche + i * slot + (slot - bw) / 2
         cumul = 0
-        details = ", ".join(f"{n} : {v}" for n, v in zip(noms, valeurs) if len(noms) > 1)
+        details = ", ".join(f"{n} : {v}" for n, v in zip(noms, valeurs, strict=True) if len(noms) > 1)
         infobulle = f"{label} – {sum(valeurs)} {unite}" + (f" ({details})" if details else "")
         # Empilement depuis la dernière série : l'or (1re série) se retrouve en haut.
-        for valeur, classe in reversed(list(zip(valeurs, classes))):
+        for valeur, classe in reversed(list(zip(valeurs, classes, strict=True))):
             if valeur <= 0:
                 continue
             haut_barre = y(cumul + valeur)
@@ -755,15 +802,15 @@ def graphique(
             )
             cumul += valeur
         if i % saut == 0:
-            svg.append(
-                f"<text x='{x + bw / 2:.1f}' y='{hauteur - 8}' text-anchor='middle'>{esc(label)}</text>"
-            )
+            svg.append(f"<text x='{x + bw / 2:.1f}' y='{hauteur - 8}' text-anchor='middle'>{esc(label)}</text>")
     svg.append("</svg>")
     legende = ""
     if len(noms) > 1:
-        legende = "<div class='legende'>" + "".join(
-            f"<span><i class='i{c[1]}'></i>{esc(n)}</span>" for c, n in zip(classes, noms)
-        ) + "</div>"
+        legende = (
+            "<div class='legende'>"
+            + "".join(f"<span><i class='i{c[1]}'></i>{esc(n)}</span>" for c, n in zip(classes, noms, strict=True))
+            + "</div>"
+        )
     return f"<div class='carte'><b>{esc(titre)}</b>{legende}{''.join(svg)}</div>"
 
 
@@ -787,8 +834,9 @@ def lien_saison(saison: str, profondeur: int) -> str:
     return f"<a href='{'../' * profondeur}saisons/{esc(saison)}.html'>{esc(saison)}</a>"
 
 
-def tableau_epreuves(epreuves: list[Epreuve], profondeur: int, ident: str, avec_archer: bool = True,
-                     avec_saison: bool = True) -> str:
+def tableau_epreuves(
+    epreuves: list[Epreuve], profondeur: int, ident: str, avec_archer: bool = True, avec_saison: bool = True
+) -> str:
     entetes = [("Date", False)]
     if avec_saison:
         entetes.append(("Saison", False))
@@ -878,8 +926,14 @@ def page_saison(saison: str, eps: list[Epreuve], saisons: list[str]) -> str:
         m = medailles(liste)
         lignes.append(
             tr(
-                [lien_archer(licence, liste[0].nom, 1), str(len(liste)), str(m[0]), str(m[1]), str(m[2]),
-                 str(sum(1 for e in liste if e.podium and e.grand))],
+                [
+                    lien_archer(licence, liste[0].nom, 1),
+                    str(len(liste)),
+                    str(m[0]),
+                    str(m[1]),
+                    str(m[2]),
+                    str(sum(1 for e in liste if e.podium and e.grand)),
+                ],
                 {1, 2, 3, 4, 5},
             )
         )
@@ -918,16 +972,30 @@ def page_annuaire(par_archer: dict[str, list[Epreuve]]) -> str:
         m = medailles(liste)
         lignes.append(
             tr(
-                [lien_archer(licence, liste[0].nom, 1),
-                 f"{saisons[0]}–{saisons[-1]}" if len(saisons) > 1 else saisons[0],
-                 str(len(saisons)), str(len(liste)), str(m[0]), str(m[1]), str(m[2]),
-                 str(sum(1 for e in liste if e.podium and e.grand))],
+                [
+                    lien_archer(licence, liste[0].nom, 1),
+                    f"{saisons[0]}–{saisons[-1]}" if len(saisons) > 1 else saisons[0],
+                    str(len(saisons)),
+                    str(len(liste)),
+                    str(m[0]),
+                    str(m[1]),
+                    str(m[2]),
+                    str(sum(1 for e in liste if e.podium and e.grand)),
+                ],
                 {2, 3, 4, 5, 6, 7},
             )
         )
     tab = tableau(
-        [("Archer", False), ("Période", False), ("Saisons", True), ("Concours", True),
-         ("🥇", True), ("🥈", True), ("🥉", True), ("Podiums GC", True)],
+        [
+            ("Archer", False),
+            ("Période", False),
+            ("Saisons", True),
+            ("Concours", True),
+            ("🥇", True),
+            ("🥈", True),
+            ("🥉", True),
+            ("Podiums GC", True),
+        ],
         lignes,
     ).replace("<table", "<table id='annuaire'", 1)
     return f"""
@@ -946,8 +1014,11 @@ def page_archer(liste: list[Epreuve]) -> str:
     podiums = [e for e in liste if e.podium]
 
     items = [(s, medailles([e for e in liste if e.saison == s])) for s in saisons]
-    graph = graphique(items, ["m1", "m2", "m3"], ["Or", "Argent", "Bronze"], "podiums", "Podiums par saison") \
-        if podiums else ""
+    graph = (
+        graphique(items, ["m1", "m2", "m3"], ["Or", "Argent", "Bronze"], "podiums", "Podiums par saison")
+        if podiums
+        else ""
+    )
 
     lignes = []
     for s in reversed(saisons):
@@ -956,12 +1027,21 @@ def page_archer(liste: list[Epreuve]) -> str:
         disciplines = ", ".join(sorted({e.discipline for e in d}))
         armes = ", ".join(sorted({e.arme for e in d if e.arme != "Autre"}))
         lignes.append(
-            tr([lien_saison(s, 1), str(len(d)), str(mm[0]), str(mm[1]), str(mm[2]),
-                esc(armes), esc(disciplines)], {1, 2, 3, 4})
+            tr(
+                [lien_saison(s, 1), str(len(d)), str(mm[0]), str(mm[1]), str(mm[2]), esc(armes), esc(disciplines)],
+                {1, 2, 3, 4},
+            )
         )
     parcours = tableau(
-        [("Saison", False), ("Concours", True), ("🥇", True), ("🥈", True), ("🥉", True),
-         ("Arc", False), ("Disciplines", False)],
+        [
+            ("Saison", False),
+            ("Concours", True),
+            ("🥇", True),
+            ("🥈", True),
+            ("🥉", True),
+            ("Arc", False),
+            ("Disciplines", False),
+        ],
         lignes,
     )
 
@@ -977,8 +1057,17 @@ def page_archer(liste: list[Epreuve]) -> str:
     ]
     bloc_scores = (
         "<h2>Meilleurs scores</h2>"
-        + tableau([("Discipline", False), ("Arc", False), ("Points", True), ("Distinction", False),
-                   ("Date", False), ("Concours", False)], lignes_scores)
+        + tableau(
+            [
+                ("Discipline", False),
+                ("Arc", False),
+                ("Points", True),
+                ("Distinction", False),
+                ("Date", False),
+                ("Concours", False),
+            ],
+            lignes_scores,
+        )
         if lignes_scores
         else ""
     )
@@ -990,9 +1079,7 @@ def page_archer(liste: list[Epreuve]) -> str:
         if obts
         else ""
     )
-    bloc_gc = (
-        "<h2>Podiums en grands concours</h2>" + tableau_epreuves(gc, 1, "gc", avec_archer=False) if gc else ""
-    )
+    bloc_gc = "<h2>Podiums en grands concours</h2>" + tableau_epreuves(gc, 1, "gc", avec_archer=False) if gc else ""
     bloc_podiums = (
         f"<h2>Tous les podiums ({len(podiums)})</h2>" + tableau_epreuves(podiums, 1, "podiums", avec_archer=False)
         if podiums
@@ -1043,10 +1130,13 @@ def page_grands_concours(epreuves: list[Epreuve], saisons: list[str]) -> str:
                 for e in liste
             )
             disciplines = ", ".join(sorted({e.discipline for e in liste}))
-            lignes.append(tr([esc(liste[0].date), esc(concours), esc(disciplines), participants],
-                             grand=any(e.podium for e in liste)))
-        tab = tableau([("Date", False), ("Concours", False), ("Discipline", False), ("Participants", False)],
-                      lignes)
+            lignes.append(
+                tr(
+                    [esc(liste[0].date), esc(concours), esc(disciplines), participants],
+                    grand=any(e.podium for e in liste),
+                )
+            )
+        tab = tableau([("Date", False), ("Concours", False), ("Discipline", False), ("Participants", False)], lignes)
         sections.append(
             f"<details id='s{s}'{' open' if s == saisons[0] else ''}><summary>Saison {esc(s)} – "
             f"{len(par_concours)} concours, {len(d)} participations, {len(podiums)} podium(s)</summary>"
@@ -1062,7 +1152,7 @@ def page_grands_concours(epreuves: list[Epreuve], saisons: list[str]) -> str:
 médaillés en tête, puis place obtenue. Les lignes surlignées sont celles avec au moins un podium.</p>
 {graphique(items, ["m1", "m2", "m3"], ["Or", "Argent", "Bronze"], "podiums", "Podiums en grands concours par saison")}
 <p>Aller à : {lignes_ancre}</p>
-{''.join(sections)}
+{"".join(sections)}
 """
 
 
@@ -1075,13 +1165,28 @@ def page_records(epreuves: list[Epreuve], par_archer: dict[str, list[Epreuve]]) 
     for rang, (licence, liste) in enumerate([c for c in classement if sum(medailles(c[1]))][:30], start=1):
         m = medailles(liste)
         lignes.append(
-            tr([str(rang), lien_archer(licence, liste[0].nom, 0), str(m[0]), str(m[1]), str(m[2]), str(sum(m)),
-                str(sum(1 for e in liste if e.podium and e.grand))], {0, 2, 3, 4, 5, 6})
+            tr(
+                [
+                    str(rang),
+                    lien_archer(licence, liste[0].nom, 0),
+                    str(m[0]),
+                    str(m[1]),
+                    str(m[2]),
+                    str(sum(m)),
+                    str(sum(1 for e in liste if e.podium and e.grand)),
+                ],
+                {0, 2, 3, 4, 5, 6},
+            )
         )
     tab_medailles = tableau(
         [
-            ("#", True), ("Archer", False), ("🥇", True), ("🥈", True), ("🥉", True),
-            ("Total", True), ("Podiums GC", True),
+            ("#", True),
+            ("Archer", False),
+            ("🥇", True),
+            ("🥈", True),
+            ("🥉", True),
+            ("Total", True),
+            ("Podiums GC", True),
         ],
         lignes,
     )
@@ -1102,17 +1207,23 @@ def page_records(epreuves: list[Epreuve], par_archer: dict[str, list[Epreuve]]) 
             top = sorted(par_licence.values(), key=lambda e: -(e.points or 0))[:5]
             avec_piquet = any(e.piquet for e in top)
             lignes_r = [
-                tr([str(r), lien_archer(e.licence, e.nom, 0), str(e.points)]
-                   + ([piquet_html(e) or "–"] if avec_piquet else [])
-                   + [lien_saison(e.saison, 0), esc(e.concours)], {0, 2})
+                tr(
+                    [str(r), lien_archer(e.licence, e.nom, 0), str(e.points)]
+                    + ([piquet_html(e) or "–"] if avec_piquet else [])
+                    + [lien_saison(e.saison, 0), esc(e.concours)],
+                    {0, 2},
+                )
                 for r, e in enumerate(top, start=1)
             ]
             sous.append(
                 f"<h3>{esc(arme)}{' – ' + esc(sexe) if sexe else ''}</h3>"
-                + tableau([("#", True), ("Archer", False), ("Points", True)]
-                          + ([("Piquet", False)] if avec_piquet else [])
-                          + [("Saison", False), ("Concours", False)],
-                          lignes_r, tri=False)
+                + tableau(
+                    [("#", True), ("Archer", False), ("Points", True)]
+                    + ([("Piquet", False)] if avec_piquet else [])
+                    + [("Saison", False), ("Concours", False)],
+                    lignes_r,
+                    tri=False,
+                )
             )
         blocs.append(f"<details><summary>{esc(discipline)}</summary>{''.join(sous)}</details>")
     return f"""
@@ -1124,7 +1235,7 @@ def page_records(epreuves: list[Epreuve], par_archer: dict[str, list[Epreuve]]) 
 <p>Meilleure performance de chaque archer, 5 premiers par arc et par sexe. En 3D, campagne et nature, le piquet
 de tir est indiqué : rouge (1), bleu (2) ou blanc (3). La FFTA ne le précise que depuis 2020 environ ; avant, il est
 <i>déduit</i> de la catégorie d'âge et de l'arc (en italique), sauf pour la 3D sur 40 cibles.</p>
-{''.join(blocs)}
+{"".join(blocs)}
 """
 
 
@@ -1168,13 +1279,152 @@ attribuées automatiquement : à vérifier avant de les remettre.</p>
 </div>
 <h2>Nouvelles distinctions, saison par saison</h2>
 <p>Chaque ligne indique le niveau atteint à la fin de la saison et celui qui était déjà acquis avant.</p>
-{''.join(sections)}
+{"".join(sections)}
 <h2>Archers de la saison {esc(derniere)} : plus haut niveau atteint</h2>
 <p><input class="filtre" data-filtre="actifs" placeholder="Filtrer (archer, badge, arc…)" /></p>
 {tableau_obtentions(en_cours, 0, "actifs")}
 <details><summary>Anciens archers ({len({t[0] for t in anciens})})</summary>
 {tableau_obtentions(anciens, 0, "anciens")}
 </details>
+"""
+
+
+# --- Palmarès national -----------------------------------------------------
+
+
+@dataclass
+class ResultatNational:
+    """Un résultat aux championnats nationaux, individuel ou par équipe (palmares_national.yaml)."""
+
+    annee: int
+    discipline: str
+    competition: str
+    categorie: str
+    place: int
+    archer: str = ""  # individuel
+    equipe: str = ""  # par équipe : division (DN1, DR…)
+    archers: tuple[str, ...] = ()  # par équipe : noms des archers
+
+    @property
+    def podium(self) -> bool:
+        return self.place in MEDAILLES
+
+
+def _texte(valeur: Any, ou: str) -> str:
+    if not isinstance(valeur, str | int) or not str(valeur).strip():
+        raise ValueError(f"{ou} : texte attendu")
+    return str(valeur).strip()
+
+
+def lire_palmares_national(chemin: Path) -> list[ResultatNational]:
+    """Lit et valide le palmarès national ; liste vide si le fichier n'existe pas."""
+    if not chemin.exists():
+        return []
+    data = yaml.safe_load(chemin.read_text(encoding="utf-8")) or {}
+    resultats = []
+    for i, bloc in enumerate(data.get("annees") or []):
+        annee = bloc.get("annee")
+        if not isinstance(annee, int):
+            raise ValueError(f"{chemin} : annees[{i}].annee doit être un entier")
+        for j, epreuve in enumerate(bloc.get("epreuves") or []):
+            ou = f"{chemin} : {annee}, epreuves[{j}]"
+            discipline = _texte(epreuve.get("discipline"), f"{ou}.discipline")
+            competition = str(epreuve.get("competition") or "").strip()
+            for k, r in enumerate(epreuve.get("resultats") or []):
+                ou_r = f"{ou}.resultats[{k}]"
+                place = r.get("place")
+                if not isinstance(place, int) or place < 1:
+                    raise ValueError(f"{ou_r}.place : entier positif attendu")
+                individuel, par_equipe = "archer" in r, "equipe" in r
+                if individuel == par_equipe:
+                    raise ValueError(f"{ou_r} : 'archer' ou 'equipe' attendu (un seul des deux)")
+                commun = {
+                    "annee": annee,
+                    "discipline": discipline,
+                    "competition": competition,
+                    "categorie": _texte(r.get("categorie"), f"{ou_r}.categorie"),
+                    "place": place,
+                }
+                if individuel:
+                    resultats.append(ResultatNational(**commun, archer=_texte(r["archer"], f"{ou_r}.archer")))
+                else:
+                    noms = r.get("archers")
+                    if not isinstance(noms, list) or not noms:
+                        raise ValueError(f"{ou_r}.archers : liste de noms attendue")
+                    resultats.append(
+                        ResultatNational(
+                            **commun,
+                            equipe=_texte(r["equipe"], f"{ou_r}.equipe"),
+                            archers=tuple(_texte(n, f"{ou_r}.archers") for n in noms),
+                        )
+                    )
+    return resultats
+
+
+def page_national(resultats: list[ResultatNational]) -> str:
+    if not resultats:
+        return """
+<p class="fil"><a href="index.html">Accueil</a> › Palmarès national</p>
+<h1>Palmarès national</h1>
+<p>Aucun résultat saisi.</p>
+"""
+    resultats = sorted(resultats, key=lambda r: (-r.annee, r.discipline, r.place))
+    titres = sum(1 for r in resultats if r.place == 1)
+    podiums = sum(1 for r in resultats if r.podium)
+    annees = sorted({r.annee for r in resultats})
+
+    lignes = []
+    for r in resultats:
+        epreuve = esc(r.discipline) + (f" <span class='etapes'>{esc(r.competition)}</span>" if r.competition else "")
+        qui = f"Équipe {esc(r.equipe)} : {esc(', '.join(r.archers))}" if r.equipe else esc(r.archer)
+        lignes.append(
+            tr(
+                [str(r.annee), epreuve, qui, esc(r.categorie), place_html(r.place)],
+                {0, 4},
+                grand=r.place == 1,
+            )
+        )
+    tab = tableau(
+        [("Année", True), ("Épreuve", False), ("Archer ou équipe", False), ("Catégorie", False), ("Place", True)],
+        lignes,
+        "national",
+    )
+
+    # Individual medals per archer: titles first, then silver, then bronze
+    par_archer: dict[str, list[int]] = defaultdict(lambda: [0, 0, 0])
+    for r in resultats:
+        if r.archer and r.podium:
+            par_archer[r.archer][r.place - 1] += 1
+    classement = sorted(par_archer.items(), key=lambda item: ([-n for n in item[1]], item[0]))
+    lignes_archers = [
+        tr([esc(nom), str(o), str(a), str(b), str(o + a + b)], {1, 2, 3, 4}) for nom, (o, a, b) in classement
+    ]
+    tab_archers = tableau(
+        [("Archer", False), ("🥇", True), ("🥈", True), ("🥉", True), ("Podiums", True)],
+        lignes_archers,
+        "national-archers",
+    )
+    items = [(str(a), [sum(1 for r in resultats if r.annee == a and r.place == p) for p in (1, 2, 3)]) for a in annees]
+    return f"""
+<p class="fil"><a href="index.html">Accueil</a> › Palmarès national</p>
+<h1>Palmarès national</h1>
+<p>Podiums et classements des archers de la compagnie aux championnats de France, en individuel et par
+équipe, de {annees[0]} à {annees[-1]}. Ces résultats sont saisis à la main : repris de l'ancien site de la
+compagnie et vérifiés avec l'extranet FFTA, qui ne donne ni les classements par équipe ni les places au
+Beursault.</p>
+<div class="chiffres">
+{chiffre(titres, "titres")}
+{chiffre(podiums, "podiums")}
+{chiffre(len(annees), "années avec un résultat")}
+</div>
+{graphique(items, ["m1", "m2", "m3"], ["Or", "Argent", "Bronze"], "podiums", "Podiums nationaux par année")}
+<h2>Tous les résultats</h2>
+<p>Les lignes surlignées sont des titres. Cliquer sur un en-tête pour trier.</p>
+<p><input class="filtre" type="search" data-filtre="national" placeholder="Filtrer (nom, année, épreuve…)"
+aria-label="Filtrer les résultats" /></p>
+{tab}
+<h2>Médailles individuelles par archer</h2>
+{tab_archers}
 """
 
 
@@ -1252,8 +1502,13 @@ par niveau).</p>
 # --- Orchestration ---------------------------------------------------------
 
 
-def generer_site(rows: list[dict[str, Any]], mots_cles: list[str], sortie: Path,
-                 exclusions: list[str] = DEFAULT_EXCLUSIONS) -> None:
+def generer_site(
+    rows: list[dict[str, Any]],
+    mots_cles: list[str],
+    sortie: Path,
+    exclusions: list[str] = DEFAULT_EXCLUSIONS,
+    national: list[ResultatNational] | None = None,
+) -> None:
     """Écrit le site complet dans ``sortie`` à partir des lignes de résultats."""
     epreuves = construire_epreuves(rows, mots_cles, exclusions)
     if not epreuves:
@@ -1291,10 +1546,14 @@ def generer_site(rows: list[dict[str, Any]], mots_cles: list[str], sortie: Path,
     ecrire("grands-concours.html", "Grands concours", page_grands_concours(epreuves, saisons), 0, "grands")
     ecrire("records.html", "Records", page_records(epreuves, par_archer), 0, "records")
     ecrire("distinctions.html", "Distinctions", page_distinctions(par_archer, saisons), 0, "distinctions")
+    ecrire("national.html", "Palmarès national", page_national(national or []), 0, "national")
     ecrire("a-propos.html", "À propos", page_apropos(mots_cles, exclusions, len(rows)), 0, "apropos")
     logger.info(
         "Site généré dans %s : %d saisons, %d archers, %d participations",
-        sortie, len(saisons), len(par_archer), len(epreuves),
+        sortie,
+        len(saisons),
+        len(par_archer),
+        len(epreuves),
     )
 
 
@@ -1317,11 +1576,13 @@ def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     parser.add_argument("--detail", type=Path, default=Path("detail_pontoise.csv"))
     parser.add_argument("--config", type=Path, default=Path("membres.yaml"))
+    parser.add_argument("--national", type=Path, default=Path("palmares_national.yaml"))
     parser.add_argument("--out", type=Path, default=Path("site"))
     args = parser.parse_args()
+    national = lire_palmares_national(args.national)
     with args.detail.open(encoding="utf-8", newline="") as handle:
         rows = list(csv.DictReader(handle))
-    generer_site(rows, lire_mots_cles(args.config), args.out, lire_exclusions(args.config))
+    generer_site(rows, lire_mots_cles(args.config), args.out, lire_exclusions(args.config), national)
 
 
 if __name__ == "__main__":

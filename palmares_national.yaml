@@ -1,0 +1,372 @@
+---
+# Palmarès national des archers de la compagnie : podiums et classements aux
+# championnats de France (et d'Europe). Saisi à la main : repris de l'ancien
+# site WordPress (https://arcpontoise.fr/palmares-national/), puis complété et
+# corrigé d'après l'extranet FFTA. Le Beursault (sans place dans l'extranet) et
+# les classements par équipe n'existent que dans ce fichier.
+#
+# Une année contient des épreuves, chacune avec ses résultats :
+# - individuel : archer, categorie, place ;
+# - par équipe : equipe (division), categorie, archers (noms), place.
+# La place est un entier : 1 à 3 pour les podiums, sinon le classement.
+
+annees:
+  - annee: 2025
+    epreuves:
+      - discipline: Tir 3D
+        resultats:
+          - {archer: HUE Françoise, categorie: S3 AD, place: 2}
+
+  - annee: 2024
+    epreuves:
+      - discipline: Tir 3D
+        resultats:
+          - {archer: HUE Françoise, categorie: S3 AD, place: 2}
+
+  - annee: 2023
+    epreuves:
+      - discipline: Tir 3D
+        resultats:
+          - {archer: HUE Françoise, categorie: S3 AD, place: 1}
+      - discipline: Tir traditionnel Beursault
+        resultats:
+          - {archer: HUE Françoise, categorie: S3 AD, place: 2}
+
+  - annee: 2022
+    epreuves:
+      - discipline: Tir Nature
+        resultats:
+          - {archer: HUE Françoise, categorie: S3 AD, place: 3}
+      - discipline: FTL
+        competition: Championnat d'Europe
+        resultats:
+          - {archer: HUE Françoise, categorie: AD, place: 2}
+
+  - annee: 2019
+    epreuves:
+      - discipline: TAE (70 m CL – 50 m CO)
+        competition: Championnat de France FFH (handisport)
+        resultats:
+          - {archer: GAUTIER Pierre-Yves, categorie: S1 H CL, place: 2}
+      - discipline: TAE National (50 m)
+        competition: Championnat de France FFH (handisport)
+        resultats:
+          - {archer: GAUTIER Pierre-Yves, categorie: S1 H CL, place: 1}
+      - discipline: Tir en campagne
+        resultats:
+          - {archer: HUE Françoise, categorie: S3 F CO, place: 3}
+      - discipline: Tir traditionnel Beursault
+        resultats:
+          - {archer: HUE Françoise, categorie: VF CO, place: 1}
+      - discipline: Tir par équipe
+        resultats:
+          - equipe: DN1
+            categorie: CO F
+            archers: [HUE, MORISSEAU, RAVIDAT, GARRIGUES]
+            place: 8
+
+  - annee: 2018
+    epreuves:
+      - discipline: TAE (70 m CL – 50 m CO)
+        resultats:
+          - {archer: DARRAS Ludovic, categorie: VH CO, place: 2}
+      - discipline: Tir en campagne
+        resultats:
+          - {archer: HUE Françoise, categorie: VF CO, place: 1}
+      - discipline: Tir par équipe
+        resultats:
+          - equipe: DN1
+            categorie: CO F
+            archers: [HUE, MORISSEAU, RAVIDAT, GARRIGUES]
+            place: 6
+
+  - annee: 2017
+    epreuves:
+      - discipline: TAE (70 m CL – 50 m CO)
+        resultats:
+          - {archer: HUE Françoise, categorie: VF CO, place: 1}
+      - discipline: TAE National (50 m)
+        resultats:
+          - {archer: HUE Françoise, categorie: VF CO, place: 2}
+      - discipline: Tir en campagne
+        resultats:
+          - {archer: HUE Françoise, categorie: VF CO, place: 2}
+      - discipline: Tir par équipe
+        resultats:
+          - equipe: DR
+            categorie: CO F
+            archers: [HUE, MORISSEAU, GARRIGUES, MONTPELLIER]
+            place: 1
+          - equipe: DN1
+            categorie: CL F
+            archers: [FONTAINE, MAFFRAY, DUCROSQ, BASSOT]
+            place: 16
+
+  - annee: 2016
+    epreuves:
+      - discipline: TAE (70 m CL – 50 m CO)
+        resultats:
+          - {archer: FONTAINE Laurence, categorie: VF CL, place: 2}
+          - {archer: HUE Françoise, categorie: VF CO, place: 1}
+      - discipline: Tir en campagne
+        resultats:
+          - {archer: HUE Françoise, categorie: VF CO, place: 3}
+      - discipline: Tir par équipe
+        resultats:
+          - equipe: DN2
+            categorie: CL F
+            archers: [FONTAINE, MAFFRAY, DUCROSQ, BASSOT]
+            place: 3
+
+  - annee: 2015
+    epreuves:
+      - discipline: TAE (70 m CL – 50 m CO)
+        resultats:
+          - {archer: FONTAINE Laurence, categorie: VF CL, place: 3}
+      - discipline: Tir par équipe
+        resultats:
+          - equipe: DN1
+            categorie: CO F
+            archers: [HUE, MORISSEAU, GARRIGUES, MONTPELLIER]
+            place: 8
+          - equipe: DR
+            categorie: CO F
+            archers: [BASSOT, FONTAINE, HERIN, DEGAND]
+            place: 11
+
+  - annee: 2014
+    epreuves:
+      - discipline: TAE National (50 m)
+        resultats:
+          - {archer: HUE Françoise, categorie: VF CO, place: 1}
+      - discipline: Tir en campagne
+        resultats:
+          - {archer: HUE Françoise, categorie: VF CO, place: 1}
+      - discipline: Tir 3D
+        resultats:
+          - {archer: CARDON Monique, categorie: VF CO, place: 3}
+          - {archer: TEURNIER Julie Marie, categorie: CF TL, place: 3}
+      - discipline: Tir par équipe
+        resultats:
+          - equipe: DR
+            categorie: CO F
+            archers: [HUE, MORISSEAU, GARRIGUES, MONTPELLIER]
+            place: 1
+
+  - annee: 2013
+    epreuves:
+      - discipline: TAE (70 m CL – 50 m CO)
+        resultats:
+          - {archer: HUE Françoise, categorie: VF CO, place: 1}
+      - discipline: TAE National (50 m)
+        resultats:
+          - {archer: HUE Françoise, categorie: VF CO, place: 1}
+      - discipline: Tir en campagne
+        resultats:
+          - {archer: HUE Françoise, categorie: VF CO, place: 1}
+      - discipline: Tir 3D
+        resultats:
+          - {archer: CARDON Monique, categorie: VF CO, place: 2}
+
+  - annee: 2012
+    epreuves:
+      - discipline: TAE National (50 m)
+        resultats:
+          - {archer: HUE Françoise, categorie: VF CO, place: 1}
+      - discipline: Tir en campagne
+        resultats:
+          - {archer: HUE Françoise, categorie: VF CO, place: 1}
+      - discipline: Tir par équipe
+        resultats:
+          - equipe: DN1
+            categorie: CO F
+            archers: [HUE, MORISSEAU, MOREAU, GARRIGUES]
+            place: 8
+
+  - annee: 2011
+    epreuves:
+      - discipline: TAE (70 m CL – 50 m CO)
+        resultats:
+          - {archer: HUE Françoise, categorie: VF CO, place: 1}
+      - discipline: TAE National (50 m)
+        resultats:
+          - {archer: HUE Françoise, categorie: VF CO, place: 1}
+      - discipline: Tir en campagne
+        resultats:
+          - {archer: HUE Françoise, categorie: VF CO, place: 1}
+      - discipline: Tir par équipe
+        resultats:
+          - equipe: DN1
+            categorie: CO F
+            archers: [BOUILLOT, HUE, MORISSEAU, MOREAU]
+            place: 2
+
+  - annee: 2010
+    epreuves:
+      - discipline: Salle
+        resultats:
+          - {archer: BOUILLOT Amandine, categorie: SF CO, place: 2}
+      - discipline: TAE (70 m CL – 50 m CO)
+        resultats:
+          - {archer: HUE Françoise, categorie: VF CO, place: 1}
+      - discipline: TAE National (50 m)
+        resultats:
+          - {archer: HUE Françoise, categorie: VF CO, place: 1}
+      - discipline: Tir en campagne
+        resultats:
+          - {archer: HUE Françoise, categorie: VF CO, place: 1}
+      - discipline: Tir par équipe
+        resultats:
+          - equipe: DN1
+            categorie: CO F
+            archers: [BOUILLOT, HUE, MORISSEAU, MOREAU, DE FRANCE]
+            place: 5
+
+  - annee: 2009
+    epreuves:
+      - discipline: TAE (70 m CL – 50 m CO)
+        resultats:
+          - {archer: HUE Françoise, categorie: VF CO, place: 1}
+      - discipline: TAE National (50 m)
+        resultats:
+          - {archer: HUE Françoise, categorie: VF CO, place: 3}
+      - discipline: Tir par équipe
+        resultats:
+          - equipe: DN1
+            categorie: CO F
+            archers: [BOUILLOT, HUE, NUNES, DE FRANCE]
+            place: 4
+
+  - annee: 2008
+    epreuves:
+      - discipline: Salle
+        resultats:
+          - {archer: HUE Françoise, categorie: VF CO, place: 3}
+      - discipline: TAE (70 m CL – 50 m CO)
+        resultats:
+          - {archer: BOUILLOT Amandine, categorie: SF CO, place: 2}
+          - {archer: HUE Françoise, categorie: Scratch F CO, place: 3}
+          - {archer: HUE Françoise, categorie: VF CO, place: 1}
+      - discipline: TAE National (50 m)
+        resultats:
+          - {archer: TULLI Elisa, categorie: SF CO, place: 3}
+          - {archer: CARDON Monique, categorie: VF CO, place: 3}
+      - discipline: Tir traditionnel Beursault
+        resultats:
+          - {archer: CARDON Monique, categorie: VF CO, place: 2}
+      - discipline: Tir par équipe
+        resultats:
+          - equipe: DN1
+            categorie: CO F
+            archers: [BOUILLOT, HUE, TULLI, NUNES, DE FRANCE]
+            place: 1
+
+  - annee: 2007
+    epreuves:
+      - discipline: Salle
+        resultats:
+          - {archer: BOUILLOT Amandine, categorie: SF CO, place: 3}
+      - discipline: TAE (70 m CL – 50 m CO)
+        resultats:
+          - {archer: CARDON Monique, categorie: VF CO, place: 3}
+      - discipline: Tir en campagne
+        resultats:
+          - {archer: CARDON Monique, categorie: VF CO, place: 2}
+      - discipline: Tir par équipe
+        resultats:
+          - equipe: DN1
+            categorie: CO F
+            archers: [BOUILLOT, HUE, TULLI, DE FRANCE]
+            place: 2
+
+  - annee: 2006
+    epreuves:
+      - discipline: Salle
+        resultats:
+          - {archer: BOUILLOT Amandine, categorie: SF CO, place: 1}
+      - discipline: TAE National (50 m)
+        resultats:
+          - {archer: BOUILLOT Amandine, categorie: SF CO, place: 1}
+          - {archer: PARENT Isabelle, categorie: SF CO, place: 3}
+      - discipline: Tir en campagne
+        resultats:
+          - {archer: CARDON Monique, categorie: VF CO, place: 2}
+      - discipline: Tir 3D
+        resultats:
+          - {archer: HUE Françoise, categorie: VF CO, place: 2}
+      - discipline: Tir traditionnel Beursault
+        resultats:
+          - {archer: VELUT Myriam, categorie: SF CL, place: 3}
+          - {archer: BOUILLOT Amandine, categorie: SF CO, place: 3}
+      - discipline: Tir par équipe
+        resultats:
+          - equipe: DN1
+            categorie: CO F
+            archers: [BOUILLOT, BROUILLÉ, TULLI, CARDON, DE FRANCE]
+            place: 1
+
+  - annee: 2005
+    epreuves:
+      - discipline: TAE (70 m CL – 50 m CO)
+        resultats:
+          - {archer: BOUILLOT Amandine, categorie: SF CO, place: 2}
+          - {archer: DE FRANCE Monique, categorie: SVF CO, place: 2}
+      - discipline: TAE National (50 m)
+        resultats:
+          - {archer: BOUILLOT Amandine, categorie: SF CO, place: 1}
+      - discipline: Tir en campagne
+        resultats:
+          - {archer: CARDON Monique, categorie: VF CO, place: 1}
+          - {archer: SEYMAND Claudine, categorie: VF BB, place: 2}
+      - discipline: Tir 3D
+        resultats:
+          - {archer: SEYMAND Claudine, categorie: VF BB, place: 2}
+      - discipline: Tir traditionnel Beursault
+        resultats:
+          - {archer: VELUT Myriam, categorie: SF CL, place: 2}
+          - {archer: BOUILLOT Amandine, categorie: SF CO, place: 3}
+      - discipline: Tir par équipe
+        resultats:
+          - equipe: DN1
+            categorie: CO F
+            archers: [BOUILLOT, TULLI, CARDON, DE FRANCE]
+            place: 1
+
+  - annee: 2004
+    epreuves:
+      - discipline: Tir 3D
+        resultats:
+          - {archer: SEYMAND Claudine, categorie: VF BB, place: 2}
+      - discipline: Tir traditionnel Beursault
+        resultats:
+          - {archer: BOUILLOT Amandine, categorie: SF CO, place: 3}
+      - discipline: Tir par équipe
+        resultats:
+          - equipe: DN1
+            categorie: CO F
+            archers: [BOUILLOT, PIVETTE, CARDON]
+            place: 5
+
+  - annee: 2001
+    epreuves:
+      - discipline: Salle
+        resultats:
+          - {archer: DE FRANCE Thierry, categorie: VH CL, place: 3}
+
+  - annee: 1994
+    epreuves:
+      - discipline: Salle
+        resultats:
+          - {archer: SANDRET Emmanuel, categorie: JH CO, place: 3}
+      - discipline: TAE National (50 m)
+        resultats:
+          - {archer: DE FRANCE Thibault, categorie: JH CO, place: 2}
+      - discipline: Tir traditionnel Beursault
+        resultats:
+          - {archer: SANDRET Emmanuel, categorie: JH CO, place: 1}
+
+  - annee: 1993
+    epreuves:
+      - discipline: TAE (70 m CL – 50 m CO)
+        resultats:
+          - {archer: SANDRET Emmanuel, categorie: JH CO, place: 3}

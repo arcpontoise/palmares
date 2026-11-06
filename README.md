@@ -28,6 +28,12 @@ Le travail se fait en deux temps :
   nouvelles distinctions saison par saison et niveau atteint par archer.
   Insignes : planches de Nhhi (Wikimedia Commons, CC BY-SA 4.0) découpées par
   `decouper_insignes.py` dans `assets/distinctions/`.
+- **Palmarès national** : podiums et classements aux championnats de France
+  depuis 1993, en individuel et par équipe. Ces résultats sont saisis à la
+  main dans `palmares_national.yaml` (repris de l'ancien site WordPress,
+  vérifiés et complétés avec l'extranet FFTA) et ne dépendent pas de la
+  collecte : l'extranet ne donne ni les classements par équipe ni les places
+  au Beursault.
 - **À propos** : règles de comptage et critères « grand concours ».
 
 Règles de comptage principales : un archer et un concours = une participation
@@ -45,10 +51,19 @@ modification de la charte s'applique au palmarès sans le régénérer.
 `generer_site.py` ne produit que les styles propres au palmarès (`style.css`),
 avec les variables de la charte (`--ink`, `--blue`, `--accent`, `--gold`…).
 
-Pour tester avec une copie locale de la charte :
+L'en-tête affiche le menu commun à tous les sites de la compagnie
+(`<arc-menu actuel="competitions">`, script `js/menu.js` de la charte). Il se
+modifie dans `menu.yaml` du dépôt `charte`, sans régénérer le palmarès. La
+barre `nav.site` ne contient que les pages du palmarès.
+
+Pour tester avec une copie locale de la charte, la servir en HTTP (le
+navigateur refuse les scripts et les polices en `file://` depuis une page
+servie en HTTP) :
 
 ```bash
-CHARTE_URL=file://$HOME/git/arcpontoise_charte python3 generer_site.py --out site
+(cd ~/git/arcpontoise_charte && python3 -m http.server 8001) &
+CHARTE_URL=http://localhost:8001 python3 generer_site.py --out site
+(cd site && python3 -m http.server 8003)
 ```
 
 ## Fichiers
@@ -59,11 +74,13 @@ CHARTE_URL=file://$HOME/git/arcpontoise_charte python3 generer_site.py --out sit
 | `generer_site.py`             | `detail_pontoise.csv` → `site/` (sans réseau)      |
 | `membres.yaml`                | Archers par saison + mots-clés « grands concours » |
 | `membres.example.yaml`        | Modèle de `membres.yaml`                           |
+| `palmares_national.yaml`      | Palmarès national, saisi à la main                 |
 | `detail_pontoise.csv`         | Données collectées (une ligne par performance)     |
 | `requirements.txt`            | Dépendances Python de la collecte                  |
 | `assets/`                     | Insignes des distinctions                          |
 | `decouper_insignes.py`        | Découpe les planches d'insignes Wikimedia (Pillow) |
-| `.github/workflows/pages.yml` | Publication sur GitHub Pages                       |
+| `.github/workflows/pages.yml` | Lint, construction et publication sur GitHub Pages |
+| `pyproject.toml`, `.yamllint` | Configuration de ruff et yamllint                  |
 | `.cache_ffta/`                | Cache des pages FFTA (généré, non versionné)       |
 | `site/`                       | Site généré (non versionné)                        |
 
@@ -179,9 +196,14 @@ contourner.
 
 ## Publication sur GitHub Pages
 
-Le workflow `.github/workflows/pages.yml` régénère le site à chaque push sur
-`main` qui modifie `detail_pontoise.csv`, `membres.yaml` ou `generer_site.py`
-(ou à la demande : onglet *Actions* > *Publier le site* > *Run workflow*).
+Le workflow `.github/workflows/pages.yml` :
+
+- sur chaque pull request : job `lint` (yamllint, ruff), contrôle obligatoire
+  de la branche `main`, puis construction du site pour vérifier qu'elle
+  aboutit ;
+- sur `main` : construction et publication du site quand les données, les
+  insignes ou `generer_site.py` changent (ou à la demande : onglet *Actions* >
+  *Publier le site* > *Run workflow*).
 
 Mise en place, une seule fois :
 
@@ -192,11 +214,19 @@ Mise en place, une seule fois :
 
 Mise à jour des données :
 
+La branche `main` est protégée : la mise à jour passe par une pull request.
+
 ```bash
+git switch main && git pull
+git switch -c donnees/$(date +%F)
 python3 palmares_pontoise.py        # collecte, puis regénère detail_pontoise.csv
 git add detail_pontoise.csv membres.yaml
-git commit -m "Mise à jour du palmarès" && git push
+git commit -m "Mise à jour du palmarès" && git push -u origin HEAD
 ```
+
+Ouvrir ensuite la pull request et la fusionner une fois le contrôle `lint`
+au vert. Le palmarès national se met à jour de la même façon, en modifiant
+`palmares_national.yaml`.
 
 Le site est reconstruit à partir du CSV : GitHub Actions n'accède jamais à la
 FFTA et ne détient aucun cookie.

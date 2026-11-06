@@ -1,0 +1,15 @@
+---
+extends: default
+
+rules:
+  line-length:
+    max: 120
+  truthy:
+    check-keys: false
+  # membres.yaml is generated with unindented sequences under mapping keys
+  indentation:
+    indent-sequences: whatever
+
+ignore: |
+  site/
+  .venv/
