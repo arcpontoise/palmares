@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Génère un site statique sur le palmarès de la Cie Archers de Pontoise.
+"""Génère un site statique sur le palmarès de la Compagnie d'archers de Pontoise.
 
 Le site est construit à partir du CSV détaillé produit par
 ``palmares_pontoise.py`` (aucun accès réseau) :
@@ -43,11 +43,11 @@ from typing import Any
 import yaml
 
 logger = logging.getLogger("generer_site")
-ASSETS = Path(__file__).parent / "assets"  # insignes des distinctions
+ASSETS = Path(__file__).parent / "assets"  # insignes des distinctions, stats.js
 # Shared visual identity (colours, fonts, logo), loaded directly by every page
 CHARTE = os.environ.get("CHARTE_URL", "https://charte.arcpontoise.fr").rstrip("/")
 
-CLUB = "Cie Archers de Pontoise"
+CLUB = "Compagnie d'archers de Pontoise"
 MEDAILLES = {1: "🥇", 2: "🥈", 3: "🥉"}
 DEFAULT_MOTS_CLES = [
     r"championnat de france",
@@ -689,7 +689,17 @@ def tableau_obtentions(
     return tableau(entetes, lignes, ident)
 
 
-def page(titre: str, corps: str, profondeur: int, actif: str, saisons: list[str]) -> str:
+def page(
+    titre: str,
+    corps: str,
+    profondeur: int,
+    actif: str,
+    saisons: list[str],
+    stats_attributs: str = "",
+) -> str:
+    """Page HTML complète. stats_attributs : attributs ajoutés à la balise du
+    script de mesure d'audience (data-titre, data-adresse), pour qu'aucun nom
+    ni numéro de licence n'arrive dans les statistiques."""
     racine = "../" * profondeur
     liens = [
         ("accueil", "index.html", "Accueil"),
@@ -715,6 +725,7 @@ def page(titre: str, corps: str, profondeur: int, actif: str, saisons: list[str]
 <link rel="stylesheet" href="{CHARTE}/css/charte.css" />
 <link rel="stylesheet" href="{racine}style.css" />
 <script src="{CHARTE}/js/menu.js" defer></script>
+<script src="{racine}stats.js" data-site="4"{stats_attributs} defer></script>
 </head>
 <body>
 <header class="site"><div class="gabarit entete-flex">
@@ -732,8 +743,10 @@ def page(titre: str, corps: str, profondeur: int, actif: str, saisons: list[str]
 <main class="gabarit">
 {corps}
 </main>
-<footer class="site gabarit">Palmarès issu de l'extranet FFTA – généré le {date.today():%d/%m/%Y}.
-Voir <a href="{racine}a-propos.html">la méthode de calcul</a>.</footer>
+<footer class="site gabarit"><p>Palmarès issu de l'extranet FFTA – généré le {date.today():%d/%m/%Y}.
+Voir <a href="{racine}a-propos.html">la méthode de calcul</a> –
+<a href="https://arcpontoise.fr/mentions-legales/">Mentions légales</a>.</p>
+<p><button type="button" class="stats-refus" data-stats-refus hidden></button></p></footer>
 <script src="{racine}site.js"></script>
 </body>
 </html>
@@ -1530,19 +1543,26 @@ def generer_site(
     (sortie / "saisons").mkdir(parents=True, exist_ok=True)
     (sortie / "archers").mkdir(exist_ok=True)
 
-    def ecrire(chemin: str, titre: str, corps: str, profondeur: int, actif: str) -> None:
-        (sortie / chemin).write_text(page(titre, corps, profondeur, actif, saisons), encoding="utf-8")
+    def ecrire(chemin: str, titre: str, corps: str, profondeur: int, actif: str, stats_attributs: str = "") -> None:
+        html = page(titre, corps, profondeur, actif, saisons, stats_attributs)
+        (sortie / chemin).write_text(html, encoding="utf-8")
+
+    # An archer's page: its name (title) and licence number (address) stay
+    # out of the audience statistics, every archer counts as one same page
+    fiche_archer = ' data-titre="Fiche d\'un archer" data-adresse="fiche.html"'
 
     (sortie / "static").mkdir(exist_ok=True)
     shutil.copytree(ASSETS / "distinctions", sortie / "static" / "distinctions", dirs_exist_ok=True)
     (sortie / "style.css").write_text(_CSS, encoding="utf-8")
     (sortie / "site.js").write_text(_JS, encoding="utf-8")
+    # Audience measurement: copy of suivi/stats.js of arcpontoise/stats (site 4)
+    shutil.copyfile(ASSETS / "stats.js", sortie / "stats.js")
     ecrire("index.html", "Palmarès", page_accueil(epreuves, par_saison, saisons), 0, "accueil")
     for s in saisons:
         ecrire(f"saisons/{s}.html", f"Saison {s}", page_saison(s, par_saison[s], saisons), 1, "accueil")
     ecrire("archers/index.html", "Les archers", page_annuaire(par_archer), 1, "archers")
     for licence, liste in par_archer.items():
-        ecrire(f"archers/{licence}.html", liste[0].nom, page_archer(liste), 1, "archers")
+        ecrire(f"archers/{licence}.html", liste[0].nom, page_archer(liste), 1, "archers", fiche_archer)
     ecrire("grands-concours.html", "Grands concours", page_grands_concours(epreuves, saisons), 0, "grands")
     ecrire("records.html", "Records", page_records(epreuves, par_archer), 0, "records")
     ecrire("distinctions.html", "Distinctions", page_distinctions(par_archer, saisons), 0, "distinctions")
