@@ -1,4 +1,4 @@
-# Palmarès FFTA – Cie Archers de Pontoise
+# Palmarès FFTA – Compagnie d'archers de Pontoise
 
 Site statique sur le palmarès de la Compagnie d'archers de Pontoise (club
 FFTA `0895289`), construit à partir de l'espace licencié FFTA
@@ -238,6 +238,16 @@ et leurs résultats, et `detail_pontoise.csv` / `membres.yaml` sont versionnés
 pour la construction. Sur un compte GitHub gratuit, GitHub Pages est
 **public** même si le dépôt est privé. Avant de publier, s'assurer de
 l'accord du club et des archers concernés (RGPD).
+
+### Mesure d'audience
+
+Les pages chargent `stats.js`, copie de `suivi/stats.js` du dépôt
+[stats](https://github.com/arcpontoise/stats), placée dans `assets/` : mesure
+anonyme par Matomo (site n° 4), réglée pour l'exemption de consentement de la
+CNIL, avec le lien « Refuser la mesure d'audience » en pied de page. Les
+fiches d'archers sont toutes enregistrées sous le même titre (« Fiche d'un
+archer ») et la même adresse (`archers/fiche.html`) : ni nom ni numéro de
+licence n'arrive dans les statistiques.
 
 ## Notes techniques
 
